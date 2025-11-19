@@ -12,10 +12,10 @@ const path = require('path');
 
 console.log('📝 開始生成 config.js...');
 
-// 從環境變數讀取設定
-const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL || process.env.VITE_GOOGLE_SCRIPT_URL || '';
-const GOOGLE_ANALYTICS_ID = process.env.GOOGLE_ANALYTICS_ID || '';
-const FACEBOOK_PIXEL_ID = process.env.FACEBOOK_PIXEL_ID || '';
+// 從環境變數讀取設定（並清除可能的換行符號）
+const GOOGLE_SCRIPT_URL = (process.env.GOOGLE_SCRIPT_URL || process.env.VITE_GOOGLE_SCRIPT_URL || '').replace(/\n/g, '').trim();
+const GOOGLE_ANALYTICS_ID = (process.env.GOOGLE_ANALYTICS_ID || '').replace(/\n/g, '').trim();
+const FACEBOOK_PIXEL_ID = (process.env.FACEBOOK_PIXEL_ID || '').replace(/\n/g, '').trim();
 
 console.log('環境變數狀態:');
 console.log('  GOOGLE_SCRIPT_URL:', GOOGLE_SCRIPT_URL ? '✓ 已設定' : '✗ 未設定');
