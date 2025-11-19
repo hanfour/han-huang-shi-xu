@@ -1,0 +1,3416 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>漢皇蒔序</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.25, minimum-scale=1.0, user-scalable=yes, target-densitydpi=device-dpi"
+    />
+    <meta
+      name="description"
+      content="漢皇蒔序｜北市名宅聚落3房，大安信義隱富回眸"
+    />
+    <meta property="og:title" content="漢皇蒔序" />
+    <meta
+      property="og:description"
+      content="漢皇蒔序｜北市名宅聚落3房，大安信義隱富回眸"
+    />
+    <meta property="og:url" content="https://d360escnnx5mvw.cloudfront.net/DEMO/漢皇建設/漢皇蒔序/index.html" />
+    <meta
+      property="og:image"
+      content="https://d360escnnx5mvw.cloudfront.net/DEMO/%E6%BC%A2%E7%9A%87%E5%BB%BA%E8%A8%AD/%E6%BC%A2%E7%9A%87%E8%92%94%E5%BA%8F/og.jpg"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="漢皇蒔序｜北市名宅聚落3房，大安信義隱富回眸"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <!-- 引入 tailwind.css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 AOS 庫的 CSS 文件 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <!-- <link rel="stylesheet" href="./src/fonts.css" /> -->
+    <!-- CustomSlider 組件 CSS -->
+    <link rel="stylesheet" href="./src/assets/utils/custom-slider/CustomSlider.css" />
+    <!-- /* Noto Sans TC */ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Shafarik&display=swap" rel="stylesheet">
+    <!-- 引入 slick-carousel -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    />
+    <meta name="author" content="HanfourHuang" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+    <!-- 引入 image-layout -->
+    <link rel="stylesheet" href="./src/assets/utils/image-layout/index.css" />
+    <!-- 引入 fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+    <style>
+      /* CSS 變數定義 - 統一管理顏色、字體、斷點 */
+      :root {
+        /* 品牌顏色 */
+        --color-brand-gold: #e9db6e;
+        --color-brand-brown: #3D3127;
+        --color-brand-brown-dark: rgb(69,58,50);
+        --color-text-gray: #808080;
+        --color-text-white: white;
+        --color-bg-black-overlay: rgba(0, 0, 0, 0.25);
+
+        /* 字體家族 */
+        --font-sans: "Noto Sans TC", "FangSong", "NSimSun", "LiSong Pro Light",
+          "Apple LiSung Light", sans-serif;
+        --font-serif: "Noto Serif", "Georgia", "Times New Roman", "LiSu",
+          "PMingLiU", serif;
+        --font-CenturyGothic: "Century Gothic", "Noto Serif", "Roboto", "Lora",
+          sans-serif;
+
+        /* 響應式斷點 */
+        --breakpoint-mobile: 768px;
+        --breakpoint-tablet: 1024px;
+        --breakpoint-desktop: 1440px;
+
+        /* 動畫時間 */
+        --transition-fast: 0.3s;
+        --transition-normal: 0.5s;
+      }
+
+      * {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        box-sizing: border-box;
+      }
+
+      body {
+        position: relative;
+        width: 100dvw;
+        min-height: 100dvh;
+        font-family: var(--font-sans);
+        overflow-x: hidden;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(./src/assets/image/background.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+        opacity: 1;
+      }
+
+      section {
+        max-width: 100dvw;
+        overflow: hidden;
+      }
+
+      .text-justify-zh {
+        text-align: justify;
+        text-align-last: justify;
+        text-justify: distribute-all-lines;
+      }
+
+      .text-justify-chars {
+        text-align: justify;
+        text-align-last: justify;
+        word-break: break-all;
+      }
+
+      /* 標籤固定寬度不換行 */
+      label.text-justify-chars {
+        white-space: nowrap;
+        display: inline-block;
+      }
+
+      .text-vertical-lr {
+        -webkit-writing-mode: vertical-lr;
+        writing-mode: vertical-lr;
+      }
+
+      .text-vertical-rl {
+        -webkit-writing-mode: vertical-rl;
+        writing-mode: vertical-rl;
+      }
+
+      .writing-vertical-rl {
+        -webkit-writing-mode: vertical-rl;
+        writing-mode: vertical-rl;
+      }
+
+      @media (min-width: 768px) {
+        .md\:text-justify-zh {
+          text-align: justify;
+          text-align-last: justify;
+          text-justify: distribute-all-lines;
+        }
+
+        .md\:text-vertical-lr {
+          -webkit-writing-mode: vertical-lr;
+          writing-mode: vertical-lr;
+        }
+
+        .md\:text-vertical-rl {
+          -webkit-writing-mode: vertical-rl;
+          writing-mode: vertical-rl;
+        }
+
+        .md\:h-dvh {
+          height: 100dvh;
+        }
+      }
+
+      select {
+        background: #fff
+          url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="%23ffffff" viewBox="0 0 20 20"><path d="M5 8l6 6 6-6z"/></svg>')
+          right 0.5rem center no-repeat;
+      }
+
+      .zoomed {
+        max-width: 95vw !important;
+        max-height: 95vh !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        cursor: zoom-out;
+        transition: all 0.3s ease;
+      }
+
+      .zoomed-container {
+        overflow: auto;
+      }
+
+      /* Aerial Style */
+
+      .mask {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 9;
+      }
+
+      @media only screen and (max-width: 767px) {
+        .mask {
+          display: block;
+        }
+      }
+
+      .mask-active {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        animation-name: fade-lr;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes fade-lr {
+        0% {
+          transform: translateX(-10px);
+        }
+
+        25% {
+          transform: translateX(10px);
+        }
+
+        50% {
+          transform: translateX(-10px);
+        }
+
+        75% {
+          transform: translateX(10px);
+        }
+
+        100% {
+          transform: translateX(-10px);
+        }
+      }
+
+      .slicks-center .slick-slide .slick-lists-img {
+        transition: all 300ms ease;
+        transform: scale(0.75);
+      }
+
+      .slicks-center .slick-center .slick-lists-img {
+        transform: scale(1);
+      }
+
+      .slick-dotted.slick-slider{
+        margin: 0;
+      }
+
+      .slick-dots {
+        bottom: 10px;
+      }
+
+      .slick-dots li {
+        margin: 0;
+      }
+
+      .slick-dots li button:before {
+        font-size: 12px;
+        color: white;
+        opacity: 1;
+      }
+
+      .slick-dots li.slick-active button:before {
+        color: var(--color-brand-gold);
+      }
+
+      .slick-next, .slick-prev {
+        width: 36px;
+        height: 36px;
+      }
+
+      .slick-prev {
+        left: 0;
+        z-index: 10;
+      }
+      .slick-next {
+        right: 0;
+        z-index: 10;
+      }
+
+      .slick-next:before, .slick-prev:before {
+        font-size: 32px;
+        color: black;
+      }
+
+      .slicks-center .slick-next:before, .slicks-center .slick-prev:before {
+        color: white;
+      }
+
+      @media screen and (max-width: 767px) {
+        .slick-dots li button {
+          width: 8px;
+          height: 8px;
+          padding: 0;
+        }
+
+        .slick-dots li button:before {
+          font-size: 8px;
+        }
+
+        .slick-next, .slick-prev {
+          width: 24px;
+          height: 24px;
+        }
+        .slick-next:before, .slick-prev:before {
+          font-size: 16px;
+        }
+      }
+
+      /* Custom styles */
+
+      .unique-responsive-carousel .slick-slide {
+        transition: all 0.3s ease;
+        padding: 0 5px;
+      }
+
+      .unique-responsive-carousel .slick-current {
+        transform: scale(1);
+        filter: grayscale(0);
+      }
+
+      .unique-responsive-carousel .slick-slide:not(.slick-current) {
+        transform: scale(0.8);
+        filter: grayscale(100%);
+      }
+
+      .unique-image-caption {
+        @apply text-[8px] md: text-[10px] text-white px-2 pb-1 absolute bottom-0 right-0 w-full text-right;
+      }
+
+      @media (max-width: 768px) {
+        .unique-responsive-carousel .slick-slide:not(.slick-current) {
+          transform: scale(1);
+          filter: grayscale(0);
+        }
+      }
+
+      .crossed-out {
+        position: relative;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+      }
+
+      .crossed-out::before,
+      .crossed-out::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: white;
+        top: 50%;
+        left: 0;
+        transform-origin: center;
+      }
+
+      .text-\[\#e9db6e\] .crossed-out::before,
+      .text-\[\#e9db6e\] .crossed-out::after {
+        background-color: var(--color-brand-gold);
+      }
+
+      .crossed-out::before {
+        transform: rotate(45deg);
+      }
+
+      .crossed-out::after {
+        transform: rotate(-45deg);
+      }
+
+      #kv {
+        /* background-image: url("./src/assets/image/kv-bg_pure.jpg"); */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .jconfirm .jc-bs3-container.container {
+        margin: 0 auto;
+      }
+
+      .jconfirm .jc-bs3-container.container .jconfirm-box-container {
+        max-width: 380px;
+        margin: 0 auto;
+      }
+
+      @keyframes glow {
+        0% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0.375;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .animate-glow {
+        animation: glow 5s infinite ease-in-out;
+      }
+
+      /* 左右滑動提示動畫 */
+      @keyframes swipe-hint {
+        0%, 100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        25% {
+          transform: translateX(-8px);
+          opacity: 0.8;
+        }
+        50% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        75% {
+          transform: translateX(8px);
+          opacity: 0.8;
+        }
+      }
+
+      .swipe-hint {
+        animation: swipe-hint 3s ease-in-out infinite;
+      }
+
+      /* 統一所有輪播縮圖平滑過渡效果 */
+      [class*="-thumbnail"] img {
+        transition: opacity var(--transition-fast) ease-in-out;
+      }
+
+      /* 輪播箭頭統一樣式 */
+      .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: all var(--transition-fast) ease-in-out;
+      }
+
+      .carousel-arrow:hover {
+        transform: translateY(-50%) scale(1.15);
+      }
+
+      .carousel-arrow-prev {
+        left: 20px;
+      }
+
+      .carousel-arrow-next {
+        right: 20px;
+      }
+
+      /* 使用 CSS 繪製箭頭圖標（基於 SVG 路徑） */
+      .carousel-arrow::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 48px;
+        height: 48px;
+        background-color: white;
+        transition: background-color var(--transition-fast) ease-in-out;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+      }
+
+      /* Next 箭頭（向右） */
+      .carousel-arrow-next::before {
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M233.046 941.461c-18.88 17.846-18.88 46.715 0.105 64.48 18.985 17.84 49.622 17.84 68.607 0l489.848-460.275c9.568-8.87 14.149-20.597 14.149-32.273 0-0.99-0.523-1.82-0.575-2.758-0.21-4.887-0.99-9.782-2.966-14.356-0.674-1.513-1.976-2.604-2.807-4.005-2.186-3.849-4.371-7.806-7.801-11.134L301.759 20.79c-18.985-17.631-49.517-17.631-68.607 0.053-18.985 17.788-18.985 46.71 0 64.5L688.608 513.39 233.046 941.46z'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M233.046 941.461c-18.88 17.846-18.88 46.715 0.105 64.48 18.985 17.84 49.622 17.84 68.607 0l489.848-460.275c9.568-8.87 14.149-20.597 14.149-32.273 0-0.99-0.523-1.82-0.575-2.758-0.21-4.887-0.99-9.782-2.966-14.356-0.674-1.513-1.976-2.604-2.807-4.005-2.186-3.849-4.371-7.806-7.801-11.134L301.759 20.79c-18.985-17.631-49.517-17.631-68.607 0.053-18.985 17.788-18.985 46.71 0 64.5L688.608 513.39 233.046 941.46z'/%3E%3C/svg%3E");
+      }
+
+      /* Prev 箭頭（向左，使用 transform: scaleX(-1) 鏡像翻轉） */
+      .carousel-arrow-prev::before {
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M233.046 941.461c-18.88 17.846-18.88 46.715 0.105 64.48 18.985 17.84 49.622 17.84 68.607 0l489.848-460.275c9.568-8.87 14.149-20.597 14.149-32.273 0-0.99-0.523-1.82-0.575-2.758-0.21-4.887-0.99-9.782-2.966-14.356-0.674-1.513-1.976-2.604-2.807-4.005-2.186-3.849-4.371-7.806-7.801-11.134L301.759 20.79c-18.985-17.631-49.517-17.631-68.607 0.053-18.985 17.788-18.985 46.71 0 64.5L688.608 513.39 233.046 941.46z'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M233.046 941.461c-18.88 17.846-18.88 46.715 0.105 64.48 18.985 17.84 49.622 17.84 68.607 0l489.848-460.275c9.568-8.87 14.149-20.597 14.149-32.273 0-0.99-0.523-1.82-0.575-2.758-0.21-4.887-0.99-9.782-2.966-14.356-0.674-1.513-1.976-2.604-2.807-4.005-2.186-3.849-4.371-7.806-7.801-11.134L301.759 20.79c-18.985-17.631-49.517-17.631-68.607 0.053-18.985 17.788-18.985 46.71 0 64.5L688.608 513.39 233.046 941.46z'/%3E%3C/svg%3E");
+        transform: translate(-50%, -50%) scaleX(-1);
+      }
+
+      .carousel-arrow:hover::before {
+        background-color: var(--color-brand-gold);
+      }
+
+      /* 手機版調整箭頭大小和位置 */
+      @media (max-width: 768px) {
+        .carousel-arrow {
+          width: 36px;
+          height: 36px;
+        }
+
+        .carousel-arrow::before {
+          width: 36px;
+          height: 36px;
+        }
+
+        .carousel-arrow-prev {
+          left: 10px;
+        }
+
+        .carousel-arrow-next {
+          right: 10px;
+        }
+      }
+
+      /* 團隊輪播樣式 */
+      .team-carousel .slick-slide {
+        height: auto !important;
+      }
+
+      /* 自定義 Slider 樣式 */
+      .traffic-carousel-desktop,
+      .park-carousel-desktop {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .traffic-carousel-desktop .slider-track,
+      .park-carousel-desktop .slider-track {
+        display: flex;
+        transition: transform 0.8s ease-in-out;
+      }
+
+      /* 確保箭頭按鈕正確顯示 */
+      .traffic-carousel-desktop .carousel-arrow,
+      .park-carousel-desktop .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+      }
+
+      /* 按鈕遮罩效果 */
+      .btn-with-overlay::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #e9db6e;
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+        pointer-events: none;
+      }
+
+      .btn-with-overlay:hover::after {
+        opacity: 0.8;
+      }
+
+      /* 品牌LOGO卡片雙層邊框效果 */
+      .logo-card-double-border {
+        position: relative;
+      }
+
+      .logo-card-double-border::after {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        border: 1px solid rgba(209, 213, 219, 0.6);
+        border-radius: 4px;
+        pointer-events: none;
+      }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N5FGGN67');</script>
+    <!-- End Google Tag Manager -->
+
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5FGGN67"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <main class="mx-auto overflow-hidden">
+      <section
+        id="kv"
+        class="w-full h-dvh relative flex justify-center items-end"
+      >
+        <div class="w-full h-full flex justify-center items-center">
+          <div class="w-10/12 md:w-8/12 2xl:w-7/12 flex flex-col justify-center items-center gap-4 md:gap-8">
+            <div class="w-full sm:w-3/4 md:w-1/2 flex flex-col gap-y-12">
+              <img src="./src/assets/image/kv_title.svg" alt="漢皇蒔序" class="" data-aos="fade" data-aos-delay="400" data-aos-anchor="#kv">
+              <div class="w-full flex flex-col justify-center items-center gap-6">
+                <img src="./src/assets/image/kv_content_1.svg" alt="捷運Y2A站3分鐘" data-aos="fade" data-aos-delay="400" data-aos-anchor="#kv">
+                <img src="./src/assets/image/kv_content_2.svg" alt="27-36坪·木柵國小生活圈" data-aos="fade" data-aos-delay="600" data-aos-anchor="#kv">
+                <img src="./src/assets/image/kv_content_3.svg" alt="北市名宅聚落3房 大安信義隱富回眸" data-aos="fade-up" data-aos-delay="800" data-aos-anchor="#kv">
+                <div class="w-52 mt-12">
+                  <img src="./src/assets/image/logo_build.svg" alt="漢皇集團" style="mix-blend-mode: multiply" data-aos="fade" data-aos-delay="1400" data-aos-anchor="#kv"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute bottom-0 right-0 m-4 sm:mb-16 sm:me-24 flex gap-2"
+        >
+          <div class="w-32 p-.5 bg-white" data-aos="fade" data-aos-delay="1400" data-aos-anchor="#kv">
+            <img src="./src/assets/image/logo_Taoyu.svg" alt="泰瑀行銷(股)公司" style="mix-blend-mode: multiply"/>
+          </div>
+        </div>
+      </section>
+
+      <!-- 區塊2 -->
+      <section id="mrt" class="relative overflow-hidden w-dvw md:py-24 bg-[#321d12]">
+        <div class="w-full md:h-full flex justify-center items-center">
+          <div class="w-full md:w-10/12 flex flex-col md:flex-row justify-between items-stretch md:gap-8">
+
+            <!-- 手機版：垂直排列 [文字][捷運路線圖][捷運情境示意圖] -->
+            <div class="w-full md:hidden flex flex-col">
+              <!-- 文字內容 -->
+              <div class="w-11/12 mx-auto flex flex-col justify-center items-stretch gap-2 py-10">
+                <h3
+                  class="text-[#e9db6e] text-lg text-center font-light !leading-tight whitespace-nowrap"
+                  data-aos-anchor="#mrt"
+                  data-aos="fade"
+                  data-aos-delay="400"
+                >
+                鍍金未來環狀線 擎啟木柵新格局
+                </h3>
+                <div>
+                  <p
+                    class="text-white text-[10px] text-center !tracking-widest !leading-6"
+                    data-aos-anchor="#mrt"
+                    data-aos="fade"
+                    data-aos-delay="800"
+                  >
+                  南環啟動、東環延伸，鍍金環狀線重塑木柵新格局<br/>
+                  【漢皇蒔序】3分鐘Y2A站，串聯六大捷運系統<br/>
+                  直取信義、松山、內湖、南港四大門戶地段<br/>
+                  一線新店、中和、板橋與機場捷運國際地利
+                  </p>
+                </div>
+              </div>
+
+              <!-- 捷運路線圖 (可點擊彈出燈箱) -->
+              <div class="relative cursor-pointer" onclick="openLightbox('./src/assets/image/traffic_mrt_map_v2.jpg', '捷運路線圖')">
+                <img src="./src/assets/image/traffic_mrt_map_v2.jpg" alt="捷運路線圖" class="" data-aos-anchor="#mrt" data-aos="fade-up" data-aos-delay="0">
+                <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                  <p class="text-[8px] text-white px-2 pb-1">
+                    捷運路線圖 (點擊放大)
+                  </p>
+                </div>
+              </div>
+
+              <!-- 捷運情境示意圖 -->
+              <div class="relative mt-1">
+                <img src="./src/assets/image/traffic_mrt.jpg" alt="捷運情境示意圖" class="" data-aos-anchor="#mrt" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                  <p class="text-[8px] text-white px-2 pb-1">
+                    捷運情境示意圖
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 桌機版：左邊文字+小圖，右邊大圖 -->
+            <div class="hidden md:flex flex-1 flex-col justify-between items-center">
+              <!-- 文字內容 -->
+              <div class="w-full flex flex-col justify-center items-stretch gap-2 py-4">
+                <h3
+                  class="text-[#e9db6e] text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+                  data-aos-anchor="#mrt"
+                  data-aos="fade"
+                  data-aos-delay="400"
+                >
+                鍍金未來環狀線 擎啟木柵新格局
+                </h3>
+                <div class="flex-1">
+                  <p
+                    class="text-white text-sm text-center !tracking-widest !leading-6"
+                    data-aos-anchor="#mrt"
+                    data-aos="fade"
+                    data-aos-delay="800"
+                  >
+                  南環啟動、東環延伸，鍍金環狀線重塑木柵新格局<br/>
+                  【漢皇蒔序】3分鐘Y2A站，串聯六大捷運系統<br/>
+                  直取信義、松山、內湖、南港四大門戶地段<br/>
+                  一線新店、中和、板橋與機場捷運國際地利
+                  </p>
+                </div>
+              </div>
+
+              <!-- 捷運情境示意圖 (小圖，在文字下方) -->
+              <div class="w-full relative">
+                <img src="./src/assets/image/traffic_mrt.jpg" alt="捷運情境示意圖" class="w-full" data-aos-anchor="#mrt" data-aos="fade" data-aos-delay="1000">
+                <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                  <p class="text-[10px] text-white px-2 pb-1">
+                    捷運情境示意圖
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 桌機版：右邊捷運路線圖 (大圖) -->
+            <div class="hidden md:block w-8/12 relative md:order-last">
+              <img src="./src/assets/image/traffic_mrt_map_v2.jpg" alt="捷運路線圖" class="w-full h-full object-cover" data-aos-anchor="#mrt" data-aos="fade-up" data-aos-delay="0">
+              <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                <p class="text-[10px] text-white px-2 pb-1">
+                  捷運路線圖
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 區塊3 -->
+      <section id="aerial" class="relative overflow-hidden bg-white flex flex-col">
+        <!-- 文字內容區塊 (移到圖片上方) -->
+        <div class="w-full flex justify-center items-center py-10 md:py-16 bg-white">
+          <div class="w-11/12 md:w-10/12 max-w-7xl flex flex-col justify-center items-center gap-4">
+            <h3
+              class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+              data-aos-anchor="#aerial"
+              data-aos="fade"
+              data-aos-delay="400"
+            >
+            木柵國小生活圈 絕版隱富名人巷
+            </h3>
+            <p
+              class="text-gray-800 text-[10px] md:text-sm text-center !tracking-widest !leading-6 max-w-3xl"
+              data-aos-anchor="#aerial"
+              data-aos="fade"
+              data-aos-delay="800"
+            >
+            木柵路三段，精英學籍與名宅聚落絕版交會<br/>
+            生活商圈豐盛、多間國際連鎖餐飲舉步即至<br/>
+            銀行環伺更成「台北小華爾街」的隱富氣場<br/>
+            再獻文山名人巷地位
+            </p>
+          </div>
+        </div>
+
+        <!-- 圖片區塊 -->
+        <div
+          id="aerial-img"
+          class="image-layout-section w-full min-h-[75dvh] md:min-h-dvh relative"
+        >
+          <div class="w-full h-full relative">
+            <div
+              class="overflow-x-auto h-full"
+              data-mobile-min-height="75dvh"
+              data-desktop-min-height="100dvh"
+            >
+              <div class="image-container">
+                <img
+                  src="./src/assets/image/aerial_2560x1440_v2.jpg"
+                  class="centered-image"
+                  data-width="2560"
+                  data-height="1440"
+                  data-target-position="1180"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <div class="mask !hidden">
+              <div class="mask-active">
+                <img src="./src/assets/icons/swipe.svg" alt="左右滑動" />
+              </div>
+            </div>
+          </div>
+          <!-- 圖片說明 -->
+          <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+            <p class="text-[8px] md:text-[10px] text-white px-2 pb-1">
+              周遭環境道路地形、3D輔以電腦合成示意
+            </p>
+          </div>
+
+          <!-- 手機版左右滑動提示 -->
+          <div class="md:hidden absolute bottom-0 left-0 w-full z-20 pointer-events-none">
+            <!-- 內陰影背景 -->
+            <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <!-- 滑動提示文字 -->
+            <div class="relative flex items-center justify-center pb-4">
+              <span class="text-white text-xs tracking-widest swipe-hint">
+                &lt;&lt;&lt; 左右滑動 &gt;&gt;&gt;
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 區塊4 -->
+      <section id="traffic" class="relative overflow-hidden w-dvw md:py-24 bg-[#321d12]">
+        <div class="w-full md:h-full flex justify-center items-center">
+          <div class="w-full flex flex-col md:flex-row justify-between items-stretch md:gap-8">
+
+            <!-- 手機版：文字 + 輪播垂直排列 -->
+            <div class="md:hidden w-full flex flex-col">
+              <div class="w-11/12 mx-auto flex flex-col justify-center items-stretch gap-2 py-10">
+                <h3
+                  class="text-[#e9db6e] text-lg text-center font-light !leading-tight whitespace-nowrap"
+                  data-aos-anchor="#traffic"
+                  data-aos="fade"
+                  data-aos-delay="400"
+                >
+                大安信義跨界 10分鐘跨境自如
+                </h3>
+                <div>
+                  <p
+                    class="text-white text-[10px] text-center !tracking-widest !leading-6"
+                    data-aos-anchor="#traffic"
+                    data-aos="fade"
+                    data-aos-delay="800"
+                  >
+                  沿著信義快速道路，約10分鐘即達信義計劃區<br/>
+                  自國道三甲馳行，約15分鐘抵達大安<br/>
+                  從容，成為最不張揚的奢華<br/>
+                  這座城市的速度，由你作主
+                  </p>
+                </div>
+              </div>
+              <div class="traffic-carousel">
+                <div class="relative">
+                  <img src="./src/assets/image/traffic_1_信義快速道路.jpg" alt="信義快速道路" class="" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[8px] text-white px-2 pb-1">信義快速道路</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/traffic_2_台北信義威秀影城.jpg" alt="台北信義威秀影城" class="" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[8px] text-white px-2 pb-1">台北信義威秀影城</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/traffic_3_敦化南路二段.jpg" alt="敦化南路二段" class="" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[8px] text-white px-2 pb-1">敦化南路二段</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/traffic_4_信義微風南山.jpg" alt="信義微風南山" class="" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[8px] text-white px-2 pb-1">信義微風南山</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/traffic_5_SOGO復興店.jpg" alt="SOGO復興店" class="" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[8px] text-white px-2 pb-1">SOGO復興店</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/traffic_6_新光三越DIAMONDTOWERS.jpg" alt="新光三越DIAMOND TOWERS" class="" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[8px] text-white px-2 pb-1">新光三越DIAMOND TOWERS</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 桌面版：文字在左邊 -->
+            <div class="hidden md:flex w-full md:w-5/12 lg:w-4/12 flex-col justify-center items-start px-8">
+              <div class="w-full flex flex-col justify-center items-start gap-4">
+                <h3
+                  class="text-[#e9db6e] text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-start font-light !leading-tight whitespace-nowrap"
+                  data-aos-anchor="#traffic"
+                  data-aos="fade"
+                  data-aos-delay="400"
+                >
+                大安信義跨界 10分鐘跨境自如
+                </h3>
+                <div>
+                  <p
+                    class="text-white text-sm text-start !tracking-widest !leading-7"
+                    data-aos-anchor="#traffic"
+                    data-aos="fade"
+                    data-aos-delay="800"
+                  >
+                  沿著信義快速道路，約10分鐘即達信義計劃區<br/>
+                  自國道三甲馳行，約15分鐘抵達大安<br/>
+                  從容，成為最不張揚的奢華<br/>
+                  這座城市的速度，由你作主
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 桌面版：統一的 Slider（顯示當前 + 部分下一張） -->
+            <div class="hidden md:block w-full md:w-8/12 lg:w-9/12 relative overflow-hidden">
+              <div class="traffic-carousel-desktop">
+                <div class="relative">
+                  <img src="./src/assets/image/traffic_1_信義快速道路.jpg" alt="信義快速道路" class="w-full h-full object-cover" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[10px] text-white px-2 pb-1">信義快速道路</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/traffic_2_台北信義威秀影城.jpg" alt="台北信義威秀影城" class="w-full h-full object-cover" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[10px] text-white px-2 pb-1">台北信義威秀影城</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/traffic_3_敦化南路二段.jpg" alt="敦化南路二段" class="w-full h-full object-cover" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[10px] text-white px-2 pb-1">敦化南路二段</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/traffic_4_信義微風南山.jpg" alt="信義微風南山" class="w-full h-full object-cover" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[10px] text-white px-2 pb-1">信義微風南山</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/traffic_5_SOGO復興店.jpg" alt="SOGO復興店" class="w-full h-full object-cover" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[10px] text-white px-2 pb-1">SOGO復興店</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/traffic_6_新光三越DIAMONDTOWERS.jpg" alt="新光三越DIAMOND TOWERS" class="w-full h-full object-cover" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[10px] text-white px-2 pb-1">新光三越DIAMOND TOWERS</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 區塊5 -->
+      <section id="location" class="!hidden relative overflow-hidden bg-white">
+        <div class="w-full flex flex-col justify-center items-center">
+          <!-- 文字區塊 -->
+          <div class="w-full flex justify-center items-center py-10 md:py-16">
+            <div class="w-11/12 md:w-10/12 max-w-7xl flex flex-col justify-center items-center gap-4">
+              <h3
+                class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+                data-aos-anchor="#location"
+                data-aos="fade"
+                data-aos-delay="200"
+              >
+              無價奢逸地段 文山名址身段
+              </h3>
+              <p
+                class="text-gray-800 text-[10px] md:text-sm text-center !tracking-widest !leading-6"
+                data-aos-anchor="#location"
+                data-aos="fade"
+                data-aos-delay="400"
+              >
+              前行 是信義的國際脈動<br/>
+              回望 是木柵的靜謐綠境
+              </p>
+            </div>
+          </div>
+          <!-- 圖片區塊 -->
+          <div class="w-full flex justify-center items-center">
+            <div
+              id="location-img"
+              class="image-layout-section w-full h-auto relative max-w-[1920px]"
+            >
+              <div class="w-full h-full relative">
+                <div
+                  class="overflow-x-auto h-full"
+                  data-mobile-min-height="75vh"
+                >
+                  <div class="image-container">
+                    <img
+                      src="./src/assets/image/life_生活機能圖_v2.jpg"
+                      class="centered-image"
+                      alt="生活機能圖"
+                      data-width="2560"
+                      data-height="1810"
+                      data-target-position="0"
+                      loading="lazy"
+                      decoding="async"
+                      data-aos-anchor="#location"
+                      data-aos="fade-up"
+                      data-aos-delay="600"
+                    />
+                  </div>
+                </div>
+                <div class="mask !hidden">
+                  <div class="mask-active">
+                    <img src="./src/assets/icons/swipe.svg" alt="左右滑動" />
+                  </div>
+                </div>
+              </div>
+              <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                <p class="text-[8px] md:text-[10px] text-white px-2 pb-1">
+                  生活機能圖
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 區塊6 -->
+      <section id="school" class="relative overflow-hidden w-dvw md:py-24 bg-[#321d12]">
+        <div class="w-full flex justify-center items-center">
+          <div class="w-full flex flex-col">
+
+            <!-- 文字區塊 -->
+            <div class="w-full flex justify-center items-center">
+              <div class="w-11/12 md:w-full flex flex-col justify-center items-center gap-4 py-10 md:py-16">
+                <h3
+                  class="text-[#e9db6e] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+                  data-aos-anchor="#school"
+                  data-aos="fade"
+                  data-aos-delay="400"
+                >
+                萃聚百年人文 北市雍雅覓境
+                </h3>
+                <div>
+                  <p
+                    class="text-white text-[10px] md:text-sm text-center !tracking-widest !leading-6 max-w-3xl"
+                    data-aos-anchor="#school"
+                    data-aos="fade"
+                    data-aos-delay="800"
+                  >
+                  文山以優質學區資源聞名，乘載世代童年故事<br/>
+                  歷年不乏名門望族、政壇領袖後代於此成長<br/>
+                  深耕教育百年只為孩子們許個平步青雲的路途<br/>
+                  在極上未來的藍圖天各一方，影響力可期
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 圖片區塊 -->
+            <!-- 桌面版：三張圖並排 -->
+            <div class="hidden md:grid md:grid-cols-3 gap-4">
+              <div class="relative">
+                <img src="./src/assets/image/school_1_木柵國小.jpg" alt="木柵國小" class="w-full h-full object-cover" data-aos-anchor="#school" data-aos="fade-up" data-aos-delay="0">
+                <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                  <p class="text-[10px] text-white px-2 pb-1">木柵國小</p>
+                </div>
+              </div>
+              <div class="relative">
+                <img src="./src/assets/image/school_2_再興中學.jpg" alt="再興中學" class="w-full h-full object-cover" data-aos-anchor="#school" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                  <p class="text-[10px] text-white px-2 pb-1">再興中學</p>
+                </div>
+              </div>
+              <div class="relative">
+                <img src="./src/assets/image/school_3_政治大學.jpg" alt="政治大學" class="w-full h-full object-cover" data-aos-anchor="#school" data-aos="fade-up" data-aos-delay="400">
+                <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                  <p class="text-[10px] text-white px-2 pb-1">政治大學</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 手機版：輪播 -->
+            <div class="md:hidden school-carousel-mobile">
+              <div class="relative">
+                <img src="./src/assets/image/school_1_木柵國小.jpg" alt="木柵國小" class="" data-aos-anchor="#school" data-aos="fade-up" data-aos-delay="0">
+                <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                  <p class="text-[8px] text-white px-2 pb-1">木柵國小</p>
+                </div>
+              </div>
+              <div class="relative">
+                <img src="./src/assets/image/school_2_再興中學.jpg" alt="再興中學" class="" data-aos-anchor="#school" data-aos="fade-up" data-aos-delay="0">
+                <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                  <p class="text-[8px] text-white px-2 pb-1">再興中學</p>
+                </div>
+              </div>
+              <div class="relative">
+                <img src="./src/assets/image/school_3_政治大學.jpg" alt="政治大學" class="" data-aos-anchor="#school" data-aos="fade-up" data-aos-delay="0">
+                <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                  <p class="text-[8px] text-white px-2 pb-1">政治大學</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 區塊7 -->
+      <section id="park" class="relative overflow-hidden w-dvw md:py-24 bg-[#321d12]">
+        <div class="w-full md:h-full flex justify-center items-center">
+          <div class="w-full flex flex-col md:flex-row justify-between items-stretch md:gap-8">
+
+            <!-- 手機版：文字 + 輪播垂直排列 -->
+            <div class="md:hidden w-full flex flex-col">
+              <div class="w-11/12 mx-auto flex flex-col justify-center items-stretch gap-2 py-10">
+                <h3
+                  class="text-[#e9db6e] text-lg text-center font-light !leading-tight whitespace-nowrap"
+                  data-aos-anchor="#park"
+                  data-aos="fade"
+                  data-aos-delay="400"
+                >
+                聚瀲自然思潮 豐藏公園詩篇
+                </h3>
+                <div>
+                  <p
+                    class="text-white text-[10px] text-center !tracking-widest !leading-6"
+                    data-aos-anchor="#park"
+                    data-aos="fade"
+                    data-aos-delay="800"
+                  >
+                  道南河濱公園與木柵公園形成雙翼綠廊，平衡城市節奏<br/>
+                  完整的生態環境，演繹晝夜相映的浪漫景韻<br/>
+                  遠眺山巒層疊，陶冶詩意人生<br/>
+                  親子同遊、慢活獨享皆舒心自在
+                  </p>
+                </div>
+              </div>
+              <div class="park-carousel">
+                <div class="relative">
+                  <img src="./src/assets/image/park_1_木柵公園萃湖.jpg" alt="木柵公園+萃湖" class="" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[8px] text-white px-2 pb-1">木柵公園+萃湖</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/park_3_道南河濱公園.jpg" alt="道南河濱公園" class="" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[8px] text-white px-2 pb-1">道南河濱公園</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/park_4_景美溪.jpg" alt="景美溪" class="" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[8px] text-white px-2 pb-1">景美溪</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/park_5基地小空拍_v2.jpg" alt="基地小空拍" class="" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[8px] text-white px-2 pb-1">基地小空拍</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/park_7_2_木柵公園萃湖.jpg" alt="木柵公園+萃湖" class="" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[8px] text-white px-2 pb-1">木柵公園+萃湖</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 桌面版：文字在左邊 -->
+            <div class="hidden md:flex w-full md:w-5/12 lg:w-4/12 flex-col justify-center items-start px-8">
+              <div class="w-full flex flex-col justify-center items-start gap-4">
+                <h3
+                  class="text-[#e9db6e] text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-start font-light !leading-tight whitespace-nowrap"
+                  data-aos-anchor="#park"
+                  data-aos="fade"
+                  data-aos-delay="400"
+                >
+                聚瀲自然思潮 豐藏公園詩篇
+                </h3>
+                <div>
+                  <p
+                    class="text-white text-sm text-start !tracking-widest !leading-7"
+                    data-aos-anchor="#park"
+                    data-aos="fade"
+                    data-aos-delay="800"
+                  >
+                  道南河濱公園與木柵公園形成雙翼綠廊，平衡城市節奏<br/>
+                  完整的生態環境，演繹晝夜相映的浪漫景韻<br/>
+                  遠眺山巒層疊，陶冶詩意人生<br/>
+                  親子同遊、慢活獨享皆舒心自在
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 桌面版：統一的 Slider（顯示當前 + 部分下一張） -->
+            <div class="hidden md:block w-full md:w-8/12 lg:w-9/12 relative overflow-hidden">
+              <div class="park-carousel-desktop">
+                <div class="relative">
+                  <img src="./src/assets/image/park_1_木柵公園萃湖.jpg" alt="木柵公園+萃湖" class="w-full h-full object-cover" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[10px] text-white px-2 pb-1">木柵公園+萃湖</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/park_3_道南河濱公園.jpg" alt="道南河濱公園" class="w-full h-full object-cover" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[10px] text-white px-2 pb-1">道南河濱公園</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/park_4_景美溪.jpg" alt="景美溪" class="w-full h-full object-cover" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[10px] text-white px-2 pb-1">景美溪</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/park_5基地小空拍_v2.jpg" alt="基地小空拍" class="w-full h-full object-cover" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[10px] text-white px-2 pb-1">基地小空拍</p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <img src="./src/assets/image/park_7_2_木柵公園萃湖.jpg" alt="木柵公園+萃湖" class="w-full h-full object-cover" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
+                  <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                    <p class="text-[10px] text-white px-2 pb-1">木柵公園+萃湖</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 區塊8 -->
+      <section id="brand" class="relative overflow-hidden bg-white">
+        <div class="w-full flex flex-col justify-center items-center">
+          <!-- 文字區塊 -->
+          <div class="w-full flex justify-center items-center py-10 md:py-16">
+            <div class="w-11/12 md:w-10/12 max-w-7xl flex flex-col justify-center items-center gap-4">
+              <div class="flex flex-col items-center gap-3">
+                <img
+                  src="./src/assets/image/logo_build.svg"
+                  alt="漢皇建設"
+                  class="h-auto"
+                  style="width: auto; max-width: 100%; mix-blend-mode: multiply;"
+                  data-aos-anchor="#brand"
+                  data-aos="fade"
+                  data-aos-delay="0"
+                />
+                <h3
+                  class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+                  data-aos-anchor="#brand"
+                  data-aos="fade"
+                  data-aos-delay="200"
+                >
+                承諾為本 如實築家 30餘年豐華執筆
+                </h3>
+              </div>
+              <p
+                class="text-gray-800 text-[10px] md:text-sm text-center !tracking-widest !leading-6"
+                data-aos-anchor="#brand"
+                data-aos="fade"
+                data-aos-delay="400"
+              >
+              深耕大台北逾三十載<br/>
+始終秉持「穩健信賴、與時俱進、永續共好」核心精神<br/>
+以人為本的匠心寫進文山肌理，因地制宜打造共感建築<br/>
+一切只為成為與土地共鳴的知音
+              </p>
+
+              <a href="https://www.hanhuang.com.tw/projects" target="_blank" class="inline-block mt-12 px-6 py-2 border-2 border-gray-500 text-gray-500 text-[10px] md:text-sm text-center !tracking-widest transition-all duration-300 ease-in-out hover:bg-[#e9db6e] hover:border-[#e9db6e] hover:text-[#3D3127]">
+                READ MORE
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 20251106 新增區塊 團隊 -->
+      <section id="team" class="relative overflow-hidden w-dvw py-12 md:py-24 bg-[#453a32]">
+        <div class="w-full flex flex-col justify-center items-center gap-8 md:gap-16">
+          <!-- 手機版：輪播 -->
+          <div class="md:hidden w-10/12">
+            <div class="team-carousel">
+              <!-- 團隊成員 1 -->
+              <div class="team-slide">
+                <div class="flex flex-col">
+                  <div class="relative">
+                    <img src="./src/assets/image/master_1_multicolor.png" alt="洪政鉉建築師事務所｜洪政鉉" class="w-full h-auto object-cover">
+                    <div class="absolute top-4 left-4 flex flex-col gap-1" style="text-shadow: 0 5px 5px rgb(0, 0, 0);">
+                      <h4 class="text-white text-xl font-light writing-vertical-rl border border-white px-px py-2">洪政鉉</h4>
+                      <p class="text-white text-xs writing-vertical-rl !tracking-widest">洪政鉉建築師事務所</p>
+                    </div>
+                  </div>
+                  <div class="bg-[#e9e5dc] px-4 pb-12 pt-4 flex flex-col gap-4">
+                    <div class="text-center">
+                      <h5 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以國際視野<br/>匠築城市全新高度</h5>
+                    </div>
+                    <div class="border-t border-[#3D3127] border-opacity-20 pt-4">
+                      <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6">作品屢獲美國IDEA與德國iF國際設計大獎，<br/>
+與潤泰、忠泰、華固、宏普建設等知名建商合作，<br/>
+締造無數國際時尚、永恆璀璨傳世之作。<br/>
+業績｜漢皇里寓、漢皇方圓跟River Sky<br/><br/></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 團隊成員 2 -->
+              <div class="team-slide">
+                <div class="flex flex-col">
+                  <div class="relative">
+                    <img src="./src/assets/image/master_2_multicolor.jpg" alt="肯緒照明設計｜林世秉" class="w-full h-auto object-cover">
+                    <div class="absolute top-4 left-4 flex flex-col gap-1" style="text-shadow: 0 5px 5px rgb(0, 0, 0);">
+                      <h4 class="text-white text-xl font-light writing-vertical-rl border border-white px-px py-2">林世秉</h4>
+                      <p class="text-white text-xs writing-vertical-rl !tracking-widest">肯緒照明設計</p>
+                    </div>
+                  </div>
+                  <div class="bg-[#e9e5dc] px-4 pb-12 pt-4 flex flex-col gap-4">
+                    <div class="text-center">
+                      <h5 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以光粹爲布<br/>用光作畫的藝術家</h5>
+                    </div>
+                    <div class="border-t border-[#3D3127] border-opacity-20 pt-4">
+                      <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6">多年曾與大陸建設、國泰、璞園、忠泰、富邦<br/>等知名建設合作。<br/>
+持續追求「光的純粹」，<br/>透過空間質地與光影的疊加，<br/>
+在每道明暗間流動深邃又迷人的詩意。<br/>
+業績｜忠泰M</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 團隊成員 3 -->
+              <div class="team-slide">
+                <div class="flex flex-col">
+                  <div class="relative">
+                    <img src="./src/assets/image/master_3_multicolor.jpg" alt="科建工程顧問｜陳陸民" class="w-full h-auto object-cover">
+                    <div class="absolute top-4 left-4 flex flex-col gap-1" style="text-shadow: 0 5px 5px rgb(0, 0, 0);">
+                      <h4 class="text-white text-xl font-light writing-vertical-rl border border-white px-px py-2">陳陸民</h4>
+                      <p class="text-white text-xs writing-vertical-rl !tracking-widest">科建工程顧問</p>
+                    </div>
+                  </div>
+                  <div class="bg-[#e9e5dc] px-4 pb-12 pt-4 flex flex-col gap-4">
+                    <div class="text-center">
+                      <h5 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">固若金湯的守護<br/>錘鍊不朽萬丈高樓</h5>
+                    </div>
+                    <div class="border-t border-[#3D3127] border-opacity-20 pt-4">
+                      <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6">以逾30年淬鍊，實力厚積薄發，<br/>
+用最嚴謹標準，不計成本與施工難度，<br/>
+只為將防護層級做到淋漓極致，<br/>打造堅若磐石的建築之作。<br/>
+業績｜高雄海洋文化及流行音樂中心<br/></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 桌面版：三欄並排 -->
+          <div class="hidden md:block w-10/12 2xl:w-8/12">
+            <div class="grid grid-cols-3 gap-1 lg:gap-2">
+              <!-- 團隊成員 1 -->
+              <div class="flex flex-col" data-aos="fade-up" data-aos-delay="0">
+                <div class="relative aspect-[3/4]">
+                  <img src="./src/assets/image/master_1_multicolor.png" alt="洪政鉉建築師事務所｜洪政鉉" class="w-full h-full object-cover">
+                  <div class="absolute top-4 left-4 flex flex-col gap-1" style="text-shadow: 0 5px 5px rgb(0, 0, 0);">
+                    <h4 class="text-white text-2xl font-light writing-vertical-rl border border-white px-px py-2">洪政鉉</h4>
+                    <p class="text-white text-xs writing-vertical-rl !tracking-widest">洪政鉉建築師事務所</p>
+                  </div>
+                </div>
+                <div class="bg-[#e9e5dc] px-4 pb-12 pt-4 flex flex-col gap-4 flex-1">
+                  <div class="text-center">
+                    <h5 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以國際視野<br/>匠築城市全新高度</h5>
+                    <!-- <p class="text-[#3D3127] text-xs !tracking-widest">洪政鉉建築師事務所｜洪政鉉</p> -->
+                  </div>
+                  <div class="border-t border-[#3D3127] border-opacity-20 pt-4">
+                    <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6">作品屢獲美國IDEA與德國iF國際設計大獎，<br/>
+與潤泰、忠泰、華固、宏普建設等知名建商合作，<br/>
+締造無數國際時尚、永恆璀璨傳世之作。<br/>
+業績｜漢皇里寓、漢皇方圓跟River Sky</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 團隊成員 2 -->
+              <div class="flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative aspect-[3/4]">
+                  <img src="./src/assets/image/master_2_multicolor.jpg" alt="肯緒照明設計｜林世秉" class="w-full h-full object-cover">
+                  <div class="absolute top-4 left-4 flex flex-col gap-1" style="text-shadow: 0 5px 5px rgb(0, 0, 0);">
+                    <h4 class="text-white text-2xl font-light writing-vertical-rl border border-white px-px py-2">林世秉</h4>
+                    <p class="text-white text-xs writing-vertical-rl !tracking-widest">肯緒照明設計</p>
+                  </div>
+                </div>
+                <div class="bg-[#e9e5dc] px-4 pb-12 pt-4 flex flex-col gap-4 flex-1">
+                  <div class="text-center">
+                    <h5 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以光粹爲布<br/>用光作畫的藝術家</h5>
+                  </div>
+                  <div class="border-t border-[#3D3127] border-opacity-20 pt-4">
+                    <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6">多年曾與大陸建設、國泰、璞園、忠泰、富邦等知名建設合作。<br/>
+持續追求「光的純粹」，<br/>透過空間質地與光影的疊加，<br/>
+在每道明暗間流動深邃又迷人的詩意。<br/>
+業績｜忠泰M</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 團隊成員 3 -->
+              <div class="flex flex-col" data-aos="fade-up" data-aos-delay="400">
+                <div class="relative aspect-[3/4]">
+                  <img src="./src/assets/image/master_3_multicolor.jpg" alt="科建工程顧問｜陳陸民" class="w-full h-full object-cover">
+                  <div class="absolute top-4 left-4 flex flex-col gap-1" style="text-shadow: 0 5px 5px rgb(0, 0, 0);">
+                    <h4 class="text-white text-2xl font-light writing-vertical-rl border border-white px-px py-2">陳陸民</h4>
+                    <p class="text-white text-xs writing-vertical-rl !tracking-widest">科建工程顧問</p>
+                  </div>
+                </div>
+                <div class="bg-[#e9e5dc] px-4 pb-12 pt-4 flex flex-col gap-4 flex-1">
+                  <div class="text-center">
+                    <h5 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">固若金湯的守護<br/>錘鍊不朽萬丈高樓</h5>
+                  </div>
+                  <div class="border-t border-[#3D3127] border-opacity-20 pt-4">
+                    <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6">以逾30年淬鍊，實力厚積薄發，<br/>
+用最嚴謹標準，不計成本與施工難度，<br/>
+只為將防護層級做到淋漓極致，<br/>打造堅若磐石的建築之作。<br/>
+業績｜高雄海洋文化及流行音樂中心</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 20251106 新增區塊 建材 -->
+      <section id="materials" class="relative overflow-hidden bg-white py-12 md:py-20">
+        <div class="w-full flex justify-center items-center">
+          <div class="w-11/12 md:w-10/12 max-w-7xl">
+            <div class="flex flex-col md:flex-row md:justify-between gap-8 md:gap-12">
+
+              <!-- 左側：文字內容區 -->
+              <div class="w-full md:w-5/12 flex flex-col justify-center gap-6">
+                <!-- 主標題 -->
+                <div
+                  data-aos="fade-right"
+                  data-aos-delay="200"
+                >
+                  <h3 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight mb-2">
+                    國際頂規 精奢品味
+                  </h3>
+                </div>
+
+                <!-- 重點品牌特寫1：三菱電梯 -->
+                <div
+                  class="border-t border-[#3D3127] border-opacity-20 pt-6"
+                  data-aos="fade-right"
+                  data-aos-delay="400"
+                >
+                  <!-- Logo -->
+                  <div class="w-full flex justify-start items-center gap-4">
+                    <div class="mb-4">
+                      <img src="./src/assets/image/logo_mitsubishi.svg" alt="Mitsubishi Elevator" class="h-8 md:h-10 w-auto">
+                    </div>
+
+                    <h4 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center !leading-tight font-medium mb-3">
+                      日本三菱電梯
+                    </h4>
+                  </div>
+
+                  <!-- 示意圖與內文左右排列 -->
+                  <div class="flex flex-col md:flex-row gap-4 items-stretch">
+                    <!-- 示意圖 -->
+                    <div class="w-full md:w-5/12 flex-shrink-0 rounded-md overflow-hidden">
+                      <img src="./src/assets/image/bm_img_1.jpg" alt="三菱電梯示意圖" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- 說明文字 -->
+                    <div class="flex-1 flex items-center">
+                      <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6 opacity-80">
+                        日本三菱電機株式會社投資與技術合作，給台灣創綠色節能與尖端科技，與日本同步推出之機種，傳動效率更高、節省電力更多，關鍵零件皆來自日本。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 重點品牌特寫2：YKK AP -->
+                <div
+                  class="border-t border-[#3D3127] border-opacity-20 pt-6"
+                  data-aos="fade-right"
+                  data-aos-delay="600"
+                >
+                  <!-- Logo -->
+                  <div class="w-full flex justify-start items-center gap-4">
+                    <div class="mb-4">
+                      <img src="./src/assets/image/logo_ykk.svg" alt="YKK AP" class="h-8 md:h-10 w-auto">
+                    </div>
+
+                    <h4 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center !leading-tight font-medium mb-3">
+                      日本頂級防水隔音氣密窗
+                    </h4>
+                  </div>
+
+                  <!-- 示意圖與內文左右排列 -->
+                  <div class="flex flex-col md:flex-row gap-4 items-stretch">
+                    <!-- 示意圖 -->
+                    <div class="w-full md:w-5/12 flex-shrink-0 rounded-md overflow-hidden">
+                      <img src="./src/assets/image/bm_img_2.jpg" alt="YKK氣密窗示意圖" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- 說明文字 -->
+                    <div class="flex-1 flex items-center">
+                      <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6 opacity-80">
+                        YKK擁有領先業界指標的絕佳氣密性，遠超日本CNS等級的水密性能，以及日本JIS工業標準規格，高耐風壓性可阻絕狂風暴雨，有效降低戶外噪音。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右側：品牌LOGO展示區 -->
+              <div class="w-full md:w-5/12 flex items-center justify-center">
+                <!-- 手機版：3x4 網格佈局 -->
+                <div class="w-full grid grid-cols-3 gap-3 md:hidden">
+                  <!-- Row 1 -->
+                  <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex flex-col items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="100" data-brand-name="日本三菱電梯NEXIEZ-MRL">
+                    <img src="./src/assets/image/logo_mitsubishi.svg" alt="Mitsubishi" class="w-full h-auto object-contain p-1">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">日本三菱電梯NEXIEZ-MRL</p>
+                    </div>
+                  </div>
+                  <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="150" data-brand-name="日本頂級防水隔音氣密窗">
+                    <img src="./src/assets/image/logo_ykk.svg" alt="YKK" class="w-full h-auto object-contain p-1">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">日本頂級防水隔音氣密窗</p>
+                    </div>
+                  </div>
+                  <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="200" data-brand-name="除菌離子電梯清淨機">
+                    <img src="./src/assets/image/logo_sharp.svg" alt="SHARP" class="w-full h-auto object-contain p-1">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">除菌離子電梯清淨機</p>
+                    </div>
+                  </div>
+                  <!-- Row 2 -->
+                  <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="250" data-brand-name="飛利浦電子鎖">
+                    <img src="./src/assets/image/logo_philips.svg" alt="PHILIPS" class="w-full h-auto object-contain p-1">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">飛利浦電子鎖</p>
+                    </div>
+                  </div>
+                  <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-brand-name="日本全自動馬桶">
+                    <img src="./src/assets/image/logo_toto.svg" alt="TOTO" class="w-full h-auto object-contain p-1">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">日本全自動馬桶</p>
+                    </div>
+                  </div>
+                  <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="350" data-brand-name="日本林內三機">
+                    <img src="./src/assets/image/logo_rinnai.svg" alt="Rinnai" class="w-full h-auto object-contain p-1">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">日本林內三機</p>
+                    </div>
+                  </div>
+                  <!-- Row 3 -->
+                  <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="400" data-brand-name="日立新風機">
+                    <img src="./src/assets/image/logo_hitachi.svg" alt="HITACHI" class="w-full h-auto object-contain p-1">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">日立新風機</p>
+                    </div>
+                  </div>
+                  <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="450" data-brand-name="美國全鋁金置物鏡櫃">
+                    <img src="./src/assets/image/logo_kohler.svg" alt="KOHLER" class="w-full h-auto object-contain p-1">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">美國全鋁金置物鏡櫃</p>
+                    </div>
+                  </div>
+                  <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="500" data-brand-name="IMPULS德國精品廚具">
+                    <img src="./src/assets/image/logo_impuls.svg" alt="IMPULS" class="w-full h-auto object-contain p-1">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">IMPULS德國精品廚具</p>
+                    </div>
+                  </div>
+                  <!-- Row 4 -->
+                  <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="550" data-brand-name="德國淋浴設備">
+                    <img src="./src/assets/image/logo_hansgrohe.svg" alt="hansgrohe" class="w-full h-auto object-contain p-1">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">德國淋浴設備</p>
+                    </div>
+                  </div>
+                  <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="600" data-brand-name="廚下型冷熱淨水器">
+                    <img src="./src/assets/image/logo_everpoll.svg" alt="EVERPOLL" class="w-full h-auto object-contain p-1">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">廚下型冷熱淨水器</p>
+                    </div>
+                  </div>
+                  <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="650" data-brand-name="日本暖風機">
+                    <img src="./src/assets/image/logo_panasonic.svg" alt="Panasonic" class="w-full h-auto object-contain p-1">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">日本暖風機</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 桌面版：3|4|3 錯落排列，統一間隔 -->
+                <div class="hidden md:block w-full relative" style="min-height: 480px;">
+                  <!-- Row 1: 3個 logo，間隔統一 -->
+                  <div
+                    class="logo-card-double-border brand-logo-card absolute top-[0%] left-[8%] w-[23%] aspect-square bg-white border border-gray-200 rounded-md hover:shadow-md transition-shadow p-4 flex items-center justify-center overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-brand-name="除菌離子電梯清淨機"
+                  >
+                    <img src="./src/assets/image/logo_sharp.svg" alt="SHARP" class="w-full h-auto object-contain p-2">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">除菌離子電梯清淨機</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="logo-card-double-border brand-logo-card absolute top-[0%] left-[38.5%] w-[23%] aspect-square bg-white border border-gray-200 rounded-md hover:shadow-md transition-shadow p-4 flex items-center justify-center overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                    data-brand-name="飛利浦電子鎖"
+                  >
+                    <img src="./src/assets/image/logo_philips.svg" alt="PHILIPS" class="w-full h-auto object-contain p-2">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">飛利浦電子鎖</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="logo-card-double-border brand-logo-card absolute top-[0%] right-[8%] w-[23%] aspect-square bg-white border border-gray-200 rounded-md hover:shadow-md transition-shadow p-4 flex items-center justify-center overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                    data-brand-name="日本全自動馬桶"
+                  >
+                    <img src="./src/assets/image/logo_toto.svg" alt="TOTO" class="w-full h-auto object-contain p-2">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">日本全自動馬桶</p>
+                    </div>
+                  </div>
+
+                  <!-- Row 2: 4個 logo，間隔統一 -->
+                  <div
+                    class="logo-card-double-border brand-logo-card absolute top-[30%] left-[0%] w-[23%] aspect-square bg-white border border-gray-200 rounded-md hover:shadow-md transition-shadow p-4 flex items-center justify-center overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+                    data-brand-name="日本林內三機"
+                  >
+                    <img src="./src/assets/image/logo_rinnai.svg" alt="Rinnai" class="w-full h-auto object-contain p-2">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">日本林內三機</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="logo-card-double-border brand-logo-card absolute top-[30%] left-[25.67%] w-[23%] aspect-square bg-white border border-gray-200 rounded-md hover:shadow-md transition-shadow p-4 flex items-center justify-center overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                    data-brand-name="日立新風機"
+                  >
+                    <img src="./src/assets/image/logo_hitachi.svg" alt="HITACHI" class="w-full h-auto object-contain p-2">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">日立新風機</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="logo-card-double-border brand-logo-card absolute top-[30%] left-[51.33%] w-[23%] aspect-square bg-white border border-gray-200 rounded-md hover:shadow-md transition-shadow p-4 flex items-center justify-center overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-delay="700"
+                    data-brand-name="美國全鋁金置物鏡櫃"
+                  >
+                    <img src="./src/assets/image/logo_kohler.svg" alt="KOHLER" class="w-full h-auto object-contain p-2">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">美國全鋁金置物鏡櫃</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="logo-card-double-border brand-logo-card absolute top-[30%] right-[0%] w-[23%] aspect-square bg-white border border-gray-200 rounded-md hover:shadow-md transition-shadow p-4 flex items-center justify-center overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-delay="800"
+                    data-brand-name="IMPULS德國精品廚具"
+                  >
+                    <img src="./src/assets/image/logo_impuls.svg" alt="IMPULS" class="w-full h-auto object-contain p-2">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">IMPULS德國精品廚具</p>
+                    </div>
+                  </div>
+
+                  <!-- Row 3: 3個 logo，間隔統一 -->
+                  <div
+                    class="logo-card-double-border brand-logo-card absolute top-[60%] left-[8%] w-[23%] aspect-square bg-white border border-gray-200 rounded-md hover:shadow-md transition-shadow p-4 flex items-center justify-center overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-delay="900"
+                    data-brand-name="德國淋浴設備"
+                  >
+                    <img src="./src/assets/image/logo_hansgrohe.svg" alt="hansgrohe" class="w-full h-auto object-contain p-2">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">德國淋浴設備</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="logo-card-double-border brand-logo-card absolute top-[60%] left-[38.5%] w-[23%] aspect-square bg-white border border-gray-200 rounded-md hover:shadow-md transition-shadow p-4 flex items-center justify-center overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-delay="1000"
+                    data-brand-name="廚下型冷熱淨水器"
+                  >
+                    <img src="./src/assets/image/logo_everpoll.svg" alt="EVERPOLL" class="w-full h-auto object-contain p-2">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">廚下型冷熱淨水器</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="logo-card-double-border brand-logo-card absolute top-[60%] right-[8%] w-[23%] aspect-square bg-white border border-gray-200 rounded-md hover:shadow-md transition-shadow p-4 flex items-center justify-center overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-delay="1100"
+                    data-brand-name="日本暖風機"
+                  >
+                    <img src="./src/assets/image/logo_panasonic.svg" alt="Panasonic" class="w-full h-auto object-contain p-2">
+                    <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">日本暖風機</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 區塊9 -->
+      <section id="building" class="relative overflow-hidden bg-[rgb(69,58,50)]">
+        <!-- 立面照正面透視、立面照仰角 -->
+        <div id="elevation" class="w-dvw flex justify-center items-center">
+          <div class="w-full h-full absolute top-0 left-0 z-10" style="pointer-events: none;">
+            <div class="w-full h-full min-h-dvh from-10% flex justify-center md:justify-start items-start">
+              <div class="w-11/12 md:w-full md:px-8 py-4 md:py-16">
+                <div class="flex items-stretch">
+                  <div class="flex justify-center items-center overflow-hidden px-4 md:px-8">
+                    <div
+                    class="w-px h-full bg-[#e9db6e] bg-opacity-50"
+                    data-aos-anchor="#elevation"
+                    data-aos="fade-down"
+                    data-aos-delay="200"></div>
+                  </div>
+                  <div class="flex flex-col items-stretch gap-2">
+                    <h3
+                      class="text-[#e9db6e] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-start font-bolder !leading-tight whitespace-nowrap"
+                      data-aos-anchor="#elevation"
+                      data-aos="fade"
+                      data-aos-delay="400"
+                    >
+                      名宅聚落地標序列 無以複製奢居式樣
+                    </h3>
+                    <div class="md:flex-1">
+                      <p
+                        class="text-white text-[10px] md:text-sm text-justify !tracking-widest !leading-6"
+                        data-aos-anchor="#elevation"
+                        data-aos="fade"
+                        data-aos-delay="800"
+                      >
+                      從土地獨特性出發，傳統工藝揉合現代美學<br/>
+以多寶閣演繹北市捷運繁華軸線、富藏木柵人文流域<br/>
+以地標尺度著眼，日夜光影精琢建築空間深度<br/>
+展現四季蒔光之中，並肩信義大安的名宅時序<br/>
+【漢皇蒔序】敬邀慧眼行家，木柵名人巷經典珍席
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- pics -->
+          <div class="w-full relative">
+            <div class="slick-carousel">
+              <div class="relative">
+                <picture>
+                  <source srcset="./src/assets/image/build3D_light.jpg" media="(min-width: 768px)">
+                  <img src="./src/assets/image/build3D_light_mobile.jpg" alt="" class="">
+                </picture>
+                <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                  <p class="text-[8px] md:text-[10px] text-white px-2 pb-1">
+                    本案3D外觀合成示意圖，實際依完工現場為準
+                  </p>
+                </div>
+              </div>
+              <div class="relative">
+                <picture>
+                  <source srcset="./src/assets/image/build3D_dark.jpg" media="(min-width: 768px)">
+                  <img src="./src/assets/image/build3D_dark_mobile.jpg" alt="" class="">
+                </picture>
+                <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
+                  <p class="text-[8px] md:text-[10px] text-white px-2 pb-1">
+                    本案3D外觀合成示意圖，實際依完工現場為準
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="info" class="w-full pt-12 flex flex-col justify-center items-center bg-white">
+        <div class="w-full pb-12">
+          <h4
+              class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center !tracking-widest !leading-6 lg:!leading-8 pb-2"
+              data-aos="fade"
+              data-aos-delay="200"
+              data-aos-anchor="#info"
+            >
+              建案資訊
+            </h4>
+          <div class="pt-4 relative z-10">
+            <div
+              class="w-full flex flex-col justify-center items-center"
+            >
+              <div
+                class="w-full md:w-auto grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 justify-items-center"
+              >
+                <p
+                  class="text-sm text-center !tracking-widest !leading-6 md:!leading-8"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  data-aos-anchor="#info"
+                >
+                投資興建｜漢吉建設股份有限公司
+                </p>
+                <p
+                  class="text-sm text-center !tracking-widest !leading-6 md:!leading-8"
+                  data-aos="fade-up"
+                  data-aos-delay="350"
+                  data-aos-anchor="#info"
+                >
+                結構工程｜科建聯合顧問有限公司
+                </p>
+                <p
+                  class="text-sm text-center !tracking-widest !leading-6 md:!leading-8"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  data-aos-anchor="#info"
+                >
+                營造公司｜漢庭營造股份有限公司
+                </p>
+                <p
+                  class="text-sm text-center !tracking-widest !leading-6 md:!leading-8"
+                  data-aos="fade-up"
+                  data-aos-delay="450"
+                  data-aos-anchor="#info"
+                >
+                燈光設計｜肯緒照明設計有限公司
+                </p>
+                <p
+                  class="text-sm text-center !tracking-widest !leading-6 md:!leading-8"
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                  data-aos-anchor="#info"
+                >
+                建築規劃｜洪政鉉建築師事務所&emsp;
+                </p>
+                <p
+                  class="text-sm text-center !tracking-widest !leading-6 md:!leading-8"
+                  data-aos="fade-up"
+                  data-aos-delay="550"
+                  data-aos-anchor="#info"
+                >
+                建築代銷｜泰瑀行銷股份有限公司
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full">
+          <!-- Google Map -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4529.808289559605!2d121.56909929999999!3d24.989490199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa70e82a26bb%3A0x87effa4d28583499!2zMTE26Ie65YyX5biC5paH5bGx5Y2A5pyo5p-16Lev5LiJ5q61MTYz6Jmf!5e1!3m2!1szh-TW!2stw!4v1762163645209!5m2!1szh-TW!2stw"
+            class="w-full h-[240px] md:h-[360px]"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </section>
+
+      <!-- 聯絡表單 -->
+      <section
+        id="form"
+        class="mx-auto min-h-dvh flex flex-col items-center justify-center pt-24 md:pt-12 pb-32 w-full relative bg-cover"
+      >
+        <div
+          class="w-full flex flex-wrap justify-center items-center flex-col z-10"
+        >
+          <div
+            class="w-10/12 container md:px-22 flex flex-col md:flex-row flex-wrap justify-center items-center md:items-stretch md:gap-12"
+          >
+            <div id="zipcode3" class="form-wrapper w-full sm:w-7/12 max-w-[480px] order-last pt-4 md:pt-16">
+              <div class="w-full flex flex-col justify-center items-center gap-16">
+                <div class="w-11/12 mx-auto flex flex-col justify-center items-stretch gap-8 pb-10">
+                  <div class="w-full">
+                    <img src="./src/assets/image/kv_title.svg" alt="漢皇蒔序">
+                  </div>
+                  <div>
+                    <img
+                      src="./src/assets/image/info-06.svg"
+                      alt="捷運Y2A站3分鐘 27-36坪|木柵國小生活圈"
+                      class="w-full h-auto"
+                      data-aos-anchor="#zipcode3"
+                      data-aos="fade"
+                      data-aos-delay="800"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-0">
+                    <div class="border-t border-[#453E32]/60 py-2 md:py-3 text-sm md:text-base"
+                      data-aos-anchor="#zipcode3"
+                      data-aos="fade"
+                      data-aos-delay="800">
+                      接待中心：木柵路三段163號
+                    </div>
+
+                    <div class="border-t border-[#453E32]/60 py-2 md:py-3 text-sm md:text-base"
+                      data-aos-anchor="#zipcode3"
+                      data-aos="fade"
+                      data-aos-delay="800">
+                      貴賓專線：02-8661-0688
+                    </div>
+
+                    <div class="border-t border-[#453E32]/60 py-2 md:py-3 text-sm md:text-base"
+                      data-aos-anchor="#zipcode3"
+                      data-aos="fade"
+                      data-aos-delay="800">
+                      建照號碼：112建字第0262號
+                    </div>
+
+                    <div class="border-t border-[#453E32]/60 py-2 md:py-3 text-sm md:text-base -tracking-[0.07545em] md:tracking-normal"
+                      data-aos-anchor="#zipcode3"
+                      data-aos="fade"
+                      data-aos-delay="800">
+                      不動產經紀人：王郁婷(109)中市經紀字第01869號
+                    </div>
+
+                    <div class="border-t border-b border-[#453E32]/60 py-2 md:py-3 text-sm md:text-base"
+                      data-aos-anchor="#zipcode3"
+                      data-aos="fade"
+                      data-aos-delay="800">
+                      建築代銷：泰瑀行銷(股)公司
+                    </div>
+                  </div>
+                </div>
+                <h4
+                  class="text-[#3D3127] text-xl md:text-2xl !tracking-widest !leading-6 lg:!leading-8 pb-2"
+                >
+                  預約賞屋
+                </h4>
+              </div>
+              <div class="grid md:grid-cols-2 md:gap-2 pt-8">
+                <div class="flex flex-wrap -mx-3">
+                  <div class="w-full px-3">
+                    <label
+                      class="hidden uppercase tracking-widest text-gray-700 text-sm font-bold mb-2"
+                      for="username"
+                    >
+                      姓名
+                    </label>
+                    <input
+                      class="appearance-none block w-full rounded-none text-sm bg-white border-b border-white text-[#808080] placeholder:text-[#808080] focus:white transition duration-300 ease-in-out py-2 px-2 mb-2 leading-tight"
+                      id="username"
+                      type="text"
+                      name="username"
+                      placeholder="請輸入姓名"
+                    />
+                  </div>
+                </div>
+                <div class="flex flex-wrap -mx-3">
+                  <div class="w-full px-3">
+                    <label
+                      class="hidden uppercase tracking-widest text-gray-700 text-sm font-bold mb-2"
+                      for="phone"
+                    >
+                      聯絡電話
+                    </label>
+                    <input
+                      class="appearance-none block w-full rounded-none text-sm bg-white border-b border-white text-[#808080] placeholder:text-[#808080] focus:white transition duration-300 ease-in-out py-2 px-2 mb-2 leading-tight"
+                      id="phone"
+                      type="tel"
+                      name="phone"
+                      placeholder="聯絡電話"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 md:gap-2">
+                <div class="flex flex-wrap -mx-3">
+                  <div class="w-full px-3">
+                    <label
+                      class="hidden uppercase tracking-widest text-gray-700 text-sm font-bold mb-2"
+                      for="zipcode3"
+                    >
+                      郵遞區號
+                    </label>
+                    <div class="w-full">
+                      <div data-role="county"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-wrap -mx-3">
+                  <div class="w-full px-3">
+                    <label
+                      class="hidden uppercase tracking-widest text-gray-700 text-sm font-bold mb-2"
+                      for="zipcode3"
+                    >
+                      鄉鎮市區
+                    </label>
+                    <div class="w-full">
+                      <div data-role="district"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap -mx-3 mt-4">
+                <div class="w-full px-3">
+                  <p class="text-[#3D3127] text-start text-sm">
+                    你所登錄的個人資料將做為以下用途<br />
+                    (一)本網站所載之相關事項通知<br/>(二)客戶管理與服務<br/>
+                    (三)本公司行銷業務之推廣本案實際內容以現場公布為準
+                  </p>
+                  <div class="w-100 d-flex mt-3">
+                    <input
+                      id="agree"
+                      name="agree"
+                      type="checkbox"
+                      required=""
+                      class="me-2"
+                    />
+                    <span class="text-[#3D3127] text-sm"
+                      >本人已知悉並同意
+                      <a
+                        href="#privacy-policy"
+                        data-fancybox
+                        class="text-[#3D3127] text-sm underline cursor-pointer"
+                        >隱私權政策聲明</a
+                      >
+                      事項
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap pt-10">
+                <div class="w-full flex justify-center items-center">
+                  <button
+                    data-name="btnSubmit"
+                    class="w-full bg-transparent border border-px border-[#3D3127] hover:bg-[#321d12] hover:text-white text-[#3D3127] py-2 shadow ease-in duration-300"
+                    onClick="javascript:SendBooking('','');"
+                    type="button"
+                  >
+                    送出表單
+                  </button>
+                </div>
+              </div>
+              <div class="mt-8 !hidden">
+                <iframe
+                  src=""
+                  width="100%"
+                  height="250"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="fixed bottom-0 md:bottom-auto md:top-1 md:right-1 w-full md:w-auto md:drop-shadow-[0_0_6px_rgba(185,163,124,0.15)] z-50"
+      data-display="all"
+      style="display: none"
+    >
+      <div class="flex justify-between items-stretch">
+        <a
+          href="tel:02-8661-0688"
+          class="btn-with-overlay flex flex-1 justify-center items-center flex-col bg-[#453a32] text-white py-2 px-4 md:px-3 ease-in duration-300 md:rounded-l-full relative overflow-hidden"
+        >
+          <div class="w-1/3 md:w-[18px] mb-2 md:mb-0 relative z-10">
+            <img
+              src="./src/assets/icons/icon-call-w.png"
+              alt=""
+              class="w-full h-auto"
+            />
+          </div>
+          <span class="block md:hidden text-[12px] text-white relative z-10">立即來電</span>
+        </a>
+        <a
+          href="https://www.facebook.com/p/%E6%BC%A2%E7%9A%87%E8%92%94%E5%BA%8F-61553777114121/"
+          target="_blank"
+          class="btn-with-overlay flex flex-1 justify-center items-center flex-col bg-[#453a32] text-white py-2 px-4 md:px-3 ease-in duration-300 relative overflow-hidden"
+        >
+          <div class="w-1/3 md:w-[18px] mb-2 md:mb-0 relative z-10">
+            <img
+              src="./src/assets/icons/icon-comment-w.png"
+              alt=""
+              class="w-full h-auto"
+            />
+          </div>
+          <span class="block md:hidden text-[12px] text-white relative z-10">FB 諮詢</span>
+        </a>
+        <a
+          href="https://maps.app.goo.gl/"
+          target="_blank"
+          class="btn-with-overlay !hidden flex flex-1 justify-center items-center flex-col bg-[#453a32] text-white py-2 px-4 md:px-3 ease-in duration-300 relative overflow-hidden"
+        >
+          <div class="w-1/4 md:w-[10px] md:w-[12px] mb-2 md:mb-0 relative z-10">
+            <img
+              src="./src/assets/icons/icon-map-w.png"
+              alt=""
+              class="w-full h-auto"
+            />
+          </div>
+          <span class="block md:hidden text-[12px] text-white relative z-10">地圖導航</span>
+        </a>
+        <a
+          href="#form"
+          class="btn-with-overlay flex flex-1 justify-center items-center flex-col bg-[#453a32] text-white py-2 px-4 md:px-3 ease-in duration-300 md:rounded-r-full relative overflow-hidden"
+        >
+          <div class="w-1/3 md:w-[18px] mb-2 md:mb-0 relative z-10">
+            <img
+              src="./src/assets/icons/icon-pen-w.png"
+              alt=""
+              class="w-full h-auto"
+            />
+          </div>
+          <span class="block md:hidden text-[12px] text-white relative z-10">立即預約</span>
+        </a>
+      </div>
+    </footer>
+    <!-- other -->
+    <div
+      id="overlay"
+      class="hidden w-dvw h-dvh fixed z-50 top-0 left-0 bg-black bg-opacity-75"
+      onclick="hideImage()"
+    >
+      <div class="w-full h-full flex items-center justify-center">
+        <img id="overlay-image" src="" alt="" />
+      </div>
+    </div>
+
+    <!-- 隱私權政策 Modal -->
+    <div id="privacy-policy" style="display: none; max-width: 1000px;">
+      <div style="padding: 5%;">
+        <h4 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">個人資料保護政策暨隱私權聲明</h4>
+        <br>
+        <p style="margin-bottom: 1rem;">
+            非常歡迎您光臨「漢皇蒔序」（以下簡稱本網站），為了讓您能夠安心的使用本網站的各項服務與資訊，特此向您說明本網站的隱私權保護政策，以保障您的權益，請您詳閱下列內容
+        </p>
+        <p style="margin-bottom: 1rem;">
+            <b>一、隱私權保護政策的適用範圍</b><br>
+            隱私權保護政策內容，包括本網站如何處理在您使用網站服務時收集到的個人識別資料。隱私權保護政策不適用於本網站以外的相關連結網站，也不適用於非本網站所委託或參與管理的人員。
+        </p>
+        <p style="margin-bottom: 1rem;">
+            <b>二、個人資料的蒐集、處理及利用方式</b><br>
+            當您造訪本網站或使用本網站所提供之功能服務時，我們將視該服務功能性質，請您提供必要的個人資料，並在該特定目的範圍內處理及利用您的個人資料；非經您書面同意，本網站不會將個人資料用於其他用途。<br>
+            本網站在您使用服務信箱、問卷調查等互動性功能時，會保留您所提供的姓名、電子郵件地址、聯絡方式及使用時間等。<br>
+            於一般瀏覽時，伺服器會自行記錄相關行徑，包括您使用連線設備的IP位址、使用時間、使用的瀏覽器、瀏覽及點選資料記錄等，做為我們增進網站服務的參考依據，此記錄為內部應用，決不對外公佈。<br>
+            為提供精確的服務，我們會將收集的問卷調查內容進行統計與分析，分析結果之統計數據或說明文字呈現，除供內部研究外，我們會視需要公佈統計數據及說明文字，但不涉及特定個人之資料。
+        </p>
+        <p style="margin-bottom: 1rem;">
+            <b>三、資料之保護</b><br>
+            本網站主機均設有防火牆、防毒系統等相關的各項資訊安全設備及必要的安全防護措施，加以保護網站及您的個人資料採用嚴格的保護措施，只由經過授權的人員才能接觸您的個人資料，相關處理人員皆簽有保密合約，如有違反保密義務者，將會受到相關的法律處分。<br>
+            如因業務需要有必要委託其他單位提供服務時，本網站亦會嚴格要求其遵守保密義務，並且採取必要檢查程序以確定其將確實遵守。
+        </p>
+        <p style="margin-bottom: 1rem;">
+            <b>四、網站對外的相關連結</b><br>
+            本網站的網頁提供其他網站的網路連結，您也可經由本網站所提供的連結，點選進入其他網站。但該連結網站不適用本網站的隱私權保護政策，您必須參考該連結網站中的隱私權保護政策。
+        </p>
+        <p style="margin-bottom: 1rem;">
+            <b>五、與第三人共用個人資料之政策</b><br>
+            本網站絕不會提供、交換、出租或出售任何您的個人資料給其他個人、團體、私人企業或公務機關，但有法律依據或合約義務者，不在此限。<br>
+            前項但書之情形包括不限於：<br>
+            經由您書面同意。<br>
+            法律明文規定。<br>
+            為免除您生命、身體、自由或財產上之危險。<br>
+            與公務機關或學術研究機構合作，基於公共利益為統計或學術研究而有必要，且資料經過提供者處理或蒐集者依其揭露方式無從識別特定之當事人。<br>
+            當您在網站的行為，違反服務條款或可能損害或妨礙網站與其他使用者權益或導致任何人遭受損害時，經網站管理單位研析揭露您的個人資料是為了辨識、聯絡或採取法律行動所必要者。<br>
+            有利於您的權益。<br>
+            本網站委託廠商協助蒐集、處理或利用您的個人資料時，將對委外廠商或個人善盡監督管理之責。
+        </p>
+        <p style="margin-bottom: 1rem;">
+            <b>六、Cookie之使用</b><br>
+            為了提供您最佳的服務，本網站會在您的電腦中放置並取用我們的Cookie，若您不願接受Cookie的寫入，您可在您使用的瀏覽器功能項中設定隱私權等級為高，即可拒絕Cookie的寫入，但可能會導至網站某些功能無法正常執行。
+        </p>
+        <p style="margin-bottom: 1rem;">
+            <b>七、隱私權保護政策之修正</b><br>
+            本網站隱私權保護政策將因應需求隨時進行修正，修正後的條款將刊登於網站上。
+        </p>
+      </div>
+    </div>
+  </body>
+
+  <script
+    type="text/javascript"
+    src="./src/assets/utils/jquery.twzipcode.min.js"
+  ></script>
+  <script type="text/javascript">
+    $("#zipcode3").twzipcode({
+      zipcodeIntoDistrict: true,
+      css: [
+        "county appearance-none block w-full rounded-none text-sm bg-white border-b border-white text-[#808080] py-2 px-2 mb-2 leading-tight",
+        "district appearance-none block w-full rounded-none text-sm bg-white border-b border-white text-[#808080] py-2 px-2 mb-2 leading-tight",
+      ],
+      countyName: "county", // 指定城市 select name
+      districtName: "district", // 指定地區 select name
+    });
+  </script>
+
+  <!-- Customized JavaScript -->
+  <!-- .. -->
+
+  <!-- 引入 AOS 庫的 JavaScript 文件 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- 引入 image-layout 的 JavaScript 文件 -->
+  <script src="./src/assets/utils/image-layout/index.js"></script>
+  <!-- 引入 CustomSlider 組件 -->
+  <script src="./src/assets/utils/custom-slider/CustomSlider.js"></script>
+  <!-- 引入配置檔案 (包含 Google Apps Script URL 等敏感資訊) -->
+  <script src="./config.js"></script>
+  <script>
+    window.onload = function () {
+      // 初始化 Fancybox
+      Fancybox.bind("[data-fancybox]", {
+        // 配置選項
+      });
+
+      // 初始化 AOS 庫
+      AOS.init({
+        offset: 200,
+        duration: 1400,
+        once: false, // 允許重複動畫，視需求而定
+        mirror: false, // 禁用鏡像效果
+        disableMutationObserver: true, // 保持啟用，以便動態內容也能正常工作
+        throttleDelay: 99, // 增加節流延遲
+      });
+
+      // let ticking = false;
+      // window.addEventListener(
+      //   "scroll",
+      //   function () {
+      //     if (!ticking) {
+      //       window.requestAnimationFrame(function () {
+      //         AOS.refresh();
+      //         ticking = false;
+      //       });
+      //       ticking = true;
+      //     }
+      //   },
+      //   {
+      //     passive: true,
+      //   }
+      // );
+      // 使用節流函數來減少 scroll 事件的處理頻率
+      let scrollTimeout;
+      let lastScrollTime = 0;
+      
+      window.addEventListener("scroll", function() {
+        const now = Date.now();
+        if (now - lastScrollTime > 150) { // 150ms 節流
+          lastScrollTime = now;
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(function() {
+            AOS.refresh();
+          }, 50);
+        }
+      }, { passive: true })
+
+      // 額外的視窗大小改變事件監聽器
+      window.addEventListener("resize", function () {
+        AOS.refresh();
+      });
+    };
+
+    // 表單輸入框 focus 樣式
+    document.querySelectorAll("input, select").forEach(function (element) {
+      element.addEventListener("input", function () {
+        if (this.value.trim() !== "") {
+          this.classList.add("focus-custom");
+        } else {
+          this.classList.remove("focus-custom");
+        }
+      });
+    });
+
+    // 輪播管理器類別 - 統一管理所有輪播功能
+    class CarouselManager {
+      constructor(config) {
+        this.name = config.name;
+        this.carouselSelector = config.carouselSelector;
+        this.thumbnailData = config.thumbnailData;
+        this.thumbnailCount = config.thumbnailCount || 1; // 1 or 2 thumbnails
+        this.slickConfig = config.slickConfig || this.getDefaultSlickConfig();
+        this.transitionTime = 300;
+
+        this.init();
+      }
+
+      getDefaultSlickConfig() {
+        return {
+          dots: true,
+          infinite: true,
+          speed: 800,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          fade: false,
+          cssEase: 'ease-in-out',
+          prevArrow: '<button type="button" class="slick-prev carousel-arrow carousel-arrow-prev"></button>',
+          nextArrow: '<button type="button" class="slick-next carousel-arrow carousel-arrow-next"></button>'
+        };
+      }
+
+      init() {
+        // 初始化 Slick 輪播
+        $(this.carouselSelector).slick(this.slickConfig);
+
+        // 監聽輪播切換事件
+        const self = this;
+        $(this.carouselSelector).on('afterChange', function(event, slick, currentSlide){
+          self.updateThumbnails(currentSlide);
+        });
+
+        // 設置縮圖點擊事件
+        this.setupThumbnailClicks();
+
+        // 初始化縮圖顯示
+        this.updateThumbnails(0);
+      }
+
+      updateThumbnails(currentSlide) {
+        if (this.thumbnailCount === 1) {
+          this.updateSingleThumbnail(currentSlide);
+        } else if (this.thumbnailCount === 2) {
+          this.updateDualThumbnails(currentSlide);
+        }
+      }
+
+      updateSingleThumbnail(currentSlide) {
+        const thumbnailSelector = `.${this.name}-thumbnail`;
+        const nextSlide = (currentSlide + 1) % this.thumbnailData.length;
+        const nextImage = this.thumbnailData[nextSlide];
+
+        this.preloadAndUpdateImage(thumbnailSelector, nextImage);
+      }
+
+      updateDualThumbnails(currentSlide) {
+        const nextSlide1 = (currentSlide + 1) % this.thumbnailData.length;
+        const nextSlide2 = (currentSlide + 2) % this.thumbnailData.length;
+        const nextImage1 = this.thumbnailData[nextSlide1];
+        const nextImage2 = this.thumbnailData[nextSlide2];
+
+        this.preloadAndUpdateImage(`.${this.name}-thumbnail-1`, nextImage1);
+        this.preloadAndUpdateImage(`.${this.name}-thumbnail-2`, nextImage2);
+      }
+
+      preloadAndUpdateImage(selector, imageData) {
+        const self = this;
+        const img = new Image();
+        img.onload = function() {
+          // 先降低透明度
+          $(`${selector} img`).css('opacity', '0');
+
+          // 在透明時快速更換圖片和文字
+          setTimeout(function() {
+            $(`${selector} img`).attr('src', imageData.src).attr('alt', imageData.alt);
+            $(`${selector} p`).text(imageData.label);
+
+            // 恢復透明度
+            $(`${selector} img`).css('opacity', '1');
+          }, self.transitionTime);
+        };
+        img.src = imageData.src;
+      }
+
+      setupThumbnailClicks() {
+        const self = this;
+
+        if (this.thumbnailCount === 1) {
+          $(`.${this.name}-thumbnail`).on('click', function() {
+            $(self.carouselSelector).slick('slickNext');
+          });
+        } else if (this.thumbnailCount === 2) {
+          // 第一個縮圖：切換到下一張
+          $(`.${this.name}-thumbnail-1`).on('click', function() {
+            $(self.carouselSelector).slick('slickNext');
+          });
+
+          // 第二個縮圖：切換到下下一張
+          $(`.${this.name}-thumbnail-2`).on('click', function() {
+            $(self.carouselSelector).slick('slickNext');
+            setTimeout(function() {
+              $(self.carouselSelector).slick('slickNext');
+            }, 100);
+          });
+        }
+      }
+    }
+
+    // 輪播配置數據
+    const carouselConfigs = {
+      mrt: {
+        name: 'mrt',
+        carouselSelector: '.mrt-carousel',
+        thumbnailCount: 1,
+        thumbnailData: [
+          {
+            src: './src/assets/image/traffic_mrt.jpg',
+            alt: '捷運情境示意圖',
+            label: '捷運情境示意圖'
+          },
+          {
+            src: './src/assets/image/traffic_mrt_map_v2.jpg',
+            alt: '捷運路線圖',
+            label: '捷運路線圖'
+          }
+        ]
+      },
+      traffic: {
+        name: 'traffic',
+        carouselSelector: '.traffic-carousel',
+        thumbnailCount: 2,
+        thumbnailData: [
+          {
+            src: './src/assets/image/traffic_1_信義快速道路.jpg',
+            alt: '信義快速道路',
+            label: '信義快速道路'
+          },
+          {
+            src: './src/assets/image/traffic_2_台北信義威秀影城.jpg',
+            alt: '台北信義威秀影城',
+            label: '台北信義威秀影城'
+          },
+          {
+            src: './src/assets/image/traffic_3_敦化南路二段.jpg',
+            alt: '敦化南路二段',
+            label: '敦化南路二段'
+          },
+          {
+            src: './src/assets/image/traffic_4_信義微風南山.jpg',
+            alt: '信義微風南山',
+            label: '信義微風南山'
+          },
+          {
+            src: './src/assets/image/traffic_5_SOGO復興店.jpg',
+            alt: 'SOGO復興店',
+            label: 'SOGO復興店'
+          },
+          {
+            src: './src/assets/image/traffic_6_新光三越DIAMONDTOWERS.jpg',
+            alt: '新光三越DIAMOND TOWERS',
+            label: '新光三越DIAMOND TOWERS'
+          }
+        ]
+      },
+      school: {
+        name: 'school',
+        carouselSelector: '.school-carousel',
+        thumbnailCount: 2,
+        thumbnailData: [
+          {
+            src: './src/assets/image/school_1_木柵國小.jpg',
+            alt: '木柵國小',
+            label: '木柵國小'
+          },
+          {
+            src: './src/assets/image/school_2_再興中學.jpg',
+            alt: '再興中學',
+            label: '再興中學'
+          },
+          {
+            src: './src/assets/image/school_3_政治大學.jpg',
+            alt: '政治大學',
+            label: '政治大學'
+          }
+        ]
+      },
+      park: {
+        name: 'park',
+        carouselSelector: '.park-carousel',
+        thumbnailCount: 1,
+        thumbnailData: [
+          {
+            src: './src/assets/image/park_1_木柵公園+萃湖.jpg',
+            alt: '木柵公園+萃湖',
+            label: '木柵公園+萃湖'
+          },
+          {
+            src: './src/assets/image/park_3_道南河濱公園.jpg',
+            alt: '道南河濱公園',
+            label: '道南河濱公園'
+          },
+          {
+            src: './src/assets/image/park_4_景美溪.jpg',
+            alt: '景美溪',
+            label: '景美溪'
+          },
+          {
+            src: './src/assets/image/park_5基地小空拍_v2.jpg',
+            alt: '基地小空拍',
+            label: '基地小空拍'
+          },
+          {
+            src: './src/assets/image/park_7_2_木柵公園+萃湖.jpg',
+            alt: '木柵公園+萃湖',
+            label: '木柵公園+萃湖'
+          }
+        ]
+      }
+    };
+
+    $(document).ready(function () {
+      $('.slicks-center').slick({
+        arrows: true,
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 5,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              arrows: true,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+      $(".slick-carousel").slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        prevArrow: '<button type="button" class="slick-prev carousel-arrow carousel-arrow-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next carousel-arrow carousel-arrow-next"></button>'
+      });
+
+      // 手機版學校輪播
+      $('.school-carousel-mobile').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        fade: false,
+        cssEase: 'ease-in-out',
+        prevArrow: '<button type="button" class="slick-prev carousel-arrow carousel-arrow-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next carousel-arrow carousel-arrow-next"></button>'
+      });
+
+      // 初始化手機版的 traffic 和 park 輪播
+      $('.traffic-carousel').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        fade: false,
+        cssEase: 'ease-in-out',
+        prevArrow: '<button type="button" class="slick-prev carousel-arrow carousel-arrow-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next carousel-arrow carousel-arrow-next"></button>'
+      });
+
+      $('.park-carousel').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        fade: false,
+        cssEase: 'ease-in-out',
+        prevArrow: '<button type="button" class="slick-prev carousel-arrow carousel-arrow-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next carousel-arrow carousel-arrow-next"></button>'
+      });
+
+      // 自定義 Slider - 顯示完整當前圖片 + 右側部分預覽（支援無限循環）
+      class CustomSlider {
+        constructor(containerSelector, options = {}) {
+          this.container = document.querySelector(containerSelector);
+          if (!this.container) return;
+
+          this.originalSlides = Array.from(this.container.children);
+          this.currentIndex = 0;
+          this.isTransitioning = false;
+
+          // 選項
+          this.autoplay = options.autoplay !== false;
+          this.autoplaySpeed = options.autoplaySpeed || 5000;
+          this.speed = options.speed || 800;
+
+          this.init();
+        }
+
+        init() {
+          // 創建 track
+          const track = document.createElement('div');
+          track.className = 'slider-track';
+          track.style.cssText = 'display: flex; transition: transform 0.8s ease-in-out;';
+
+          // 克隆第一張圖片添加到最後（用於無限循環）
+          const firstClone = this.originalSlides[0].cloneNode(true);
+          const lastClone = this.originalSlides[this.originalSlides.length - 1].cloneNode(true);
+
+          // 組裝：lastClone + 原始slides + firstClone
+          track.appendChild(lastClone);
+          this.originalSlides.forEach(slide => track.appendChild(slide));
+          track.appendChild(firstClone);
+
+          // 清空容器並添加 track
+          this.container.innerHTML = '';
+          this.container.appendChild(track);
+          this.track = track;
+          this.slides = Array.from(track.children);
+
+          // 設置每個 slide 的寬度和樣式
+          this.slides.forEach(slide => {
+            slide.style.flexShrink = '0';
+            slide.style.width = 'calc(75% - 16px)'; // 完整圖片佔 75%，減去間距
+            slide.style.marginRight = '16px'; // 使用 margin 而不是 padding，避免影響圖說定位
+          });
+
+          // 初始位置（從第1張開始，因為前面有克隆）
+          this.currentIndex = 1;
+          this.track.style.transition = 'none';
+          this.track.style.transform = `translateX(calc(-75% * ${this.currentIndex}))`;
+          setTimeout(() => {
+            this.track.style.transition = 'transform 0.8s ease-in-out';
+          }, 50);
+
+          // 添加箭頭按鈕
+          this.createArrows();
+
+          // 自動播放
+          if (this.autoplay) {
+            this.startAutoplay();
+            this.container.addEventListener('mouseenter', () => this.stopAutoplay());
+            this.container.addEventListener('mouseleave', () => this.startAutoplay());
+          }
+        }
+
+        createArrows() {
+          const prevBtn = document.createElement('button');
+          prevBtn.type = 'button';
+          prevBtn.className = 'slick-prev carousel-arrow carousel-arrow-prev';
+          prevBtn.addEventListener('click', () => this.prev());
+
+          const nextBtn = document.createElement('button');
+          nextBtn.type = 'button';
+          nextBtn.className = 'slick-next carousel-arrow carousel-arrow-next';
+          nextBtn.addEventListener('click', () => this.next());
+
+          this.container.appendChild(prevBtn);
+          this.container.appendChild(nextBtn);
+        }
+
+        goToSlide(index, instant = false) {
+          if (this.isTransitioning && !instant) return;
+
+          this.isTransitioning = true;
+          this.currentIndex = index;
+
+          if (instant) {
+            this.track.style.transition = 'none';
+          }
+
+          this.track.style.transform = `translateX(calc(-75% * ${this.currentIndex}))`;
+
+          setTimeout(() => {
+            this.isTransitioning = false;
+
+            if (instant) {
+              this.track.style.transition = 'transform 0.8s ease-in-out';
+            }
+
+            // 無限循環邏輯
+            const totalSlides = this.slides.length;
+            if (this.currentIndex === 0) {
+              // 到達最前面的克隆，跳到真實的最後一張
+              setTimeout(() => {
+                this.goToSlide(totalSlides - 2, true);
+              }, 50);
+            } else if (this.currentIndex === totalSlides - 1) {
+              // 到達最後面的克隆，跳到真實的第一張
+              setTimeout(() => {
+                this.goToSlide(1, true);
+              }, 50);
+            }
+          }, instant ? 50 : this.speed);
+        }
+
+        next() {
+          if (!this.isTransitioning) {
+            this.goToSlide(this.currentIndex + 1);
+          }
+        }
+
+        prev() {
+          if (!this.isTransitioning) {
+            this.goToSlide(this.currentIndex - 1);
+          }
+        }
+
+        startAutoplay() {
+          this.stopAutoplay();
+          this.autoplayInterval = setInterval(() => this.next(), this.autoplaySpeed);
+        }
+
+        stopAutoplay() {
+          if (this.autoplayInterval) {
+            clearInterval(this.autoplayInterval);
+            this.autoplayInterval = null;
+          }
+        }
+      }
+
+      // 初始化自定義 slider
+      new CustomSlider('.traffic-carousel-desktop', {
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 800
+      });
+
+      new CustomSlider('.park-carousel-desktop', {
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 800
+      });
+
+      $(".unique-responsive-carousel").slick({
+        centerMode: true,
+        centerPadding: "0",
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              centerMode: false,
+            },
+          },
+        ],
+      });
+
+      // 團隊輪播初始化
+      $(".team-carousel").slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        adaptiveHeight: true,
+        prevArrow: '<button type="button" class="slick-prev carousel-arrow carousel-arrow-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next carousel-arrow carousel-arrow-next"></button>'
+      });
+
+      // 圖片放大縮小功能
+      window.toggleImageZoom = function(element) {
+        const img = element.querySelector('img');
+        const container = element;
+
+        if (container.classList.contains('zoomed-container')) {
+          // 縮小
+          container.classList.remove('zoomed-container');
+          img.classList.remove('zoomed');
+          container.style.position = 'relative';
+          container.style.zIndex = '1';
+          container.style.backgroundColor = 'transparent';
+        } else {
+          // 放大
+          container.classList.add('zoomed-container');
+          img.classList.add('zoomed');
+          container.style.position = 'fixed';
+          container.style.top = '50%';
+          container.style.left = '50%';
+          container.style.transform = 'translate(-50%, -50%)';
+          container.style.zIndex = '9999';
+          container.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+          container.style.width = '100vw';
+          container.style.height = '100vh';
+          container.style.display = 'flex';
+          container.style.alignItems = 'center';
+          container.style.justifyContent = 'center';
+          container.style.padding = '20px';
+        }
+      };
+
+      // 圖片燈箱功能
+      window.openLightbox = function(imageSrc, imageAlt) {
+        // 創建燈箱元素
+        const lightbox = document.createElement('div');
+        lightbox.id = 'image-lightbox';
+        lightbox.style.cssText = `
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.95);
+          z-index: 10000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: zoom-out;
+          padding: 20px;
+        `;
+
+        // 創建圖片元素
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = imageAlt;
+        img.style.cssText = `
+          max-width: 95%;
+          max-height: 95%;
+          object-fit: contain;
+          user-select: none;
+        `;
+
+        // 創建關閉按鈕
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '✕';
+        closeBtn.style.cssText = `
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          background: rgba(255, 255, 255, 0.2);
+          border: 2px solid white;
+          color: white;
+          font-size: 24px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          z-index: 10001;
+        `;
+
+        closeBtn.onmouseover = function() {
+          this.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+        };
+
+        closeBtn.onmouseout = function() {
+          this.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+        };
+
+        // 組裝燈箱
+        lightbox.appendChild(img);
+        lightbox.appendChild(closeBtn);
+        document.body.appendChild(lightbox);
+
+        // 淡入效果
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+
+        // 關閉燈箱函數
+        function closeLightbox() {
+          lightbox.style.opacity = '0';
+          setTimeout(() => {
+            document.body.removeChild(lightbox);
+          }, 300);
+        }
+
+        // 點擊背景或關閉按鈕關閉燈箱
+        lightbox.addEventListener('click', function(e) {
+          if (e.target === lightbox || e.target === closeBtn) {
+            closeLightbox();
+          }
+        });
+
+        // ESC 鍵關閉燈箱
+        document.addEventListener('keydown', function escKeyHandler(e) {
+          if (e.key === 'Escape') {
+            closeLightbox();
+            document.removeEventListener('keydown', escKeyHandler);
+          }
+        });
+      };
+
+      function toggleFooterVisibility() {
+        // 檢測是否為 iOS 設備
+        const iOS =
+          /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const viewportWidth = iOS ? screen.width : window.innerWidth;
+        let kvHeight = $("#kv").height();
+        let threshold = kvHeight * 0.55;
+        let scrollTop = $(window).scrollTop();
+
+        // data-display= ${element}
+        // mobile 僅在手機顯示
+        // desktop 僅在桌機顯示
+        // all 手機桌機都顯示
+        if ($("footer").data("display") === "mobile") {
+          if (viewportWidth < 768) {
+            if (scrollTop > threshold) {
+              $("footer").show();
+            } else {
+              $("footer").hide();
+            }
+          }
+        } else if ($("footer").data("display") === "desktop") {
+          if (viewportWidth >= 768) {
+            if (scrollTop > threshold) {
+              $("footer").show();
+            } else {
+              $("footer").hide();
+            }
+          }
+        } else {
+          if (scrollTop > threshold) {
+            $("footer").show();
+          } else {
+            $("footer").hide();
+          }
+        }
+      }
+
+      // Mobile menu toggle and active section highlighting
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        if (mobileMenuButton) {
+          mobileMenuButton.addEventListener("click", function () {
+            const mobileMenu = document.getElementById("mobile-menu");
+            const isMenuHidden = mobileMenu.classList.contains("hidden");
+
+            // Toggle menu visibility
+            if (isMenuHidden) {
+              mobileMenu.classList.remove("hidden");
+            } else {
+              mobileMenu.classList.add("hidden");
+            }
+
+            // Change hamburger icon to close icon and vice versa
+            const iconPath = this.querySelector("path");
+            if (isMenuHidden) {
+              iconPath.setAttribute("d", "M6 18L18 6M6 6l12 12");
+            } else {
+              iconPath.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
+            }
+          });
+        }
+
+        // Handle active section highlighting
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll("header a");
+
+        function highlightNavigation() {
+          const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (
+              scrollPosition >= sectionTop &&
+              scrollPosition < sectionBottom
+            ) {
+              navLinks.forEach((link) => {
+                if (link.getAttribute("href") === "#" + section.id) {
+                  link.classList.add("text-[#FFE3A4]");
+                  link.classList.remove("text-white");
+                } else {
+                  link.classList.remove("text-[#FFE3A4]");
+                  link.classList.add("text-white");
+                }
+              });
+            }
+          });
+        }
+
+        window.addEventListener("scroll", highlightNavigation);
+        highlightNavigation(); // Initial check
+      });
+
+      // 初始检查
+      toggleFooterVisibility();
+
+      // 绑定滚动事件
+      $(window).on("scroll", function () {
+        toggleFooterVisibility();
+      });
+
+      const listenOnScreen = () => {
+        // 檢測是否為 iOS 設備
+        const iOS =
+          /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        // 根據設備類型獲取正確的視口寬度
+        const viewportWidth = iOS ? screen.width : window.innerWidth;
+
+        // 選取所有使用 data-aos 屬性的元素
+        let elements = document.querySelectorAll("[data-aos]");
+
+        // 遍歷所有元素
+        for (let element of elements) {
+          // 檢查元素是否有 data-aos-anchor 屬性
+          if (!element.hasAttribute("data-aos-anchor")) {
+            // 如果元素缺少 data-aos-anchor 屬性，印出元素的標籤名稱、id 和 class
+            console.log(
+              "Element with tag: " +
+                element.tagName +
+                ", id: " +
+                element.id +
+                ", class: " +
+                element.className +
+                " is missing data-aos-anchor attribute."
+            );
+          }
+        }
+        toggleFooterVisibility();
+      };
+      window.addEventListener("resize", listenOnScreen);
+      listenOnScreen();
+    });
+
+    $(".mask").click(function () {
+      $(this).fadeOut();
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const imageLayout = new ImageLayoutManager({
+        defaultMobileMinHeight: "90vh",
+        defaultDesktopMinHeight: "100vh",
+        resizeDebounceTime: 150,
+      });
+      imageLayout.initializeAll();
+    });
+  </script>
+  <script>
+    // 品牌Logo卡片互動效果
+    document.addEventListener("DOMContentLoaded", function () {
+      const brandCards = document.querySelectorAll('.brand-logo-card');
+
+      brandCards.forEach(card => {
+        const overlay = card.querySelector('.brand-overlay');
+
+        // 桌面版：滑鼠移動追蹤方向感知
+        card.addEventListener('mouseenter', function(e) {
+          if (window.innerWidth >= 768) { // 桌面版
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const width = rect.width;
+            const height = rect.height;
+
+            // 計算滑鼠進入的方向
+            const fromTop = y;
+            const fromBottom = height - y;
+            const fromLeft = x;
+            const fromRight = width - x;
+            const min = Math.min(fromTop, fromBottom, fromLeft, fromRight);
+
+            let direction = '';
+            if (min === fromTop) direction = 'top';
+            else if (min === fromBottom) direction = 'bottom';
+            else if (min === fromLeft) direction = 'left';
+            else if (min === fromRight) direction = 'right';
+
+            // 設置初始位置
+            overlay.style.transition = 'none';
+            switch(direction) {
+              case 'top':
+                overlay.style.transform = 'translateY(-100%)';
+                break;
+              case 'bottom':
+                overlay.style.transform = 'translateY(100%)';
+                break;
+              case 'left':
+                overlay.style.transform = 'translateX(-100%)';
+                break;
+              case 'right':
+                overlay.style.transform = 'translateX(100%)';
+                break;
+            }
+
+            // 強制重排
+            overlay.offsetHeight;
+
+            // 動畫進入
+            overlay.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+            overlay.style.transform = 'translate(0, 0)';
+            overlay.style.opacity = '1';
+          }
+        });
+
+        card.addEventListener('mouseleave', function(e) {
+          if (window.innerWidth >= 768) { // 桌面版
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const width = rect.width;
+            const height = rect.height;
+
+            // 計算滑鼠離開的方向
+            let direction = '';
+            if (y < 0) direction = 'top';
+            else if (y > height) direction = 'bottom';
+            else if (x < 0) direction = 'left';
+            else if (x > width) direction = 'right';
+
+            // 動畫離開
+            overlay.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+            switch(direction) {
+              case 'top':
+                overlay.style.transform = 'translateY(-100%)';
+                break;
+              case 'bottom':
+                overlay.style.transform = 'translateY(100%)';
+                break;
+              case 'left':
+                overlay.style.transform = 'translateX(-100%)';
+                break;
+              case 'right':
+                overlay.style.transform = 'translateX(100%)';
+                break;
+            }
+            overlay.style.opacity = '0';
+          }
+        });
+
+        // 手機版：點擊切換
+        card.addEventListener('click', function(e) {
+          if (window.innerWidth < 768) { // 手機版
+            e.preventDefault();
+
+            // 關閉其他所有的overlay
+            brandCards.forEach(otherCard => {
+              if (otherCard !== card) {
+                const otherOverlay = otherCard.querySelector('.brand-overlay');
+                otherOverlay.style.opacity = '0';
+                otherOverlay.classList.remove('active');
+              }
+            });
+
+            // 切換當前overlay
+            const isActive = overlay.classList.contains('active');
+            if (isActive) {
+              overlay.style.opacity = '0';
+              overlay.classList.remove('active');
+            } else {
+              overlay.style.transition = 'opacity 0.3s ease';
+              overlay.style.transform = 'translate(0, 0)';
+              overlay.style.opacity = '1';
+              overlay.classList.add('active');
+            }
+          }
+        });
+      });
+
+      // 點擊空白處關閉手機版的overlay
+      document.addEventListener('click', function(e) {
+        if (window.innerWidth < 768) {
+          const isCard = e.target.closest('.brand-logo-card');
+          if (!isCard) {
+            brandCards.forEach(card => {
+              const overlay = card.querySelector('.brand-overlay');
+              overlay.style.opacity = '0';
+              overlay.classList.remove('active');
+            });
+          }
+        }
+      });
+    });
+
+    // ========================================
+    // 預約表單處理
+    // ========================================
+
+    /**
+     * SendBooking - 處理預約表單送出
+     *
+     * @param {string} utmSource - UTM 來源參數（選用）
+     * @param {string} utmMedium - UTM 媒介參數（選用）
+     */
+    function SendBooking(utmSource, utmMedium) {
+      // 取得 Google Apps Script URL
+      // 優先順序：
+      // 1. window.__ENV__ (由 Vercel 建置時注入)
+      // 2. config.js 中的設定
+      // 3. window 物件上的全域變數（備用）
+      let scriptUrl = null;
+
+      // 方法 1: 從 window.__ENV__ 取得（Vercel 建置時注入的環境變數）
+      if (typeof window.__ENV__ !== 'undefined' && window.__ENV__.GOOGLE_SCRIPT_URL) {
+        scriptUrl = window.__ENV__.GOOGLE_SCRIPT_URL;
+      }
+
+      // 方法 2: 從 CONFIG 物件取得（config.js）
+      if (!scriptUrl && typeof CONFIG !== 'undefined' && CONFIG.GOOGLE_SCRIPT_URL) {
+        scriptUrl = CONFIG.GOOGLE_SCRIPT_URL;
+      }
+
+      // 方法 3: 從 window 全域變數取得（備用方案）
+      if (!scriptUrl && typeof window.GOOGLE_SCRIPT_URL !== 'undefined') {
+        scriptUrl = window.GOOGLE_SCRIPT_URL;
+      }
+
+      // 驗證 URL 是否有效
+      if (!scriptUrl) {
+        console.error('未設定 Google Apps Script URL');
+        console.info('請確認以下其中一項設定：');
+        console.info('1. Vercel 環境變數或 window.__ENV__.GOOGLE_SCRIPT_URL');
+        console.info('2. config.js 檔案中的 CONFIG.GOOGLE_SCRIPT_URL');
+        alert('系統配置錯誤，請聯繫網站管理員。\n電話：02-8661-0688');
+        return false;
+      }
+
+      if (scriptUrl === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+        console.error('請先設定正確的 Google Apps Script URL');
+        alert('系統尚未完成設定，請聯繫網站管理員。\n電話：02-8661-0688');
+        return false;
+      }
+
+      // 取得表單欄位值
+      const username = document.getElementById('username').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const agree = document.getElementById('agree').checked;
+
+      // 取得縣市和鄉鎮市區的值
+      const countySelect = document.querySelector('[data-role="county"] select');
+      const districtSelect = document.querySelector('[data-role="district"] select');
+      const county = countySelect ? countySelect.value : '';
+      const district = districtSelect ? districtSelect.value : '';
+
+      // 表單驗證
+      if (!username) {
+        alert('請輸入姓名');
+        document.getElementById('username').focus();
+        return false;
+      }
+
+      if (!phone) {
+        alert('請輸入聯絡電話');
+        document.getElementById('phone').focus();
+        return false;
+      }
+
+      // 驗證電話格式（台灣手機或市話）
+      const phoneRegex = /^(09\d{8}|0\d{1,2}-?\d{6,8})$/;
+      if (!phoneRegex.test(phone.replace(/\s+/g, ''))) {
+        alert('請輸入正確的電話號碼格式\n例如：0912-345-678 或 02-12345678');
+        document.getElementById('phone').focus();
+        return false;
+      }
+
+      if (!agree) {
+        alert('請同意隱私權政策聲明');
+        return false;
+      }
+
+      // 準備要送出的資料
+      const formData = {
+        username: username,
+        phone: phone,
+        county: county,
+        district: district,
+        agree: agree,
+        utmSource: utmSource || '',
+        utmMedium: utmMedium || '',
+        timestamp: new Date().toISOString()
+      };
+
+      // 顯示載入中狀態
+      const submitButton = document.querySelector('[data-name="btnSubmit"]');
+      const originalButtonText = submitButton.innerHTML;
+      submitButton.disabled = true;
+      submitButton.innerHTML = '送出中...';
+      submitButton.style.opacity = '0.6';
+
+      // 發送資料到 Google Apps Script
+      fetch(scriptUrl, {
+        method: 'POST',
+        mode: 'no-cors', // 重要：Google Apps Script 需要使用 no-cors 模式
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(() => {
+        // no-cors 模式下無法讀取回應，但可以假設成功
+        // 顯示成功訊息
+        alert('感謝您的預約！\n我們會儘快與您聯繫。');
+
+        // 清空表單
+        document.getElementById('username').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('agree').checked = false;
+        if (countySelect) countySelect.selectedIndex = 0;
+        if (districtSelect) districtSelect.selectedIndex = 0;
+
+        // 移除 focus-custom 樣式
+        document.querySelectorAll('input').forEach(input => {
+          input.classList.remove('focus-custom');
+        });
+
+        // Google Analytics 事件追蹤（如果有設定 GA）
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submission', {
+            'event_category': 'Booking',
+            'event_label': 'Reservation Form',
+            'value': 1
+          });
+        }
+
+        // Facebook Pixel 事件追蹤（如果有設定 FB Pixel）
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', {
+            content_name: '預約賞屋',
+            content_category: 'Reservation'
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('送出時發生錯誤，請稍後再試或直接來電聯繫我們。\n電話：02-8661-0688');
+      })
+      .finally(() => {
+        // 恢復按鈕狀態
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonText;
+        submitButton.style.opacity = '1';
+      });
+
+      return false;
+    }
+
+    // 將 SendBooking 函數掛載到 window 物件，讓 HTML 的 onClick 可以呼叫
+    window.SendBooking = SendBooking;
+
+    // Enter 鍵送出表單（可選）
+    document.addEventListener('DOMContentLoaded', function() {
+      const formInputs = document.querySelectorAll('#username, #phone');
+      formInputs.forEach(input => {
+        input.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            SendBooking('', '');
+          }
+        });
+      });
+    });
+  </script>
+</html>

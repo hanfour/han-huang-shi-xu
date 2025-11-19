@@ -1,0 +1,81 @@
+/* Noto Serif TC */
+@font-face {
+  font-family: 'Noto Serif TC';
+  src: url('./assets/fonts/Noto_Serif_TC/NotoSerifTC-Light.otf');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Noto Serif TC';
+  src: url('./assets/fonts/Noto_Serif_TC/NotoSerifTC-ExtraLight.otf');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Noto Serif TC';
+  src: url('./assets/fonts/Noto_Serif_TC/NotoSerifTC-Regular.otf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Noto Serif TC';
+  src: url('./assets/fonts/Noto_Serif_TC/NotoSerifTC-Medium.otf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Noto Serif TC';
+  src: url('./assets/fonts/Noto_Serif_TC/NotoSerifTC-SemiBold.otf');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Noto Serif TC';
+  src: url('./assets/fonts/Noto_Serif_TC/NotoSerifTC-Bold.otf');
+  font-weight: 700;
+}
+/* Noto Sans TC */
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('./assets/fonts/Noto_Sans_TC/static/NotoSansTC-Light.ttf');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('./assets/fonts/Noto_Sans_TC/static/NotoSansTC-ExtraLight.ttf');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('./assets/fonts/Noto_Sans_TC/static/NotoSansTC-Regular.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('./assets/fonts/Noto_Sans_TC/static/NotoSansTC-Medium.ttf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('./assets/fonts/Noto_Sans_TC/static/NotoSansTC-SemiBold.ttf');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('./assets/fonts/Noto_Sans_TC/static/NotoSansTC-Bold.ttf');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('./assets/fonts/Noto_Sans_TC/static/NotoSansTC-ExtraBold.ttf');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('./assets/fonts/Noto_Sans_TC/static/NotoSansTC-Black.ttf');
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('./assets/fonts/CenturyGothicPaneuropeanRegular.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Trajan Pro';
+  src: url('./assets/fonts/TrajanPro-Regular.ttf');
+}

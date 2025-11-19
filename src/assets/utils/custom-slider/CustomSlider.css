@@ -1,0 +1,102 @@
+/**
+ * CustomSlider - 樣式文件
+ *
+ * 提供 CustomSlider 組件所需的基礎樣式
+ * 可以根據專案需求自定義箭頭、容器等樣式
+ */
+
+/* 容器基本樣式 */
+.custom-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Track 基本樣式 */
+.custom-slider .slider-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+/* 預設箭頭樣式（可選） */
+.custom-slider .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-slider .carousel-arrow:hover {
+  transform: translateY(-50%) scale(1.15);
+}
+
+.custom-slider .carousel-arrow-prev {
+  left: 20px;
+}
+
+.custom-slider .carousel-arrow-next {
+  right: 20px;
+}
+
+/* 使用 CSS 繪製箭頭圖標（基於 SVG 路徑） */
+.custom-slider .carousel-arrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  transition: background-color 0.3s ease-in-out;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* Next 箭頭（向右） */
+.custom-slider .carousel-arrow-next::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M233.046 941.461c-18.88 17.846-18.88 46.715 0.105 64.48 18.985 17.84 49.622 17.84 68.607 0l489.848-460.275c9.568-8.87 14.149-20.597 14.149-32.273 0-0.99-0.523-1.82-0.575-2.758-0.21-4.887-0.99-9.782-2.966-14.356-0.674-1.513-1.976-2.604-2.807-4.005-2.186-3.849-4.371-7.806-7.801-11.134L301.759 20.79c-18.985-17.631-49.517-17.631-68.607 0.053-18.985 17.788-18.985 46.71 0 64.5L688.608 513.39 233.046 941.46z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M233.046 941.461c-18.88 17.846-18.88 46.715 0.105 64.48 18.985 17.84 49.622 17.84 68.607 0l489.848-460.275c9.568-8.87 14.149-20.597 14.149-32.273 0-0.99-0.523-1.82-0.575-2.758-0.21-4.887-0.99-9.782-2.966-14.356-0.674-1.513-1.976-2.604-2.807-4.005-2.186-3.849-4.371-7.806-7.801-11.134L301.759 20.79c-18.985-17.631-49.517-17.631-68.607 0.053-18.985 17.788-18.985 46.71 0 64.5L688.608 513.39 233.046 941.46z'/%3E%3C/svg%3E");
+}
+
+/* Prev 箭頭（向左，使用 transform: scaleX(-1) 鏡像翻轉） */
+.custom-slider .carousel-arrow-prev::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M233.046 941.461c-18.88 17.846-18.88 46.715 0.105 64.48 18.985 17.84 49.622 17.84 68.607 0l489.848-460.275c9.568-8.87 14.149-20.597 14.149-32.273 0-0.99-0.523-1.82-0.575-2.758-0.21-4.887-0.99-9.782-2.966-14.356-0.674-1.513-1.976-2.604-2.807-4.005-2.186-3.849-4.371-7.806-7.801-11.134L301.759 20.79c-18.985-17.631-49.517-17.631-68.607 0.053-18.985 17.788-18.985 46.71 0 64.5L688.608 513.39 233.046 941.46z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M233.046 941.461c-18.88 17.846-18.88 46.715 0.105 64.48 18.985 17.84 49.622 17.84 68.607 0l489.848-460.275c9.568-8.87 14.149-20.597 14.149-32.273 0-0.99-0.523-1.82-0.575-2.758-0.21-4.887-0.99-9.782-2.966-14.356-0.674-1.513-1.976-2.604-2.807-4.005-2.186-3.849-4.371-7.806-7.801-11.134L301.759 20.79c-18.985-17.631-49.517-17.631-68.607 0.053-18.985 17.788-18.985 46.71 0 64.5L688.608 513.39 233.046 941.46z'/%3E%3C/svg%3E");
+  transform: translate(-50%, -50%) scaleX(-1);
+}
+
+.custom-slider .carousel-arrow:hover::before {
+  background-color: var(--color-brand-gold, #e9db6e);
+}
+
+/* 手機版調整箭頭大小和位置 */
+@media (max-width: 768px) {
+  .custom-slider .carousel-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .custom-slider .carousel-arrow::before {
+    width: 36px;
+    height: 36px;
+  }
+
+  .custom-slider .carousel-arrow-prev {
+    left: 10px;
+  }
+
+  .custom-slider .carousel-arrow-next {
+    right: 10px;
+  }
+}

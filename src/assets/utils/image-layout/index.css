@@ -1,0 +1,71 @@
+.w-full {
+  width: 100%;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+/* 基本容器樣式 */
+.overflow-x-auto {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+/* 圖片容器樣式 */
+.image-container {
+  position: relative;
+  height: 100%;
+  /* 確保容器可以容納較寬的圖片 */
+  min-width: 100%;
+  display: flex;
+}
+
+/* 圖片基本樣式 */
+.centered-image,
+.image-layout-section picture img {  /* 添加對 picture 內的 img 的支援 */
+  max-width: none !important;
+  height: auto; /* 改為 auto */
+  min-height: 100%; /* 確保最小高度 */
+  object-fit: contain; /* 改為 contain,不裁切 */
+  display: block;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+  flex-shrink: 0; /* 防止圖片被壓縮 */
+}
+
+/* picture 元素樣式 */
+.image-layout-section picture {
+  height: 100%;
+  display: block;
+  flex-shrink: 0; /* 防止 picture 元素被壓縮 */
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+.mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+  font-size: 0.875rem;
+}
