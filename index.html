@@ -3351,20 +3351,6 @@
       })
       .then(() => {
         // no-cors 模式下無法讀取回應，但可以假設成功
-        // 顯示成功訊息
-        alert('感謝您的預約！\n我們會儘快與您聯繫。');
-
-        // 清空表單
-        document.getElementById('username').value = '';
-        document.getElementById('phone').value = '';
-        document.getElementById('agree').checked = false;
-        if (countySelect) countySelect.selectedIndex = 0;
-        if (districtSelect) districtSelect.selectedIndex = 0;
-
-        // 移除 focus-custom 樣式
-        document.querySelectorAll('input').forEach(input => {
-          input.classList.remove('focus-custom');
-        });
 
         // Google Analytics 事件追蹤（如果有設定 GA）
         if (typeof gtag !== 'undefined') {
@@ -3382,6 +3368,9 @@
             content_category: 'Reservation'
           });
         }
+
+        // 轉址到感謝頁面
+        window.location.href = 'thanku.html';
       })
       .catch(error => {
         console.error('Error:', error);
