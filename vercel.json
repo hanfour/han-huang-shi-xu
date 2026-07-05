@@ -1,7 +1,7 @@
 {
   "buildCommand": "node generate-config.js",
   "outputDirectory": ".",
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": false,
   "headers": [
     {
