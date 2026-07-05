@@ -73,3 +73,4 @@ build/
 *.backup
 *.bak
 *.tmp
+.env*

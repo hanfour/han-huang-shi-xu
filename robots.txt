@@ -1,0 +1,55 @@
+# 戀戀溫州｜台大溫州 隱富靜巷
+# https://lian-lian-wenzhou.vercel.app/
+
+User-agent: *
+Allow: /
+Disallow: /thanku.html
+Disallow: /config.js
+Disallow: /google-apps-script.js
+Disallow: /generate-config.js
+
+# AI / LLM crawlers (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Sitemap
+Sitemap: https://lian-lian-wenzhou.vercel.app/sitemap.xml
