@@ -2683,27 +2683,27 @@
 
     // 表單送出
     function SendBooking(utmSource, utmMedium) {
-      let scriptUrl = null;
-      if (typeof window.__ENV__ !== 'undefined' && window.__ENV__.GOOGLE_SCRIPT_URL) {
-        scriptUrl = window.__ENV__.GOOGLE_SCRIPT_URL;
-      }
-      if (!scriptUrl && typeof CONFIG !== 'undefined' && CONFIG.GOOGLE_SCRIPT_URL) {
-        scriptUrl = CONFIG.GOOGLE_SCRIPT_URL;
-      }
-      if (!scriptUrl && typeof window.GOOGLE_SCRIPT_URL !== 'undefined') {
-        scriptUrl = window.GOOGLE_SCRIPT_URL;
-      }
+      const cfg = (typeof CONFIG !== 'undefined') ? CONFIG : {};
+      const provider = (cfg.FORM_PROVIDER || 'hfms').toLowerCase();
 
-      if (!scriptUrl) {
-        console.error('未設定 Google Apps Script URL');
-        alert('系統配置錯誤，請聯繫網站管理員。\n電話：02-2306-3888');
-        return false;
-      }
-
-      if (scriptUrl === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-        console.error('請先設定正確的 Google Apps Script URL');
-        alert('系統尚未完成設定，請聯繫網站管理員。\n電話：02-2306-3888');
-        return false;
+      let submitConfig = null;
+      if (provider === 'hfms') {
+        const endpoint = cfg.HFMS_ENDPOINT;
+        const apiKey = cfg.HFMS_API_KEY;
+        if (!endpoint || !apiKey || endpoint === 'YOUR_HFMS_ENDPOINT_HERE' || apiKey === 'YOUR_HFMS_API_KEY_HERE') {
+          console.error('未設定 HFMS_ENDPOINT / HFMS_API_KEY');
+          alert('系統配置錯誤，請聯繫網站管理員。\n電話：02-2306-3888');
+          return false;
+        }
+        submitConfig = { type: 'hfms', endpoint, apiKey };
+      } else {
+        let scriptUrl = cfg.GOOGLE_SCRIPT_URL || (window.__ENV__ && window.__ENV__.GOOGLE_SCRIPT_URL) || window.GOOGLE_SCRIPT_URL;
+        if (!scriptUrl || scriptUrl === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+          console.error('未設定 Google Apps Script URL');
+          alert('系統配置錯誤，請聯繫網站管理員。\n電話：02-2306-3888');
+          return false;
+        }
+        submitConfig = { type: 'google', endpoint: scriptUrl };
       }
 
       const username = document.getElementById('username').value.trim();
@@ -2743,19 +2743,26 @@
         project: '戀戀溫州'
       };
 
+      // 若使用 HFMS，自動附上 GA4 client_id 便於 Server-Side 追蹤
+      if (submitConfig.type === 'hfms') {
+        try {
+          const gaCookie = document.cookie.split('; ').find((row) => row.startsWith('_ga='));
+          if (gaCookie) {
+            const parts = gaCookie.split('.');
+            if (parts.length >= 4) {
+              formData._ga_client_id = parts.slice(-2).join('.');
+            }
+          }
+        } catch (_) { /* ignore */ }
+      }
+
       const submitButton = document.querySelector('[data-name="btnSubmit"]');
       const originalButtonText = submitButton.innerHTML;
       submitButton.disabled = true;
       submitButton.innerHTML = '送 出 中 ...';
       submitButton.style.opacity = '0.6';
 
-      fetch(scriptUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      })
-      .then(() => {
+      const trackAndRedirect = () => {
         if (typeof gtag !== 'undefined') {
           gtag('event', 'form_submission', {
             'event_category': 'Booking',
@@ -2770,16 +2777,52 @@
           });
         }
         window.location.href = 'thanku.html';
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('送出時發生錯誤，請稍後再試或直接來電聯繫我們。\n電話：02-2306-3888');
-      })
-      .finally(() => {
+      };
+
+      const restoreButton = () => {
         submitButton.disabled = false;
         submitButton.innerHTML = originalButtonText;
         submitButton.style.opacity = '1';
-      });
+      };
+
+      if (submitConfig.type === 'hfms') {
+        fetch(submitConfig.endpoint, {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': submitConfig.apiKey
+          },
+          body: JSON.stringify(formData)
+        })
+          .then(async (res) => {
+            let payload = null;
+            try { payload = await res.json(); } catch (_) { }
+            if (!res.ok || !payload || payload.success === false) {
+              const msg = payload && payload.error && payload.error.message ? payload.error.message : ('HTTP ' + res.status);
+              throw new Error(msg);
+            }
+            trackAndRedirect();
+          })
+          .catch((error) => {
+            console.error('HFMS submit error:', error);
+            alert('送出時發生錯誤，請稍後再試或直接來電聯繫我們。\n電話：02-2306-3888');
+          })
+          .finally(restoreButton);
+      } else {
+        fetch(submitConfig.endpoint, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        })
+          .then(() => { trackAndRedirect(); })
+          .catch((error) => {
+            console.error('GAS submit error:', error);
+            alert('送出時發生錯誤，請稍後再試或直接來電聯繫我們。\n電話：02-2306-3888');
+          })
+          .finally(restoreButton);
+      }
 
       return false;
     }

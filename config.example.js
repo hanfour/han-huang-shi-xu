@@ -8,10 +8,17 @@
  */
 
 const CONFIG = {
-  // Google Apps Script Web App URL
-  // 在 Google Apps Script 部署後，將取得的 URL 填入這裡
-  // 範例：'https://script.google.com/macros/s/AKfycbz.../exec'
-  GOOGLE_SCRIPT_URL: 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE',
+  // 表單提交服務 (預設 hfms;若切回 google 則使用 GOOGLE_SCRIPT_URL)
+  FORM_PROVIDER: 'hfms',
+
+  // miilink HFMS 表單服務
+  // Endpoint 範例：'https://miilink.net/api/hfms/submit/<projectId>'
+  HFMS_ENDPOINT: 'YOUR_HFMS_ENDPOINT_HERE',
+  // API Key (pk_live_...)
+  HFMS_API_KEY: 'YOUR_HFMS_API_KEY_HERE',
+
+  // Google Apps Script Web App URL (備援;FORM_PROVIDER = 'google' 時使用)
+  GOOGLE_SCRIPT_URL: '',
 
   // Google Analytics ID (選用)
   GOOGLE_ANALYTICS_ID: '',
