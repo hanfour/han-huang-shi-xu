@@ -108,7 +108,7 @@
       body {
         position: relative;
         width: 100dvw;
-        min-height: 100dvh;
+        min-height: 100svh;
         font-family: var(--font-sans);
         overflow-x: hidden;
       }
@@ -543,6 +543,182 @@
         }
       }
 
+      /* 2F公設輪播：中央焦點 + 左右露出鄰圖 */
+      .fc-outer {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      /* 兩側暗角，壓在露出的鄰圖上；滑動中淡出讓視線跟著走 */
+      .fc-outer::before,
+      .fc-outer::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: calc(16.667% - 12px);
+        pointer-events: none;
+        z-index: 2;
+        opacity: 1;
+        transition: opacity 0.25s ease;
+      }
+
+      .fc-outer::before {
+        left: 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 100%);
+      }
+
+      .fc-outer::after {
+        right: 0;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 100%);
+      }
+
+      .fc-outer.is-sliding::before,
+      .fc-outer.is-sliding::after {
+        opacity: 0;
+      }
+
+      /* 左右各 12px，合起來就是鄰圖之間的 24px 間距 */
+      .facility-carousel .slick-slide {
+        padding: 0 12px;
+      }
+
+      .fc-frame {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+      }
+
+      .fc-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* 左上角空間名 */
+      .fc-cap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.75rem 1rem;
+        z-index: 3;
+        pointer-events: none;
+      }
+
+      .fc-cap-en {
+        display: block;
+        font-family: 'Times New Roman', serif;
+        color: #ffffff;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        line-height: 1.2;
+        font-size: clamp(1rem, 1.7vw, 1.7rem);
+        mix-blend-mode: screen;
+        opacity: 0.5;
+      }
+
+      .fc-cap-zh {
+        display: block;
+        margin-top: 0.35rem;
+        color: #ffffff;
+        font-size: 0.8rem;
+        letter-spacing: 0.16em;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+      }
+
+      .fc-note {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 3;
+        background: rgba(0, 0, 0, 0.25);
+      }
+
+      .fc-note p {
+        font-size: 8px;
+        color: #ffffff;
+        padding: 2px 8px;
+      }
+
+      /* 箭頭改釘在中央圖左下角，覆寫全域 .carousel-arrow 的垂直置中定位 */
+      .fc-nav {
+        position: absolute;
+        bottom: 1.1rem;
+        left: calc(16.667% + 1.1rem);
+        z-index: 5;
+        display: flex;
+        gap: 0.55rem;
+      }
+
+      .fc-nav .carousel-arrow {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        transform: none;
+        width: 40px;
+        height: 40px;
+      }
+
+      .fc-nav .carousel-arrow:hover {
+        transform: scale(1.08);
+      }
+
+      .fc-nav .carousel-arrow::before {
+        width: 40px;
+        height: 40px;
+      }
+
+      /* 手機：取消左右露出，單張滿版，箭頭移到圖下方置中 */
+      @media (max-width: 767px) {
+        /* 箭頭改為靜態排在圖下方，補一段留白免得貼死下一區塊 */
+        .fc-outer {
+          padding-bottom: 2.5rem;
+        }
+
+        .fc-outer::before,
+        .fc-outer::after {
+          display: none;
+        }
+
+        .facility-carousel .slick-slide {
+          padding: 0;
+        }
+
+        .fc-frame {
+          aspect-ratio: 16 / 11;
+        }
+
+        .fc-nav {
+          position: static;
+          justify-content: center;
+          margin-top: 1.5rem;
+        }
+
+        .fc-nav .carousel-arrow,
+        .fc-nav .carousel-arrow::before {
+          width: 32px;
+          height: 32px;
+        }
+
+        /* 箭頭離開圖片、落在紙紋底上，全域的白色箭頭會看不見 */
+        .fc-nav .carousel-arrow::before {
+          background-color: #7d621a;
+        }
+
+        .fc-nav .carousel-arrow:hover::before {
+          background-color: #2b2b2b;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .fc-note p {
+          font-size: 10px;
+        }
+      }
+
       /* 團隊輪播樣式 */
       .team-carousel .slick-slide {
         height: auto !important;
@@ -627,34 +803,16 @@
     <main class="mx-auto overflow-hidden">
       <section
         id="kv"
-        class="w-full h-dvh relative flex justify-center items-end"
+        class="w-full h-auto relative"
       >
-        <div class="w-full h-full flex justify-center items-center">
-          <div class="w-10/12 md:w-8/12 2xl:w-7/12 flex flex-col justify-center items-center gap-4 md:gap-8">
-            <div class="w-full sm:w-3/4 md:w-1/2 flex flex-col gap-y-12">
-              <img src="./src/assets/image/kv_title.svg" alt="漢皇蒔序" class="" data-aos="fade" data-aos-delay="400" data-aos-anchor="#kv">
-              <div class="w-full flex flex-col justify-center items-center gap-6">
-                <img src="./src/assets/image/kv_content_1.svg" alt="捷運Y2A站3分鐘" data-aos="fade" data-aos-delay="400" data-aos-anchor="#kv">
-                <img src="./src/assets/image/kv_content_2.svg" alt="27-36坪·木柵國小生活圈" data-aos="fade" data-aos-delay="600" data-aos-anchor="#kv">
-                <img src="./src/assets/image/kv_content_3.svg" alt="北市名宅聚落3房 大安信義隱富回眸" data-aos="fade-up" data-aos-delay="800" data-aos-anchor="#kv">
-                <div class="w-52 mt-12">
-                  <img src="./src/assets/image/logo_build.svg" alt="漢皇集團" style="mix-blend-mode: multiply" data-aos="fade" data-aos-delay="1400" data-aos-anchor="#kv"/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="absolute bottom-0 right-0 m-4 sm:mb-16 sm:me-24 flex gap-2"
-        >
-          <div class="w-32 p-.5 bg-white" data-aos="fade" data-aos-delay="1400" data-aos-anchor="#kv">
-            <img src="./src/assets/image/logo_Taoyu.svg" alt="泰瑀行銷(股)公司" style="mix-blend-mode: multiply"/>
-          </div>
+        <div class="w-full h-auto flex justify-center items-center">
+          <img src="./src/assets/image/kv_fullIMG_desktop.webp" alt="" class="w-full h-auto hidden md:block" data-aos="fade" data-aos-delay="0" data-aos-anchor="#kv">
+          <img src="./src/assets/image/kv_fullIMG_mobile.webp" alt="" class="w-full h-auto block md:hidden" data-aos="fade" data-aos-delay="0" data-aos-anchor="#kv">
         </div>
       </section>
 
       <!-- 區塊2 -->
-      <section id="mrt" class="relative overflow-hidden w-dvw md:py-24 bg-[#321d12]">
+      <section id="mrt" class="relative overflow-hidden w-dvw md:py-24 bg-[url('./src/assets/image/paper.png')] bg-auto bg-repeat" style="background-size: 18%;">
         <div class="w-full md:h-full flex justify-center items-center">
           <div class="w-full md:w-10/12 flex flex-col md:flex-row justify-between items-stretch md:gap-8">
 
@@ -663,7 +821,7 @@
               <!-- 文字內容 -->
               <div class="w-11/12 mx-auto flex flex-col justify-center items-stretch gap-2 py-10">
                 <h3
-                  class="text-[#e9db6e] text-lg text-center font-light !leading-tight whitespace-nowrap"
+                  class="text-[#7d621a] text-lg text-center font-light !leading-tight whitespace-nowrap"
                   data-aos-anchor="#mrt"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -672,7 +830,7 @@
                 </h3>
                 <div>
                   <p
-                    class="text-white text-[10px] text-center !tracking-widest !leading-6"
+                    class="text-[#2B2B2B] text-[10px] text-center !tracking-widest !leading-6"
                     data-aos-anchor="#mrt"
                     data-aos="fade"
                     data-aos-delay="800"
@@ -711,7 +869,7 @@
               <!-- 文字內容 -->
               <div class="w-full flex flex-col justify-center items-stretch gap-2 py-4">
                 <h3
-                  class="text-[#e9db6e] text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+                  class="text-[#7d621a] text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
                   data-aos-anchor="#mrt"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -720,7 +878,7 @@
                 </h3>
                 <div class="flex-1">
                   <p
-                    class="text-white text-sm text-center !tracking-widest !leading-6"
+                    class="text-[#2B2B2B] text-sm text-center !tracking-widest !leading-6"
                     data-aos-anchor="#mrt"
                     data-aos="fade"
                     data-aos-delay="800"
@@ -746,7 +904,7 @@
 
             <!-- 桌機版：右邊捷運路線圖 (大圖) -->
             <div class="hidden md:block w-8/12 relative md:order-last">
-              <img src="./src/assets/image/traffic_mrt_map_v2.jpg" alt="捷運路線圖" class="w-full h-full object-cover" data-aos-anchor="#mrt" data-aos="fade-up" data-aos-delay="0">
+              <img src="./src/assets/image/traffic_mrt_map_v2.jpg" alt="捷運路線圖" class="w-full h-full object-cover" data-aos-anchor="#mrt" data-aos="fade" data-aos-delay="0">
               <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
                 <p class="text-[10px] text-white px-2 pb-1">
                   捷運路線圖
@@ -759,12 +917,13 @@
       </section>
 
       <!-- 區塊3 -->
-      <section id="aerial" class="relative overflow-hidden bg-white flex flex-col">
+      <section id="aerial" class="relative overflow-hidden bg-[#048DD3] flex flex-col">
         <!-- 文字內容區塊 (移到圖片上方) -->
-        <div class="w-full flex justify-center items-center py-10 md:py-16 bg-white">
+        <!-- 漸層底部收在 #048DD3，與空拍圖頂端天空同色 -->
+        <div class="w-full flex justify-center items-center py-10 md:py-16 bg-gradient-to-b from-[#35A8DC] to-[#048DD3]">
           <div class="w-11/12 md:w-10/12 max-w-7xl flex flex-col justify-center items-center gap-4">
             <h3
-              class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+              class="text-white text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
               data-aos-anchor="#aerial"
               data-aos="fade"
               data-aos-delay="400"
@@ -772,7 +931,7 @@
             木柵國小生活圈 絕版隱富名人巷
             </h3>
             <p
-              class="text-gray-800 text-[10px] md:text-sm text-center !tracking-widest !leading-6 max-w-3xl"
+              class="text-white text-[10px] md:text-sm text-center !tracking-widest !leading-6 max-w-3xl"
               data-aos-anchor="#aerial"
               data-aos="fade"
               data-aos-delay="800"
@@ -836,7 +995,7 @@
       </section>
 
       <!-- 區塊4 -->
-      <section id="traffic" class="relative overflow-hidden w-dvw md:py-24 bg-[#321d12]">
+      <section id="traffic" class="relative overflow-hidden w-dvw md:py-24 bg-[url('./src/assets/image/paper.png')] bg-auto bg-repeat" style="background-size: 18%;">
         <div class="w-full md:h-full flex justify-center items-center">
           <div class="w-full flex flex-col md:flex-row justify-between items-stretch md:gap-8">
 
@@ -844,7 +1003,7 @@
             <div class="md:hidden w-full flex flex-col">
               <div class="w-11/12 mx-auto flex flex-col justify-center items-stretch gap-2 py-10">
                 <h3
-                  class="text-[#e9db6e] text-lg text-center font-light !leading-tight whitespace-nowrap"
+                  class="text-[#7d621a] text-lg text-center font-light !leading-tight whitespace-nowrap"
                   data-aos-anchor="#traffic"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -853,7 +1012,7 @@
                 </h3>
                 <div>
                   <p
-                    class="text-white text-[10px] text-center !tracking-widest !leading-6"
+                    class="text-[#2B2B2B] text-[10px] text-center !tracking-widest !leading-6"
                     data-aos-anchor="#traffic"
                     data-aos="fade"
                     data-aos-delay="800"
@@ -909,7 +1068,7 @@
             <div class="hidden md:flex w-full md:w-5/12 lg:w-4/12 flex-col justify-center items-start px-8">
               <div class="w-full flex flex-col justify-center items-start gap-4">
                 <h3
-                  class="text-[#e9db6e] text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-start font-light !leading-tight whitespace-nowrap"
+                  class="text-[#7d621a] text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-start font-light !leading-tight whitespace-nowrap"
                   data-aos-anchor="#traffic"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -918,7 +1077,7 @@
                 </h3>
                 <div>
                   <p
-                    class="text-white text-sm text-start !tracking-widest !leading-7"
+                    class="text-[#2B2B2B] text-sm text-start !tracking-widest !leading-7"
                     data-aos-anchor="#traffic"
                     data-aos="fade"
                     data-aos-delay="800"
@@ -984,7 +1143,7 @@
           <div class="w-full flex justify-center items-center py-10 md:py-16">
             <div class="w-11/12 md:w-10/12 max-w-7xl flex flex-col justify-center items-center gap-4">
               <h3
-                class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+                class="text-[#2B2B2B] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
                 data-aos-anchor="#location"
                 data-aos="fade"
                 data-aos-delay="200"
@@ -1046,7 +1205,7 @@
       </section>
 
       <!-- 區塊6 -->
-      <section id="school" class="relative overflow-hidden w-dvw md:py-24 bg-[#321d12]">
+      <section id="school" class="relative overflow-hidden w-dvw md:py-24  bg-[url('./src/assets/image/paper.png')] bg-auto bg-repeat" style="background-size: 18%;">
         <div class="w-full flex justify-center items-center">
           <div class="w-full flex flex-col">
 
@@ -1054,7 +1213,7 @@
             <div class="w-full flex justify-center items-center">
               <div class="w-11/12 md:w-full flex flex-col justify-center items-center gap-4 py-10 md:py-16">
                 <h3
-                  class="text-[#e9db6e] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+                  class="text-[#7d621a] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
                   data-aos-anchor="#school"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -1063,7 +1222,7 @@
                 </h3>
                 <div>
                   <p
-                    class="text-white text-[10px] md:text-sm text-center !tracking-widest !leading-6 max-w-3xl"
+                    class="text-[#2B2B2B] text-[10px] md:text-sm text-center !tracking-widest !leading-6 max-w-3xl"
                     data-aos-anchor="#school"
                     data-aos="fade"
                     data-aos-delay="800"
@@ -1127,7 +1286,7 @@
       </section>
 
       <!-- 區塊7 -->
-      <section id="park" class="relative overflow-hidden w-dvw md:py-24 bg-[#321d12]">
+      <section id="park" class="relative overflow-hidden w-dvw md:py-24 bg-[url('./src/assets/image/paper.png')] bg-auto bg-repeat" style="background-size: 18%;">
         <div class="w-full md:h-full flex justify-center items-center">
           <div class="w-full flex flex-col md:flex-row justify-between items-stretch md:gap-8">
 
@@ -1135,7 +1294,7 @@
             <div class="md:hidden w-full flex flex-col">
               <div class="w-11/12 mx-auto flex flex-col justify-center items-stretch gap-2 py-10">
                 <h3
-                  class="text-[#e9db6e] text-lg text-center font-light !leading-tight whitespace-nowrap"
+                  class="text-[#7d621a] text-lg text-center font-light !leading-tight whitespace-nowrap"
                   data-aos-anchor="#park"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -1144,7 +1303,7 @@
                 </h3>
                 <div>
                   <p
-                    class="text-white text-[10px] text-center !tracking-widest !leading-6"
+                    class="text-[#2B2B2B] text-[10px] text-center !tracking-widest !leading-6"
                     data-aos-anchor="#park"
                     data-aos="fade"
                     data-aos-delay="800"
@@ -1194,7 +1353,7 @@
             <div class="hidden md:flex w-full md:w-5/12 lg:w-4/12 flex-col justify-center items-start px-8">
               <div class="w-full flex flex-col justify-center items-start gap-4">
                 <h3
-                  class="text-[#e9db6e] text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-start font-light !leading-tight whitespace-nowrap"
+                  class="text-[#7d621a] text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-start font-light !leading-tight whitespace-nowrap"
                   data-aos-anchor="#park"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -1203,7 +1362,7 @@
                 </h3>
                 <div>
                   <p
-                    class="text-white text-sm text-start !tracking-widest !leading-7"
+                    class="text-[#2B2B2B] text-sm text-start !tracking-widest !leading-7"
                     data-aos-anchor="#park"
                     data-aos="fade"
                     data-aos-delay="800"
@@ -1258,23 +1417,23 @@
 
 
       <!-- 區塊8 -->
-      <section id="brand" class="relative overflow-hidden bg-white">
+      <section id="brand" class="relative overflow-hidden w-dvw bg-[#3d3127]">
         <div class="w-full flex flex-col justify-center items-center">
           <!-- 文字區塊 -->
-          <div class="w-full flex justify-center items-center py-10 md:py-16">
+          <div class="w-full flex justify-center items-center py-12 md:py-20">
             <div class="w-11/12 md:w-10/12 max-w-7xl flex flex-col justify-center items-center gap-4">
               <div class="flex flex-col items-center gap-3">
                 <img
-                  src="./src/assets/image/logo_build.svg"
+                  src="./src/assets/image/logo_build_white.svg"
                   alt="漢皇建設"
                   class="h-auto"
-                  style="width: auto; max-width: 100%; mix-blend-mode: multiply;"
+                  style="width: auto; max-width: 100%;"
                   data-aos-anchor="#brand"
                   data-aos="fade"
                   data-aos-delay="0"
                 />
                 <h3
-                  class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+                  class="text-white text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
                   data-aos-anchor="#brand"
                   data-aos="fade"
                   data-aos-delay="200"
@@ -1283,7 +1442,7 @@
                 </h3>
               </div>
               <p
-                class="text-gray-800 text-[10px] md:text-sm text-center !tracking-widest !leading-6"
+                class="text-[#cfc7bb] text-[10px] md:text-sm text-center !tracking-widest !leading-6"
                 data-aos-anchor="#brand"
                 data-aos="fade"
                 data-aos-delay="400"
@@ -1294,7 +1453,7 @@
 一切只為成為與土地共鳴的知音
               </p>
 
-              <a href="https://www.hanhuang.com.tw/projects" target="_blank" class="inline-block mt-12 px-6 py-2 border-2 border-gray-500 text-gray-500 text-[10px] md:text-sm text-center !tracking-widest transition-all duration-300 ease-in-out hover:bg-[#e9db6e] hover:border-[#e9db6e] hover:text-[#3D3127]">
+              <a href="https://www.hanhuang.com.tw/projects" target="_blank" class="inline-block mt-12 px-6 py-2 border-2 border-[#e9db6e] text-[#e9db6e] text-[10px] md:text-sm text-center !tracking-widest transition-all duration-300 ease-in-out hover:bg-[#e9db6e] hover:border-[#e9db6e] hover:text-[#2B2B2B]">
                 READ MORE
               </a>
             </div>
@@ -1303,7 +1462,7 @@
       </section>
 
       <!-- 20251106 新增區塊 團隊 -->
-      <section id="team" class="relative overflow-hidden w-dvw py-12 md:py-24 bg-[#453a32]">
+      <section id="team" class="relative overflow-hidden w-dvw py-12 md:py-24 bg-[#ded8ca]">
         <div class="w-full flex flex-col justify-center items-center gap-8 md:gap-16">
           <!-- 手機版：輪播 -->
           <div class="md:hidden w-10/12">
@@ -1318,12 +1477,12 @@
                       <p class="text-white text-xs writing-vertical-rl !tracking-widest">洪政鉉建築師事務所</p>
                     </div>
                   </div>
-                  <div class="bg-[#e9e5dc] px-4 pb-12 pt-4 flex flex-col gap-4">
+                  <div class="bg-white px-4 pb-12 pt-4 flex flex-col gap-4">
                     <div class="text-center">
-                      <h5 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以國際視野<br/>匠築城市全新高度</h5>
+                      <h5 class="text-[#2B2B2B] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以國際視野<br/>匠築城市全新高度</h5>
                     </div>
-                    <div class="border-t border-[#3D3127] border-opacity-20 pt-4">
-                      <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6">作品屢獲美國IDEA與德國iF國際設計大獎，<br/>
+                    <div class="border-t border-[#2B2B2B] border-opacity-20 pt-4">
+                      <p class="text-[#2B2B2B] text-[10px] md:text-sm text-center !tracking-widest !leading-6">作品屢獲美國IDEA與德國iF國際設計大獎，<br/>
 與潤泰、忠泰、華固、宏普建設等知名建商合作，<br/>
 締造無數國際時尚、永恆璀璨傳世之作。<br/>
 業績｜漢皇里寓、漢皇方圓跟River Sky<br/><br/></p>
@@ -1342,12 +1501,12 @@
                       <p class="text-white text-xs writing-vertical-rl !tracking-widest">肯緒照明設計</p>
                     </div>
                   </div>
-                  <div class="bg-[#e9e5dc] px-4 pb-12 pt-4 flex flex-col gap-4">
+                  <div class="bg-white px-4 pb-12 pt-4 flex flex-col gap-4">
                     <div class="text-center">
-                      <h5 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以光粹爲布<br/>用光作畫的藝術家</h5>
+                      <h5 class="text-[#2B2B2B] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以光粹爲布<br/>用光作畫的藝術家</h5>
                     </div>
-                    <div class="border-t border-[#3D3127] border-opacity-20 pt-4">
-                      <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6">多年曾與大陸建設、國泰、璞園、忠泰、富邦<br/>等知名建設合作。<br/>
+                    <div class="border-t border-[#2B2B2B] border-opacity-20 pt-4">
+                      <p class="text-[#2B2B2B] text-[10px] md:text-sm text-center !tracking-widest !leading-6">多年曾與大陸建設、國泰、璞園、忠泰、富邦<br/>等知名建設合作。<br/>
 持續追求「光的純粹」，<br/>透過空間質地與光影的疊加，<br/>
 在每道明暗間流動深邃又迷人的詩意。<br/>
 業績｜忠泰M</p>
@@ -1366,12 +1525,12 @@
                       <p class="text-white text-xs writing-vertical-rl !tracking-widest">科建工程顧問</p>
                     </div>
                   </div>
-                  <div class="bg-[#e9e5dc] px-4 pb-12 pt-4 flex flex-col gap-4">
+                  <div class="bg-white px-4 pb-12 pt-4 flex flex-col gap-4">
                     <div class="text-center">
-                      <h5 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">固若金湯的守護<br/>錘鍊不朽萬丈高樓</h5>
+                      <h5 class="text-[#2B2B2B] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">固若金湯的守護<br/>錘鍊不朽萬丈高樓</h5>
                     </div>
-                    <div class="border-t border-[#3D3127] border-opacity-20 pt-4">
-                      <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6">以逾30年淬鍊，實力厚積薄發，<br/>
+                    <div class="border-t border-[#2B2B2B] border-opacity-20 pt-4">
+                      <p class="text-[#2B2B2B] text-[10px] md:text-sm text-center !tracking-widest !leading-6">以逾30年淬鍊，實力厚積薄發，<br/>
 用最嚴謹標準，不計成本與施工難度，<br/>
 只為將防護層級做到淋漓極致，<br/>打造堅若磐石的建築之作。<br/>
 業績｜高雄海洋文化及流行音樂中心<br/></p>
@@ -1394,13 +1553,13 @@
                     <p class="text-white text-xs writing-vertical-rl !tracking-widest">洪政鉉建築師事務所</p>
                   </div>
                 </div>
-                <div class="bg-[#e9e5dc] px-4 pb-12 pt-4 flex flex-col gap-4 flex-1">
+                <div class="bg-white px-4 pb-12 pt-4 flex flex-col gap-4 flex-1">
                   <div class="text-center">
-                    <h5 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以國際視野<br/>匠築城市全新高度</h5>
-                    <!-- <p class="text-[#3D3127] text-xs !tracking-widest">洪政鉉建築師事務所｜洪政鉉</p> -->
+                    <h5 class="text-[#2B2B2B] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以國際視野<br/>匠築城市全新高度</h5>
+                    <!-- <p class="text-[#2B2B2B] text-xs !tracking-widest">洪政鉉建築師事務所｜洪政鉉</p> -->
                   </div>
-                  <div class="border-t border-[#3D3127] border-opacity-20 pt-4">
-                    <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6">作品屢獲美國IDEA與德國iF國際設計大獎，<br/>
+                  <div class="border-t border-[#2B2B2B] border-opacity-20 pt-4">
+                    <p class="text-[#2B2B2B] text-[10px] md:text-sm text-center !tracking-widest !leading-6">作品屢獲美國IDEA與德國iF國際設計大獎，<br/>
 與潤泰、忠泰、華固、宏普建設等知名建商合作，<br/>
 締造無數國際時尚、永恆璀璨傳世之作。<br/>
 業績｜漢皇里寓、漢皇方圓跟River Sky</p>
@@ -1417,12 +1576,12 @@
                     <p class="text-white text-xs writing-vertical-rl !tracking-widest">肯緒照明設計</p>
                   </div>
                 </div>
-                <div class="bg-[#e9e5dc] px-4 pb-12 pt-4 flex flex-col gap-4 flex-1">
+                <div class="bg-white px-4 pb-12 pt-4 flex flex-col gap-4 flex-1">
                   <div class="text-center">
-                    <h5 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以光粹爲布<br/>用光作畫的藝術家</h5>
+                    <h5 class="text-[#2B2B2B] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以光粹爲布<br/>用光作畫的藝術家</h5>
                   </div>
-                  <div class="border-t border-[#3D3127] border-opacity-20 pt-4">
-                    <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6">多年曾與大陸建設、國泰、璞園、忠泰、富邦等知名建設合作。<br/>
+                  <div class="border-t border-[#2B2B2B] border-opacity-20 pt-4">
+                    <p class="text-[#2B2B2B] text-[10px] md:text-sm text-center !tracking-widest !leading-6">多年曾與大陸建設、國泰、璞園、忠泰、富邦等知名建設合作。<br/>
 持續追求「光的純粹」，<br/>透過空間質地與光影的疊加，<br/>
 在每道明暗間流動深邃又迷人的詩意。<br/>
 業績｜忠泰M</p>
@@ -1439,12 +1598,12 @@
                     <p class="text-white text-xs writing-vertical-rl !tracking-widest">科建工程顧問</p>
                   </div>
                 </div>
-                <div class="bg-[#e9e5dc] px-4 pb-12 pt-4 flex flex-col gap-4 flex-1">
+                <div class="bg-white px-4 pb-12 pt-4 flex flex-col gap-4 flex-1">
                   <div class="text-center">
-                    <h5 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">固若金湯的守護<br/>錘鍊不朽萬丈高樓</h5>
+                    <h5 class="text-[#2B2B2B] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">固若金湯的守護<br/>錘鍊不朽萬丈高樓</h5>
                   </div>
-                  <div class="border-t border-[#3D3127] border-opacity-20 pt-4">
-                    <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6">以逾30年淬鍊，實力厚積薄發，<br/>
+                  <div class="border-t border-[#2B2B2B] border-opacity-20 pt-4">
+                    <p class="text-[#2B2B2B] text-[10px] md:text-sm text-center !tracking-widest !leading-6">以逾30年淬鍊，實力厚積薄發，<br/>
 用最嚴謹標準，不計成本與施工難度，<br/>
 只為將防護層級做到淋漓極致，<br/>打造堅若磐石的建築之作。<br/>
 業績｜高雄海洋文化及流行音樂中心</p>
@@ -1469,14 +1628,14 @@
                   data-aos="fade-right"
                   data-aos-delay="200"
                 >
-                  <h3 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight mb-2">
+                  <h3 class="text-[#2B2B2B] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight mb-2">
                     國際頂規 精奢品味
                   </h3>
                 </div>
 
                 <!-- 重點品牌特寫1：三菱電梯 -->
                 <div
-                  class="border-t border-[#3D3127] border-opacity-20 pt-6"
+                  class="border-t border-[#2B2B2B] border-opacity-20 pt-6"
                   data-aos="fade-right"
                   data-aos-delay="400"
                 >
@@ -1486,7 +1645,7 @@
                       <img src="./src/assets/image/logo_mitsubishi.svg" alt="Mitsubishi Elevator" class="h-8 md:h-10 w-auto">
                     </div>
 
-                    <h4 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center !leading-tight font-medium mb-3">
+                    <h4 class="text-[#2B2B2B] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center !leading-tight font-medium mb-3">
                       日本三菱電梯
                     </h4>
                   </div>
@@ -1500,7 +1659,7 @@
 
                     <!-- 說明文字 -->
                     <div class="flex-1 flex items-center">
-                      <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6 opacity-80">
+                      <p class="text-[#2B2B2B] text-[10px] md:text-sm text-center !tracking-widest !leading-6 opacity-80">
                         日本三菱電機株式會社投資與技術合作，給台灣創綠色節能與尖端科技，與日本同步推出之機種，傳動效率更高、節省電力更多，關鍵零件皆來自日本。
                       </p>
                     </div>
@@ -1509,7 +1668,7 @@
 
                 <!-- 重點品牌特寫2：YKK AP -->
                 <div
-                  class="border-t border-[#3D3127] border-opacity-20 pt-6"
+                  class="border-t border-[#2B2B2B] border-opacity-20 pt-6"
                   data-aos="fade-right"
                   data-aos-delay="600"
                 >
@@ -1519,7 +1678,7 @@
                       <img src="./src/assets/image/logo_ykk.svg" alt="YKK AP" class="h-8 md:h-10 w-auto">
                     </div>
 
-                    <h4 class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center !leading-tight font-medium mb-3">
+                    <h4 class="text-[#2B2B2B] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center !leading-tight font-medium mb-3">
                       日本頂級防水隔音氣密窗
                     </h4>
                   </div>
@@ -1533,7 +1692,7 @@
 
                     <!-- 說明文字 -->
                     <div class="flex-1 flex items-center">
-                      <p class="text-[#3D3127] text-[10px] md:text-sm text-center !tracking-widest !leading-6 opacity-80">
+                      <p class="text-[#2B2B2B] text-[10px] md:text-sm text-center !tracking-widest !leading-6 opacity-80">
                         YKK擁有領先業界指標的絕佳氣密性，遠超日本CNS等級的水密性能，以及日本JIS工業標準規格，高耐風壓性可阻絕狂風暴雨，有效降低戶外噪音。
                       </p>
                     </div>
@@ -1756,8 +1915,61 @@
         </div>
       </section>
 
+      <!-- VR實境 -->
+      <section id="vr" class="relative overflow-hidden w-dvw py-12 md:py-24 bg-[url('./src/assets/image/paper.png')] bg-auto bg-repeat" style="background-size: 18%;">
+        <div class="w-full flex justify-center items-center">
+          <div class="w-11/12 md:w-10/12 max-w-7xl flex flex-col justify-center items-center gap-6 md:gap-10">
+
+            <!-- 文字區塊 -->
+            <div class="w-full flex flex-col justify-center items-center gap-4">
+              <h3
+                class="text-[#7d621a] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+                data-aos-anchor="#vr"
+                data-aos="fade"
+                data-aos-delay="400"
+              >
+                VR實境賞屋 沉浸漫遊
+              </h3>
+              <p
+                class="text-[#2B2B2B] text-[10px] md:text-sm text-center !tracking-widest !leading-6 max-w-3xl"
+                data-aos-anchor="#vr"
+                data-aos="fade"
+                data-aos-delay="800"
+              >
+                拖曳畫面自由環顧四周，即刻走進【漢皇蒔序】的生活場景
+              </p>
+            </div>
+
+            <!-- VR 播放器 -->
+            <div
+              class="w-full rounded-md overflow-hidden shadow-lg bg-black"
+              data-aos-anchor="#vr"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="relative w-full aspect-[3/4] md:aspect-video">
+                <iframe
+                  src="https://www.kujiale.com/cloud/design/3FO3HRV7TTY1/airoaming"
+                  title="漢皇蒔序 VR實境"
+                  class="absolute inset-0 w-full h-full border-0"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allow="fullscreen; xr-spatial-tracking; gyroscope; accelerometer; magnetometer"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <p class="text-[8px] md:text-[10px] text-[#2B2B2B] text-center opacity-70">
+              VR實境為3D合成示意圖，實際依完工現場為準
+            </p>
+
+          </div>
+        </div>
+      </section>
+
       <!-- 區塊9 -->
-      <section id="building" class="relative overflow-hidden bg-[rgb(69,58,50)]">
+      <section id="building" class="relative overflow-hidden bg-[url('./src/assets/image/paper.png')] bg-auto bg-repeat" style="background-size: 18%;">
         <!-- 立面照正面透視、立面照仰角 -->
         <div id="elevation" class="w-dvw flex justify-center items-center">
           <div class="w-full h-full absolute top-0 left-0 z-10" style="pointer-events: none;">
@@ -1800,7 +2012,7 @@
             </div>
           </div>
 
-          <!-- pics -->
+          <!-- 3D外觀圖 -->
           <div class="w-full relative">
             <div class="slick-carousel">
               <div class="relative">
@@ -1830,11 +2042,102 @@
         </div>
       </section>
 
+      <!-- 區塊10：2F公設 -->
+      <section id="facility" class="relative overflow-hidden bg-[url('./src/assets/image/paper.png')] bg-auto bg-repeat" style="background-size: 18%;">
+        <!-- 文字區塊 -->
+        <div class="w-full flex justify-center items-center">
+          <div class="w-11/12 md:w-10/12 max-w-7xl flex flex-col justify-center items-center gap-4 py-10 md:py-16">
+            <h3
+              class="text-[#7d621a] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+              data-aos-anchor="#facility"
+              data-aos="fade"
+              data-aos-delay="400"
+            >
+              收放自如的日常
+            </h3>
+            <p
+              class="text-[#2B2B2B] text-[10px] md:text-sm text-center !tracking-widest !leading-6 max-w-3xl"
+              data-aos-anchor="#facility"
+              data-aos="fade"
+              data-aos-delay="800"
+            >
+              健身房、多功能室、家教教室、琴室<br/>
+              自宅之外的第二進，動靜之間各安其所
+            </p>
+          </div>
+        </div>
 
-      <section id="info" class="w-full pt-12 flex flex-col justify-center items-center bg-white">
+        <!-- 滿版輪播：中央焦點，左右露出鄰圖 -->
+        <div
+          class="fc-outer"
+          data-aos-anchor="#facility"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div class="facility-carousel">
+
+            <div>
+              <div class="fc-frame">
+                <img src="./src/assets/image/健身房.webp" alt="2F 健身房">
+                <div class="fc-cap">
+                  <span class="fc-cap-en">Gym</span>
+                  <span class="fc-cap-zh">健身房</span>
+                </div>
+                <div class="fc-note">
+                  <p>2F公設3D合成示意圖，實際依完工現場為準</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="fc-frame">
+                <img src="./src/assets/image/多功能室.webp" alt="2F 多功能室">
+                <div class="fc-cap">
+                  <span class="fc-cap-en">Multi-function Room</span>
+                  <span class="fc-cap-zh">多功能室</span>
+                </div>
+                <div class="fc-note">
+                  <p>2F公設3D合成示意圖，實際依完工現場為準</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="fc-frame">
+                <img src="./src/assets/image/家教教室.webp" alt="2F 家教教室">
+                <div class="fc-cap">
+                  <span class="fc-cap-en">Tutoring Classroom</span>
+                  <span class="fc-cap-zh">家教教室</span>
+                </div>
+                <div class="fc-note">
+                  <p>2F公設3D合成示意圖，實際依完工現場為準</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="fc-frame">
+                <img src="./src/assets/image/琴室.webp" alt="2F 琴室">
+                <div class="fc-cap">
+                  <span class="fc-cap-en">Piano Room</span>
+                  <span class="fc-cap-zh">琴室</span>
+                </div>
+                <div class="fc-note">
+                  <p>2F公設3D合成示意圖，實際依完工現場為準</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="fc-nav"></div>
+        </div>
+      </section>
+
+      <section id="info" class="w-full pt-12 flex flex-col justify-center items-center bg-[url('./src/assets/image/paper.png')] bg-auto bg-repeat" style="background-size: 18%;">
         <div class="w-full pb-12">
           <h4
-              class="text-[#3D3127] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center !tracking-widest !leading-6 lg:!leading-8 pb-2"
+              class="text-[#2B2B2B] text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center !tracking-widest !leading-6 lg:!leading-8 pb-2"
               data-aos="fade"
               data-aos-delay="200"
               data-aos-anchor="#info"
@@ -1968,17 +2271,10 @@
                       data-aos-delay="800">
                       不動產經紀人：王郁婷(109)中市經紀字第01869號
                     </div>
-
-                    <div class="border-t border-b border-[#453E32]/60 py-2 md:py-3 text-sm md:text-base"
-                      data-aos-anchor="#zipcode3"
-                      data-aos="fade"
-                      data-aos-delay="800">
-                      建築代銷：泰瑀行銷(股)公司
-                    </div>
                   </div>
                 </div>
                 <h4
-                  class="text-[#3D3127] text-xl md:text-2xl !tracking-widest !leading-6 lg:!leading-8 pb-2"
+                  class="text-[#2B2B2B] text-xl md:text-2xl !tracking-widest !leading-6 lg:!leading-8 pb-2"
                 >
                   預約賞屋
                 </h4>
@@ -2049,7 +2345,7 @@
               </div>
               <div class="flex flex-wrap -mx-3 mt-4">
                 <div class="w-full px-3">
-                  <p class="text-[#3D3127] text-start text-sm">
+                  <p class="text-[#2B2B2B] text-start text-sm">
                     你所登錄的個人資料將做為以下用途<br />
                     (一)本網站所載之相關事項通知<br/>(二)客戶管理與服務<br/>
                     (三)本公司行銷業務之推廣本案實際內容以現場公布為準
@@ -2062,12 +2358,12 @@
                       required=""
                       class="me-2"
                     />
-                    <span class="text-[#3D3127] text-sm"
+                    <span class="text-[#2B2B2B] text-sm"
                       >本人已知悉並同意
                       <a
                         href="#privacy-policy"
                         data-fancybox
-                        class="text-[#3D3127] text-sm underline cursor-pointer"
+                        class="text-[#2B2B2B] text-sm underline cursor-pointer"
                         >隱私權政策聲明</a
                       >
                       事項
@@ -2079,7 +2375,7 @@
                 <div class="w-full flex justify-center items-center">
                   <button
                     data-name="btnSubmit"
-                    class="w-full bg-transparent border border-px border-[#3D3127] hover:bg-[#321d12] hover:text-white text-[#3D3127] py-2 shadow ease-in duration-300"
+                    class="w-full bg-transparent border border-px border-[#2B2B2B] hover:bg-[#321d12] hover:text-white text-[#2B2B2B] py-2 shadow ease-in duration-300"
                     onClick="javascript:SendBooking('','');"
                     type="button"
                   >
@@ -2587,6 +2883,43 @@
         autoplaySpeed: 3000,
         prevArrow: '<button type="button" class="slick-prev carousel-arrow carousel-arrow-prev"></button>',
         nextArrow: '<button type="button" class="slick-next carousel-arrow carousel-arrow-next"></button>'
+      });
+
+      // 2F公設輪播：中央焦點 + 左右露出鄰圖
+      var $facility = $('.facility-carousel');
+      var $facilityOuter = $('.fc-outer');
+      // 兩側暗角在換頁期間淡出，換完再浮回來
+      $facility.on('beforeChange', function () {
+        $facilityOuter.addClass('is-sliding');
+      });
+      $facility.on('afterChange', function () {
+        $facilityOuter.removeClass('is-sliding');
+      });
+      $facility.slick({
+        dots: false,
+        infinite: true,
+        speed: 600,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '16.667%',
+        arrows: true,
+        appendArrows: $('.fc-nav'),
+        autoplay: true,
+        autoplaySpeed: 4000,
+        fade: false,
+        cssEase: 'ease-in-out',
+        prevArrow: '<button type="button" class="carousel-arrow carousel-arrow-prev" aria-label="上一張"></button>',
+        nextArrow: '<button type="button" class="carousel-arrow carousel-arrow-next" aria-label="下一張"></button>',
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              centerMode: false,
+              centerPadding: '0px'
+            }
+          }
+        ]
       });
 
       // 手機版學校輪播
