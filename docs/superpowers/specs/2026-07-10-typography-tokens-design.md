@@ -60,10 +60,32 @@
 
 - `--font-serif` — 0 引用，且首選字型 `"Noto Serif"` 從未載入
 - `--font-CenturyGothic` — 0 引用
-- `src/fonts.css` — 第 42 行早已被註解，整檔未載入。其中 `@font-face` 宣告的 Noto Serif TC / Century Gothic / Trajan Pro 全部未生效
+- `src/fonts.css` — 第 42 行早已被註解，整檔未載入
 - Google Fonts `Shafarik`（L53 `<link>`）— markup 0 使用
 
-註：`.fc-cap-en` 使用的 Times New Roman 是**系統字型**，與 `fonts.css` 載入的任何字型無關。故刪除 `fonts.css` 對畫面零影響。
+註：`.fc-cap-en` 使用的 Times New Roman 是**系統字型**，與 `fonts.css` 無關。
+
+### 2.2.1 本地字型資產全數失效（137MB）
+
+`src/assets/fonts/` 共 22 個字型檔、**137MB**，全部在 git 追蹤下。實測結論：
+
+- `src/assets/fonts/` 的唯一引用來源是 `src/fonts.css`，而該檔從未載入
+- `index.html` 內 **0 個 `@font-face`**；`thanku.html` 同樣走 Google Fonts CDN
+- 頁面實際顯示的 Noto Sans TC 來自 Google Fonts CDN（`index.html:48`），非本地檔案
+
+因此**全部 137MB 皆為無效資產**。三項佐證：
+
+1. `fonts.css:80` 引用 `TrajanPro-Regular.ttf`，但磁碟上的檔案為 `TrajanPro-Regular.otf`。
+   副檔名不符——即使解開 L42 的註解，這條 `@font-face` 仍會 404。此規則從未生效過。
+2. 有 6 個檔案連 `fonts.css` 都未提及，屬完全孤立：
+   `NotoSansCJKtc-DemiLight.otf`(16M)、`NotoSansTC-VariableFont_wght.ttf`(11M)、
+   `AdobeMingStd-Light.otf`(9.7M)、`NotoSerifTC-Black.otf`(5.6M)、
+   `NotoSansTC-Thin.ttf`(6.8M)、`Fontspring-DEMO-theseasons-bd.otf`(16K)
+3. `Fontspring-DEMO-theseasons-bd.otf` 為 **DEMO 授權**字型，依 Fontspring 條款不得用於
+   商業用途或公開部署。此為授權風險，與本次重構無關但應一併處理。
+
+**處置**：刪除為獨立步驟，且置於實作順序最末（見 5. 步驟 9），執行前另行確認。
+刪除僅縮減 working tree 與部署體積；`.git` 物件仍保有歷史，clone 大小不變。
 
 ### 2.3 字色
 
@@ -188,8 +210,10 @@ B 類多數已是 96px，離群者為 `#materials`(80)、`#school`(160)、`#faci
 - `--font-serif` 重新定義為 `'Times New Roman', Georgia, serif`（照 `.fc-cap-en` 的實際 fallback 順序）
 - `.fc-cap-en` 改用 `font-family: var(--font-serif)`。視覺不變。
 - 刪除 `--font-CenturyGothic`
-- 刪除 `src/fonts.css` 與 `src/assets/fonts/` 下的 Noto Serif TC、Century Gothic、Trajan Pro
-- 移除 `Shafarik` 的 Google Fonts `<link>`
+- 刪除 `src/fonts.css`（整檔未載入，見 2.2.1）
+- 移除 `Shafarik` 的 Google Fonts `<link>`（`index.html:53`、`thanku.html:39`）
+
+`src/assets/fonts/` 的 137MB 刪除**不在此步驟**，見 5. 步驟 9。
 
 ### 3.3 字級階梯
 
@@ -287,14 +311,18 @@ section 實為 padding 定位，應先回頭修正本文件。
 
 風險由低至高，每步可獨立 commit 與回滾：
 
-1. 新增 `tailwind.config` 色彩 token 與 `<style type="text/tailwindcss">` 區塊（不改 markup）
+1. 新增 `tailwind.config` 色彩／字級 token 與 `<style type="text/tailwindcss">` 區塊（不改 markup）
 2. 字色 token 替換 + 移除 `text-gray-700/800`
-3. 清理死字型（`fonts.css`、`Shafarik`、`--font-CenturyGothic`）與死 class（`.unique-*`）
+3. 清理死設定：`fonts.css`、`Shafarik` `<link>`、`--font-CenturyGothic`、`.unique-*` 死 class
 4. `--font-serif` 重新定義，`.fc-cap-en` 改用變數
-5. 建立 `.section-title` / `.body-text` / `.img-caption` / `.info-row`，替換 markup
+5. 建立 `.section-title` / `.subsection-title` / `.body-text` / `.img-caption` / `.info-row`，替換 markup
 6. 修正 `title` 字級曲線（`md:text-3xl` → `md:text-2xl`）
-7. 統一標題階層與顏色
-8. 統一垂直間距（逐 section）
+7. 統一標題階層與顏色（`#materials`、`#info`）
+8. 統一垂直間距（`#materials`、`#school`、`#facility`、`#info` 四個 B 類 section）
+9. **（獨立步驟，執行前另行確認）** 刪除 `src/assets/fonts/` 全部 137MB
+
+步驟 1–8 完成後網站應與現況視覺一致（除 3.3、3.5、3.6 列出的預期改動外）。
+步驟 9 與前八步無依賴關係，可單獨執行或永久擱置。
 
 ---
 
