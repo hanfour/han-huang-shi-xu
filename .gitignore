@@ -73,8 +73,3 @@ build/
 *.backup
 *.bak
 *.tmp
-
-# 臨時驗證 harness（重構完成後刪除）
-_verify.sh
-_shot.html
-_probe.html
