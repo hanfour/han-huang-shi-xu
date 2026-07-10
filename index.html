@@ -57,6 +57,28 @@
     <style type="text/tailwindcss">
       /* 語意元件 class。@apply 只在 type="text/tailwindcss" 的 style 內有效；
          寫進普通 <style> 會靜默失效（見 .unique-image-caption 的前車之鑑）。 */
+      @layer components {
+        /* section 主標。字級曲線於 Task 7 修正為單調。 */
+        .section-title {
+          @apply text-gold text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light !leading-tight;
+        }
+        /* section 次標（品牌名），恆比主標小一級 */
+        .subsection-title {
+          @apply text-ink text-base md:text-xl 2xl:text-2xl font-medium !leading-tight;
+        }
+        /* 內文。不綁定顏色 —— 深底用 text-white，淺底用 text-ink。 */
+        .body-text {
+          @apply text-[10px] md:text-sm !tracking-widest !leading-6;
+        }
+        /* 圖片上的 overlay 圖說 */
+        .img-caption {
+          @apply text-[8px] md:text-[10px] text-white px-2 pb-1;
+        }
+        /* #form 的建案資訊列 */
+        .info-row {
+          @apply text-sm md:text-base;
+        }
+      }
     </style>
     <!-- 引入 AOS 庫的 CSS 文件 -->
     <link
@@ -813,7 +835,7 @@
               <!-- 文字內容 -->
               <div class="w-11/12 mx-auto flex flex-col justify-center items-stretch gap-2 py-10">
                 <h3
-                  class="text-gold text-lg text-center font-light !leading-tight whitespace-nowrap"
+                  class="section-title text-center whitespace-nowrap"
                   data-aos-anchor="#mrt"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -822,7 +844,7 @@
                 </h3>
                 <div>
                   <p
-                    class="text-ink text-[10px] text-center !tracking-widest !leading-6"
+                    class="body-text text-ink text-center"
                     data-aos-anchor="#mrt"
                     data-aos="fade"
                     data-aos-delay="800"
@@ -839,7 +861,7 @@
               <div class="relative cursor-pointer" onclick="openLightbox('./src/assets/image/traffic_mrt_map_v2.jpg', '捷運路線圖')">
                 <img src="./src/assets/image/traffic_mrt_map_v2.jpg" alt="捷運路線圖" class="" data-aos-anchor="#mrt" data-aos="fade-up" data-aos-delay="0">
                 <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                  <p class="text-[8px] text-white px-2 pb-1">
+                  <p class="img-caption">
                     捷運路線圖 (點擊放大)
                   </p>
                 </div>
@@ -849,7 +871,7 @@
               <div class="relative mt-1">
                 <img src="./src/assets/image/traffic_mrt.jpg" alt="捷運情境示意圖" class="" data-aos-anchor="#mrt" data-aos="fade-up" data-aos-delay="200">
                 <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                  <p class="text-[8px] text-white px-2 pb-1">
+                  <p class="img-caption">
                     捷運情境示意圖
                   </p>
                 </div>
@@ -861,7 +883,7 @@
               <!-- 文字內容 -->
               <div class="w-full flex flex-col justify-center items-stretch gap-2 py-4">
                 <h3
-                  class="text-gold text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+                  class="section-title text-center whitespace-nowrap"
                   data-aos-anchor="#mrt"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -887,7 +909,7 @@
               <div class="w-full relative">
                 <img src="./src/assets/image/traffic_mrt.jpg" alt="捷運情境示意圖" class="w-full" data-aos-anchor="#mrt" data-aos="fade" data-aos-delay="1000">
                 <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                  <p class="text-[10px] text-white px-2 pb-1">
+                  <p class="img-caption">
                     捷運情境示意圖
                   </p>
                 </div>
@@ -898,7 +920,7 @@
             <div class="hidden md:block w-8/12 relative md:order-last">
               <img src="./src/assets/image/traffic_mrt_map_v2.jpg" alt="捷運路線圖" class="w-full h-full object-cover" data-aos-anchor="#mrt" data-aos="fade" data-aos-delay="0">
               <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                <p class="text-[10px] text-white px-2 pb-1">
+                <p class="img-caption">
                   捷運路線圖
                 </p>
               </div>
@@ -923,7 +945,7 @@
             木柵國小生活圈 絕版隱富名人巷
             </h3>
             <p
-              class="text-white text-[10px] md:text-sm text-center !tracking-widest !leading-6 max-w-3xl"
+              class="body-text text-white text-center max-w-3xl"
               data-aos-anchor="#aerial"
               data-aos="fade"
               data-aos-delay="800"
@@ -967,7 +989,7 @@
           </div>
           <!-- 圖片說明 -->
           <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-            <p class="text-[8px] md:text-[10px] text-white px-2 pb-1">
+            <p class="img-caption">
               周遭環境道路地形、3D輔以電腦合成示意
             </p>
           </div>
@@ -995,7 +1017,7 @@
             <div class="md:hidden w-full flex flex-col">
               <div class="w-11/12 mx-auto flex flex-col justify-center items-stretch gap-2 py-10">
                 <h3
-                  class="text-gold text-lg text-center font-light !leading-tight whitespace-nowrap"
+                  class="section-title text-center whitespace-nowrap"
                   data-aos-anchor="#traffic"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -1004,7 +1026,7 @@
                 </h3>
                 <div>
                   <p
-                    class="text-ink text-[10px] text-center !tracking-widest !leading-6"
+                    class="body-text text-ink text-center"
                     data-aos-anchor="#traffic"
                     data-aos="fade"
                     data-aos-delay="800"
@@ -1020,37 +1042,37 @@
                 <div class="relative">
                   <img src="./src/assets/image/traffic_1_信義快速道路.jpg" alt="信義快速道路" class="" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[8px] text-white px-2 pb-1">信義快速道路</p>
+                    <p class="img-caption">信義快速道路</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/traffic_2_台北信義威秀影城.jpg" alt="台北信義威秀影城" class="" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[8px] text-white px-2 pb-1">台北信義威秀影城</p>
+                    <p class="img-caption">台北信義威秀影城</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/traffic_3_敦化南路二段.jpg" alt="敦化南路二段" class="" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[8px] text-white px-2 pb-1">敦化南路二段</p>
+                    <p class="img-caption">敦化南路二段</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/traffic_4_信義微風南山.jpg" alt="信義微風南山" class="" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[8px] text-white px-2 pb-1">信義微風南山</p>
+                    <p class="img-caption">信義微風南山</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/traffic_5_SOGO復興店.jpg" alt="SOGO復興店" class="" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[8px] text-white px-2 pb-1">SOGO復興店</p>
+                    <p class="img-caption">SOGO復興店</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/traffic_6_新光三越DIAMONDTOWERS.jpg" alt="新光三越DIAMOND TOWERS" class="" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[8px] text-white px-2 pb-1">新光三越DIAMOND TOWERS</p>
+                    <p class="img-caption">新光三越DIAMOND TOWERS</p>
                   </div>
                 </div>
               </div>
@@ -1060,7 +1082,7 @@
             <div class="hidden md:flex w-full md:w-5/12 lg:w-4/12 flex-col justify-center items-start px-8">
               <div class="w-full flex flex-col justify-center items-start gap-4">
                 <h3
-                  class="text-gold text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-start font-light !leading-tight whitespace-nowrap"
+                  class="section-title text-start whitespace-nowrap"
                   data-aos-anchor="#traffic"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -1089,37 +1111,37 @@
                 <div class="relative">
                   <img src="./src/assets/image/traffic_1_信義快速道路.jpg" alt="信義快速道路" class="w-full h-full object-cover" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[10px] text-white px-2 pb-1">信義快速道路</p>
+                    <p class="img-caption">信義快速道路</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/traffic_2_台北信義威秀影城.jpg" alt="台北信義威秀影城" class="w-full h-full object-cover" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[10px] text-white px-2 pb-1">台北信義威秀影城</p>
+                    <p class="img-caption">台北信義威秀影城</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/traffic_3_敦化南路二段.jpg" alt="敦化南路二段" class="w-full h-full object-cover" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[10px] text-white px-2 pb-1">敦化南路二段</p>
+                    <p class="img-caption">敦化南路二段</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/traffic_4_信義微風南山.jpg" alt="信義微風南山" class="w-full h-full object-cover" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[10px] text-white px-2 pb-1">信義微風南山</p>
+                    <p class="img-caption">信義微風南山</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/traffic_5_SOGO復興店.jpg" alt="SOGO復興店" class="w-full h-full object-cover" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[10px] text-white px-2 pb-1">SOGO復興店</p>
+                    <p class="img-caption">SOGO復興店</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/traffic_6_新光三越DIAMONDTOWERS.jpg" alt="新光三越DIAMOND TOWERS" class="w-full h-full object-cover" data-aos-anchor="#traffic" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[10px] text-white px-2 pb-1">新光三越DIAMOND TOWERS</p>
+                    <p class="img-caption">新光三越DIAMOND TOWERS</p>
                   </div>
                 </div>
               </div>
@@ -1187,7 +1209,7 @@
                 </div>
               </div>
               <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                <p class="text-[8px] md:text-[10px] text-white px-2 pb-1">
+                <p class="img-caption">
                   生活機能圖
                 </p>
               </div>
@@ -1205,7 +1227,7 @@
             <div class="w-full flex justify-center items-center">
               <div class="w-11/12 md:w-full flex flex-col justify-center items-center gap-4 py-10 md:py-16">
                 <h3
-                  class="text-gold text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+                  class="section-title text-center whitespace-nowrap"
                   data-aos-anchor="#school"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -1214,7 +1236,7 @@
                 </h3>
                 <div>
                   <p
-                    class="text-ink text-[10px] md:text-sm text-center !tracking-widest !leading-6 max-w-3xl"
+                    class="body-text text-ink text-center max-w-3xl"
                     data-aos-anchor="#school"
                     data-aos="fade"
                     data-aos-delay="800"
@@ -1234,19 +1256,19 @@
               <div class="relative">
                 <img src="./src/assets/image/school_1_木柵國小.jpg" alt="木柵國小" class="w-full h-full object-cover" data-aos-anchor="#school" data-aos="fade-up" data-aos-delay="0">
                 <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                  <p class="text-[10px] text-white px-2 pb-1">木柵國小</p>
+                  <p class="img-caption">木柵國小</p>
                 </div>
               </div>
               <div class="relative">
                 <img src="./src/assets/image/school_2_再興中學.jpg" alt="再興中學" class="w-full h-full object-cover" data-aos-anchor="#school" data-aos="fade-up" data-aos-delay="200">
                 <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                  <p class="text-[10px] text-white px-2 pb-1">再興中學</p>
+                  <p class="img-caption">再興中學</p>
                 </div>
               </div>
               <div class="relative">
                 <img src="./src/assets/image/school_3_政治大學.jpg" alt="政治大學" class="w-full h-full object-cover" data-aos-anchor="#school" data-aos="fade-up" data-aos-delay="400">
                 <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                  <p class="text-[10px] text-white px-2 pb-1">政治大學</p>
+                  <p class="img-caption">政治大學</p>
                 </div>
               </div>
             </div>
@@ -1256,19 +1278,19 @@
               <div class="relative">
                 <img src="./src/assets/image/school_1_木柵國小.jpg" alt="木柵國小" class="" data-aos-anchor="#school" data-aos="fade-up" data-aos-delay="0">
                 <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                  <p class="text-[8px] text-white px-2 pb-1">木柵國小</p>
+                  <p class="img-caption">木柵國小</p>
                 </div>
               </div>
               <div class="relative">
                 <img src="./src/assets/image/school_2_再興中學.jpg" alt="再興中學" class="" data-aos-anchor="#school" data-aos="fade-up" data-aos-delay="0">
                 <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                  <p class="text-[8px] text-white px-2 pb-1">再興中學</p>
+                  <p class="img-caption">再興中學</p>
                 </div>
               </div>
               <div class="relative">
                 <img src="./src/assets/image/school_3_政治大學.jpg" alt="政治大學" class="" data-aos-anchor="#school" data-aos="fade-up" data-aos-delay="0">
                 <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                  <p class="text-[8px] text-white px-2 pb-1">政治大學</p>
+                  <p class="img-caption">政治大學</p>
                 </div>
               </div>
             </div>
@@ -1286,7 +1308,7 @@
             <div class="md:hidden w-full flex flex-col">
               <div class="w-11/12 mx-auto flex flex-col justify-center items-stretch gap-2 py-10">
                 <h3
-                  class="text-gold text-lg text-center font-light !leading-tight whitespace-nowrap"
+                  class="section-title text-center whitespace-nowrap"
                   data-aos-anchor="#park"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -1295,7 +1317,7 @@
                 </h3>
                 <div>
                   <p
-                    class="text-ink text-[10px] text-center !tracking-widest !leading-6"
+                    class="body-text text-ink text-center"
                     data-aos-anchor="#park"
                     data-aos="fade"
                     data-aos-delay="800"
@@ -1311,31 +1333,31 @@
                 <div class="relative">
                   <img src="./src/assets/image/park_1_木柵公園萃湖.jpg" alt="木柵公園+萃湖" class="" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[8px] text-white px-2 pb-1">木柵公園+萃湖</p>
+                    <p class="img-caption">木柵公園+萃湖</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/park_3_道南河濱公園.jpg" alt="道南河濱公園" class="" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[8px] text-white px-2 pb-1">道南河濱公園</p>
+                    <p class="img-caption">道南河濱公園</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/park_4_景美溪.jpg" alt="景美溪" class="" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[8px] text-white px-2 pb-1">景美溪</p>
+                    <p class="img-caption">景美溪</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/park_5基地小空拍_v2.jpg" alt="基地小空拍" class="" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[8px] text-white px-2 pb-1">基地小空拍</p>
+                    <p class="img-caption">基地小空拍</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/park_7_2_木柵公園萃湖.jpg" alt="木柵公園+萃湖" class="" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[8px] text-white px-2 pb-1">木柵公園+萃湖</p>
+                    <p class="img-caption">木柵公園+萃湖</p>
                   </div>
                 </div>
               </div>
@@ -1345,7 +1367,7 @@
             <div class="hidden md:flex w-full md:w-5/12 lg:w-4/12 flex-col justify-center items-start px-8">
               <div class="w-full flex flex-col justify-center items-start gap-4">
                 <h3
-                  class="text-gold text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-start font-light !leading-tight whitespace-nowrap"
+                  class="section-title text-start whitespace-nowrap"
                   data-aos-anchor="#park"
                   data-aos="fade"
                   data-aos-delay="400"
@@ -1374,31 +1396,31 @@
                 <div class="relative">
                   <img src="./src/assets/image/park_1_木柵公園萃湖.jpg" alt="木柵公園+萃湖" class="w-full h-full object-cover" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[10px] text-white px-2 pb-1">木柵公園+萃湖</p>
+                    <p class="img-caption">木柵公園+萃湖</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/park_3_道南河濱公園.jpg" alt="道南河濱公園" class="w-full h-full object-cover" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[10px] text-white px-2 pb-1">道南河濱公園</p>
+                    <p class="img-caption">道南河濱公園</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/park_4_景美溪.jpg" alt="景美溪" class="w-full h-full object-cover" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[10px] text-white px-2 pb-1">景美溪</p>
+                    <p class="img-caption">景美溪</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/park_5基地小空拍_v2.jpg" alt="基地小空拍" class="w-full h-full object-cover" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[10px] text-white px-2 pb-1">基地小空拍</p>
+                    <p class="img-caption">基地小空拍</p>
                   </div>
                 </div>
                 <div class="relative">
                   <img src="./src/assets/image/park_7_2_木柵公園萃湖.jpg" alt="木柵公園+萃湖" class="w-full h-full object-cover" data-aos-anchor="#park" data-aos="fade-up" data-aos-delay="0">
                   <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                    <p class="text-[10px] text-white px-2 pb-1">木柵公園+萃湖</p>
+                    <p class="img-caption">木柵公園+萃湖</p>
                   </div>
                 </div>
               </div>
@@ -1434,7 +1456,7 @@
                 </h3>
               </div>
               <p
-                class="text-sand text-[10px] md:text-sm text-center !tracking-widest !leading-6"
+                class="body-text text-sand text-center"
                 data-aos-anchor="#brand"
                 data-aos="fade"
                 data-aos-delay="400"
@@ -1474,7 +1496,7 @@
                       <h5 class="text-ink text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以國際視野<br/>匠築城市全新高度</h5>
                     </div>
                     <div class="border-t border-[#2B2B2B] border-opacity-20 pt-4">
-                      <p class="text-ink text-[10px] md:text-sm text-center !tracking-widest !leading-6">作品屢獲美國IDEA與德國iF國際設計大獎，<br/>
+                      <p class="body-text text-ink text-center">作品屢獲美國IDEA與德國iF國際設計大獎，<br/>
 與潤泰、忠泰、華固、宏普建設等知名建商合作，<br/>
 締造無數國際時尚、永恆璀璨傳世之作。<br/>
 業績｜漢皇里寓、漢皇方圓跟River Sky<br/><br/></p>
@@ -1498,7 +1520,7 @@
                       <h5 class="text-ink text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以光粹爲布<br/>用光作畫的藝術家</h5>
                     </div>
                     <div class="border-t border-[#2B2B2B] border-opacity-20 pt-4">
-                      <p class="text-ink text-[10px] md:text-sm text-center !tracking-widest !leading-6">多年曾與大陸建設、國泰、璞園、忠泰、富邦<br/>等知名建設合作。<br/>
+                      <p class="body-text text-ink text-center">多年曾與大陸建設、國泰、璞園、忠泰、富邦<br/>等知名建設合作。<br/>
 持續追求「光的純粹」，<br/>透過空間質地與光影的疊加，<br/>
 在每道明暗間流動深邃又迷人的詩意。<br/>
 業績｜忠泰M</p>
@@ -1522,7 +1544,7 @@
                       <h5 class="text-ink text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">固若金湯的守護<br/>錘鍊不朽萬丈高樓</h5>
                     </div>
                     <div class="border-t border-[#2B2B2B] border-opacity-20 pt-4">
-                      <p class="text-ink text-[10px] md:text-sm text-center !tracking-widest !leading-6">以逾30年淬鍊，實力厚積薄發，<br/>
+                      <p class="body-text text-ink text-center">以逾30年淬鍊，實力厚積薄發，<br/>
 用最嚴謹標準，不計成本與施工難度，<br/>
 只為將防護層級做到淋漓極致，<br/>打造堅若磐石的建築之作。<br/>
 業績｜高雄海洋文化及流行音樂中心<br/></p>
@@ -1551,7 +1573,7 @@
                     <!-- <p class="text-ink text-xs !tracking-widest">洪政鉉建築師事務所｜洪政鉉</p> -->
                   </div>
                   <div class="border-t border-[#2B2B2B] border-opacity-20 pt-4">
-                    <p class="text-ink text-[10px] md:text-sm text-center !tracking-widest !leading-6">作品屢獲美國IDEA與德國iF國際設計大獎，<br/>
+                    <p class="body-text text-ink text-center">作品屢獲美國IDEA與德國iF國際設計大獎，<br/>
 與潤泰、忠泰、華固、宏普建設等知名建商合作，<br/>
 締造無數國際時尚、永恆璀璨傳世之作。<br/>
 業績｜漢皇里寓、漢皇方圓跟River Sky</p>
@@ -1573,7 +1595,7 @@
                     <h5 class="text-ink text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">以光粹爲布<br/>用光作畫的藝術家</h5>
                   </div>
                   <div class="border-t border-[#2B2B2B] border-opacity-20 pt-4">
-                    <p class="text-ink text-[10px] md:text-sm text-center !tracking-widest !leading-6">多年曾與大陸建設、國泰、璞園、忠泰、富邦等知名建設合作。<br/>
+                    <p class="body-text text-ink text-center">多年曾與大陸建設、國泰、璞園、忠泰、富邦等知名建設合作。<br/>
 持續追求「光的純粹」，<br/>透過空間質地與光影的疊加，<br/>
 在每道明暗間流動深邃又迷人的詩意。<br/>
 業績｜忠泰M</p>
@@ -1595,7 +1617,7 @@
                     <h5 class="text-ink text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light mb-1">固若金湯的守護<br/>錘鍊不朽萬丈高樓</h5>
                   </div>
                   <div class="border-t border-[#2B2B2B] border-opacity-20 pt-4">
-                    <p class="text-ink text-[10px] md:text-sm text-center !tracking-widest !leading-6">以逾30年淬鍊，實力厚積薄發，<br/>
+                    <p class="body-text text-ink text-center">以逾30年淬鍊，實力厚積薄發，<br/>
 用最嚴謹標準，不計成本與施工難度，<br/>
 只為將防護層級做到淋漓極致，<br/>打造堅若磐石的建築之作。<br/>
 業績｜高雄海洋文化及流行音樂中心</p>
@@ -1651,7 +1673,7 @@
 
                     <!-- 說明文字 -->
                     <div class="flex-1 flex items-center">
-                      <p class="text-ink text-[10px] md:text-sm text-center !tracking-widest !leading-6 opacity-80">
+                      <p class="body-text text-ink text-center opacity-80">
                         日本三菱電機株式會社投資與技術合作，給台灣創綠色節能與尖端科技，與日本同步推出之機種，傳動效率更高、節省電力更多，關鍵零件皆來自日本。
                       </p>
                     </div>
@@ -1684,7 +1706,7 @@
 
                     <!-- 說明文字 -->
                     <div class="flex-1 flex items-center">
-                      <p class="text-ink text-[10px] md:text-sm text-center !tracking-widest !leading-6 opacity-80">
+                      <p class="body-text text-ink text-center opacity-80">
                         YKK擁有領先業界指標的絕佳氣密性，遠超日本CNS等級的水密性能，以及日本JIS工業標準規格，高耐風壓性可阻絕狂風暴雨，有效降低戶外噪音。
                       </p>
                     </div>
@@ -1700,76 +1722,76 @@
                   <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex flex-col items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="100" data-brand-name="日本三菱電梯NEXIEZ-MRL">
                     <img src="./src/assets/image/logo_mitsubishi.svg" alt="Mitsubishi" class="w-full h-auto object-contain p-1">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">日本三菱電梯NEXIEZ-MRL</p>
+                      <p class="body-text text-white text-center px-2">日本三菱電梯NEXIEZ-MRL</p>
                     </div>
                   </div>
                   <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="150" data-brand-name="日本頂級防水隔音氣密窗">
                     <img src="./src/assets/image/logo_ykk.svg" alt="YKK" class="w-full h-auto object-contain p-1">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">日本頂級防水隔音氣密窗</p>
+                      <p class="body-text text-white text-center px-2">日本頂級防水隔音氣密窗</p>
                     </div>
                   </div>
                   <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="200" data-brand-name="除菌離子電梯清淨機">
                     <img src="./src/assets/image/logo_sharp.svg" alt="SHARP" class="w-full h-auto object-contain p-1">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">除菌離子電梯清淨機</p>
+                      <p class="body-text text-white text-center px-2">除菌離子電梯清淨機</p>
                     </div>
                   </div>
                   <!-- Row 2 -->
                   <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="250" data-brand-name="飛利浦電子鎖">
                     <img src="./src/assets/image/logo_philips.svg" alt="PHILIPS" class="w-full h-auto object-contain p-1">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">飛利浦電子鎖</p>
+                      <p class="body-text text-white text-center px-2">飛利浦電子鎖</p>
                     </div>
                   </div>
                   <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-brand-name="日本全自動馬桶">
                     <img src="./src/assets/image/logo_toto.svg" alt="TOTO" class="w-full h-auto object-contain p-1">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">日本全自動馬桶</p>
+                      <p class="body-text text-white text-center px-2">日本全自動馬桶</p>
                     </div>
                   </div>
                   <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="350" data-brand-name="日本林內三機">
                     <img src="./src/assets/image/logo_rinnai.svg" alt="Rinnai" class="w-full h-auto object-contain p-1">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">日本林內三機</p>
+                      <p class="body-text text-white text-center px-2">日本林內三機</p>
                     </div>
                   </div>
                   <!-- Row 3 -->
                   <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="400" data-brand-name="日立新風機">
                     <img src="./src/assets/image/logo_hitachi.svg" alt="HITACHI" class="w-full h-auto object-contain p-1">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">日立新風機</p>
+                      <p class="body-text text-white text-center px-2">日立新風機</p>
                     </div>
                   </div>
                   <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="450" data-brand-name="美國全鋁金置物鏡櫃">
                     <img src="./src/assets/image/logo_kohler.svg" alt="KOHLER" class="w-full h-auto object-contain p-1">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">美國全鋁金置物鏡櫃</p>
+                      <p class="body-text text-white text-center px-2">美國全鋁金置物鏡櫃</p>
                     </div>
                   </div>
                   <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="500" data-brand-name="IMPULS德國精品廚具">
                     <img src="./src/assets/image/logo_impuls.svg" alt="IMPULS" class="w-full h-auto object-contain p-1">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">IMPULS德國精品廚具</p>
+                      <p class="body-text text-white text-center px-2">IMPULS德國精品廚具</p>
                     </div>
                   </div>
                   <!-- Row 4 -->
                   <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="550" data-brand-name="德國淋浴設備">
                     <img src="./src/assets/image/logo_hansgrohe.svg" alt="hansgrohe" class="w-full h-auto object-contain p-1">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">德國淋浴設備</p>
+                      <p class="body-text text-white text-center px-2">德國淋浴設備</p>
                     </div>
                   </div>
                   <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="600" data-brand-name="廚下型冷熱淨水器">
                     <img src="./src/assets/image/logo_everpoll.svg" alt="EVERPOLL" class="w-full h-auto object-contain p-1">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">廚下型冷熱淨水器</p>
+                      <p class="body-text text-white text-center px-2">廚下型冷熱淨水器</p>
                     </div>
                   </div>
                   <div class="logo-card-double-border brand-logo-card aspect-square bg-white border border-gray-200 rounded-md shadow-sm p-3 flex items-center justify-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="650" data-brand-name="日本暖風機">
                     <img src="./src/assets/image/logo_panasonic.svg" alt="Panasonic" class="w-full h-auto object-contain p-1">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-[10px] text-center !tracking-widest !leading-6 px-2">日本暖風機</p>
+                      <p class="body-text text-white text-center px-2">日本暖風機</p>
                     </div>
                   </div>
                 </div>
@@ -1785,7 +1807,7 @@
                   >
                     <img src="./src/assets/image/logo_sharp.svg" alt="SHARP" class="w-full h-auto object-contain p-2">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">除菌離子電梯清淨機</p>
+                      <p class="body-text text-white text-center px-2">除菌離子電梯清淨機</p>
                     </div>
                   </div>
 
@@ -1797,7 +1819,7 @@
                   >
                     <img src="./src/assets/image/logo_philips.svg" alt="PHILIPS" class="w-full h-auto object-contain p-2">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">飛利浦電子鎖</p>
+                      <p class="body-text text-white text-center px-2">飛利浦電子鎖</p>
                     </div>
                   </div>
 
@@ -1809,7 +1831,7 @@
                   >
                     <img src="./src/assets/image/logo_toto.svg" alt="TOTO" class="w-full h-auto object-contain p-2">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">日本全自動馬桶</p>
+                      <p class="body-text text-white text-center px-2">日本全自動馬桶</p>
                     </div>
                   </div>
 
@@ -1822,7 +1844,7 @@
                   >
                     <img src="./src/assets/image/logo_rinnai.svg" alt="Rinnai" class="w-full h-auto object-contain p-2">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">日本林內三機</p>
+                      <p class="body-text text-white text-center px-2">日本林內三機</p>
                     </div>
                   </div>
 
@@ -1834,7 +1856,7 @@
                   >
                     <img src="./src/assets/image/logo_hitachi.svg" alt="HITACHI" class="w-full h-auto object-contain p-2">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">日立新風機</p>
+                      <p class="body-text text-white text-center px-2">日立新風機</p>
                     </div>
                   </div>
 
@@ -1846,7 +1868,7 @@
                   >
                     <img src="./src/assets/image/logo_kohler.svg" alt="KOHLER" class="w-full h-auto object-contain p-2">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">美國全鋁金置物鏡櫃</p>
+                      <p class="body-text text-white text-center px-2">美國全鋁金置物鏡櫃</p>
                     </div>
                   </div>
 
@@ -1858,7 +1880,7 @@
                   >
                     <img src="./src/assets/image/logo_impuls.svg" alt="IMPULS" class="w-full h-auto object-contain p-2">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">IMPULS德國精品廚具</p>
+                      <p class="body-text text-white text-center px-2">IMPULS德國精品廚具</p>
                     </div>
                   </div>
 
@@ -1871,7 +1893,7 @@
                   >
                     <img src="./src/assets/image/logo_hansgrohe.svg" alt="hansgrohe" class="w-full h-auto object-contain p-2">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">德國淋浴設備</p>
+                      <p class="body-text text-white text-center px-2">德國淋浴設備</p>
                     </div>
                   </div>
 
@@ -1883,7 +1905,7 @@
                   >
                     <img src="./src/assets/image/logo_everpoll.svg" alt="EVERPOLL" class="w-full h-auto object-contain p-2">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">廚下型冷熱淨水器</p>
+                      <p class="body-text text-white text-center px-2">廚下型冷熱淨水器</p>
                     </div>
                   </div>
 
@@ -1895,7 +1917,7 @@
                   >
                     <img src="./src/assets/image/logo_panasonic.svg" alt="Panasonic" class="w-full h-auto object-contain p-2">
                     <div class="brand-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                      <p class="text-white text-sm text-center !tracking-widest !leading-6 px-2">日本暖風機</p>
+                      <p class="body-text text-white text-center px-2">日本暖風機</p>
                     </div>
                   </div>
 
@@ -1915,7 +1937,7 @@
             <!-- 文字區塊 -->
             <div class="w-full flex flex-col justify-center items-center gap-4">
               <h3
-                class="text-gold text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+                class="section-title text-center whitespace-nowrap"
                 data-aos-anchor="#vr"
                 data-aos="fade"
                 data-aos-delay="400"
@@ -1923,7 +1945,7 @@
                 VR實境賞屋 沉浸漫遊
               </h3>
               <p
-                class="text-ink text-[10px] md:text-sm text-center !tracking-widest !leading-6 max-w-3xl"
+                class="body-text text-ink text-center max-w-3xl"
                 data-aos-anchor="#vr"
                 data-aos="fade"
                 data-aos-delay="800"
@@ -1986,7 +2008,7 @@
                     </h3>
                     <div class="md:flex-1">
                       <p
-                        class="text-white text-[10px] md:text-sm text-justify !tracking-widest !leading-6"
+                        class="body-text text-white text-justify"
                         data-aos-anchor="#elevation"
                         data-aos="fade"
                         data-aos-delay="800"
@@ -2013,7 +2035,7 @@
                   <img src="./src/assets/image/build3D_light_mobile.jpg" alt="" class="">
                 </picture>
                 <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                  <p class="text-[8px] md:text-[10px] text-white px-2 pb-1">
+                  <p class="img-caption">
                     本案3D外觀合成示意圖，實際依完工現場為準
                   </p>
                 </div>
@@ -2024,7 +2046,7 @@
                   <img src="./src/assets/image/build3D_dark_mobile.jpg" alt="" class="">
                 </picture>
                 <div class="absolute bottom-1 right-0 pe-2 z-10 bg-black bg-opacity-25">
-                  <p class="text-[8px] md:text-[10px] text-white px-2 pb-1">
+                  <p class="img-caption">
                     本案3D外觀合成示意圖，實際依完工現場為準
                   </p>
                 </div>
@@ -2040,7 +2062,7 @@
         <div class="w-full flex justify-center items-center">
           <div class="w-11/12 md:w-10/12 max-w-7xl flex flex-col justify-center items-center gap-4 py-10 md:py-16">
             <h3
-              class="text-gold text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-center font-light !leading-tight whitespace-nowrap"
+              class="section-title text-center whitespace-nowrap"
               data-aos-anchor="#facility"
               data-aos="fade"
               data-aos-delay="400"
@@ -2048,7 +2070,7 @@
               收放自如的日常
             </h3>
             <p
-              class="text-ink text-[10px] md:text-sm text-center !tracking-widest !leading-6 max-w-3xl"
+              class="body-text text-ink text-center max-w-3xl"
               data-aos-anchor="#facility"
               data-aos="fade"
               data-aos-delay="800"
@@ -2236,28 +2258,28 @@
                     />
                   </div>
                   <div class="flex flex-col gap-0">
-                    <div class="border-t border-[#453E32]/60 py-2 md:py-3 text-sm md:text-base"
+                    <div class="border-t border-[#453E32]/60 py-2 md:py-3 info-row"
                       data-aos-anchor="#zipcode3"
                       data-aos="fade"
                       data-aos-delay="800">
                       接待中心：木柵路三段163號
                     </div>
 
-                    <div class="border-t border-[#453E32]/60 py-2 md:py-3 text-sm md:text-base"
+                    <div class="border-t border-[#453E32]/60 py-2 md:py-3 info-row"
                       data-aos-anchor="#zipcode3"
                       data-aos="fade"
                       data-aos-delay="800">
                       貴賓專線：02-8661-0688
                     </div>
 
-                    <div class="border-t border-[#453E32]/60 py-2 md:py-3 text-sm md:text-base"
+                    <div class="border-t border-[#453E32]/60 py-2 md:py-3 info-row"
                       data-aos-anchor="#zipcode3"
                       data-aos="fade"
                       data-aos-delay="800">
                       建照號碼：112建字第0262號
                     </div>
 
-                    <div class="border-t border-[#453E32]/60 py-2 md:py-3 text-sm md:text-base -tracking-[0.07545em] md:tracking-normal"
+                    <div class="border-t border-[#453E32]/60 py-2 md:py-3 info-row -tracking-[0.07545em] md:tracking-normal"
                       data-aos-anchor="#zipcode3"
                       data-aos="fade"
                       data-aos-delay="800">
