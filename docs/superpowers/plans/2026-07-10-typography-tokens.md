@@ -820,19 +820,12 @@ git commit -m "fix: section 標題字級曲線改為單調遞增，消除平板�
                     <h4 class="subsection-title text-center mb-3">
 ```
 
-- [ ] **Step 3: 移除 inline style 的那個 h4**
+- [ ] **Step 3:（取消）inline style 的 h4 維持原樣**
 
-找到：
-
-```html
-              <h4 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">
-```
-
-改為：
-
-```html
-              <h4 class="subsection-title mb-4">
-```
+> **修正（執行時發現）：** 第 2495 行那個 `<h4 style="font-size: 1.5rem; …">` 是
+> **隱私權彈窗**「個人資料保護政策暨隱私權聲明」的標題，位於 `display:none` 的
+> fancybox modal 內，與主頁面排版體系無關，且彈窗內全是 inline style。
+> 原 spec 誤判為品牌次標。**此步驟取消，不動該 h4。**
 
 - [ ] **Step 4: `#info` 主標由 h4 升為 h3 並改用 `.section-title`**
 
