@@ -34,6 +34,30 @@
     ></script>
     <!-- 引入 tailwind.css -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // 色彩單一真相來源。修改此處即全站同步。
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#2B2B2B',
+              gold: '#7d621a',
+              'gold-light': '#e9db6e',
+              'gold-pale': '#FFE3A4',
+              sand: '#cfc7bb',
+              muted: '#808080',
+              brown: '#3d3127',
+              'brown-dark': '#453a32',
+              'brown-deep': '#321d12',
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      /* 語意元件 class。@apply 只在 type="text/tailwindcss" 的 style 內有效；
+         寫進普通 <style> 會靜默失效（見 .unique-image-caption 的前車之鑑）。 */
+    </style>
     <!-- 引入 AOS 庫的 CSS 文件 -->
     <link
       rel="stylesheet"
