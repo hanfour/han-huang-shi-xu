@@ -58,9 +58,10 @@
       /* 語意元件 class。@apply 只在 type="text/tailwindcss" 的 style 內有效；
          寫進普通 <style> 會靜默失效（見 .unique-image-caption 的前車之鑑）。 */
       @layer components {
-        /* section 主標。字級曲線於 Task 7 修正為單調。 */
+        /* section 主標。18 → 24(md) → 30(2xl)，單調遞增。
+           原本 md:text-3xl lg:text-2xl 會讓平板(768) 比筆電(1024) 大 6px。 */
         .section-title {
-          @apply text-gold text-lg md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-light !leading-tight;
+          @apply text-gold text-lg md:text-2xl 2xl:text-3xl font-light !leading-tight;
         }
         /* section 次標（品牌名），恆比主標小一級 */
         .subsection-title {
