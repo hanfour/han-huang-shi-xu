@@ -105,8 +105,8 @@
         /* 字體家族 */
         --font-sans: "Noto Sans TC", "FangSong", "NSimSun", "LiSong Pro Light",
           "Apple LiSung Light", sans-serif;
-        --font-serif: "Noto Serif", "Georgia", "Times New Roman", "LiSu",
-          "PMingLiU", serif;
+        /* 供 .fc-cap-en 使用（#facility 的英文圖說）。順序照其原本硬寫的值。 */
+        --font-serif: 'Times New Roman', Georgia, serif;
 
         /* 響應式斷點 */
         --breakpoint-mobile: 768px;
@@ -601,7 +601,7 @@
 
       .fc-cap-en {
         display: block;
-        font-family: 'Times New Roman', serif;
+        font-family: var(--font-serif);
         color: #ffffff;
         letter-spacing: 0.14em;
         text-transform: uppercase;
