@@ -63,7 +63,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     />
-    <!-- <link rel="stylesheet" href="./src/fonts.css" /> -->
     <!-- CustomSlider 組件 CSS -->
     <link rel="stylesheet" href="./src/assets/utils/custom-slider/CustomSlider.css" />
     <!-- /* Noto Sans TC */ -->
@@ -73,7 +72,6 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Shafarik&display=swap" rel="stylesheet">
     <!-- 引入 slick-carousel -->
     <link
       rel="stylesheet"
@@ -109,8 +107,6 @@
           "Apple LiSung Light", sans-serif;
         --font-serif: "Noto Serif", "Georgia", "Times New Roman", "LiSu",
           "PMingLiU", serif;
-        --font-CenturyGothic: "Century Gothic", "Noto Serif", "Roboto", "Lora",
-          sans-serif;
 
         /* 響應式斷點 */
         --breakpoint-mobile: 768px;
@@ -358,34 +354,6 @@
         }
         .slick-next:before, .slick-prev:before {
           font-size: 16px;
-        }
-      }
-
-      /* Custom styles */
-
-      .unique-responsive-carousel .slick-slide {
-        transition: all 0.3s ease;
-        padding: 0 5px;
-      }
-
-      .unique-responsive-carousel .slick-current {
-        transform: scale(1);
-        filter: grayscale(0);
-      }
-
-      .unique-responsive-carousel .slick-slide:not(.slick-current) {
-        transform: scale(0.8);
-        filter: grayscale(100%);
-      }
-
-      .unique-image-caption {
-        @apply text-[8px] md: text-[10px] text-white px-2 pb-1 absolute bottom-0 right-0 w-full text-right;
-      }
-
-      @media (max-width: 768px) {
-        .unique-responsive-carousel .slick-slide:not(.slick-current) {
-          transform: scale(1);
-          filter: grayscale(0);
         }
       }
 
@@ -3144,24 +3112,6 @@
         autoplay: true,
         autoplaySpeed: 5000,
         speed: 800
-      });
-
-      $(".unique-responsive-carousel").slick({
-        centerMode: true,
-        centerPadding: "0",
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        dots: true,
-        arrows: false,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-              centerMode: false,
-            },
-          },
-        ],
       });
 
       // 團隊輪播初始化

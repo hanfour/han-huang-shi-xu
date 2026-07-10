@@ -267,26 +267,31 @@ git commit -m "refactor: 字色改用 token，移除隱藏元素上的 Tailwind 
 ### Task 3: 清理死設定
 
 **Files:**
-- Modify: `index.html`（L53 Shafarik、L84–90 `:root`、L352–359 `.unique-*`）
-- Modify: `thanku.html`（L39 Shafarik）
+- Modify: `index.html`（Shafarik link、`:root` 的 `--font-CenturyGothic`、`.unique-*` CSS 與 JS 初始化）
 - Delete: `src/fonts.css`
+- **不動 `thanku.html`**
 
 **Interfaces:**
 - Consumes: 無
 - Produces: 無（純刪除）
 
 實測依據：`.unique-image-caption` 與 `.unique-responsive-carousel` 在 markup 中皆 0 引用；
-`--font-CenturyGothic` 0 引用；`Shafarik` 0 使用；`src/fonts.css` 從未被載入（`index.html:42` 是註解）。
+`--font-CenturyGothic` 0 引用；`src/fonts.css` 從未被載入（`index.html` 的 link 是註解）。
 
-- [ ] **Step 1: 移除 Shafarik 的 Google Fonts link（兩個檔案）**
+> **修正（執行時發現）：`thanku.html` 有在用 Shafarik。**
+> `thanku.html:109` 的 `<h1 class="… font-shafarik">` 實際使用該字型，且其 Tailwind config
+> 有 `'shafarik': ['Shafarik', 'serif']`。原 spec 只驗證了 `index.html` 就下結論「Shafarik 0 使用」。
+> **只刪 `index.html` 的 link，`thanku.html` 的 link 與 config 一律保留。**
 
-刪除 `index.html` 這一行：
+- [ ] **Step 1: 移除 `index.html` 的 Shafarik link（僅此一個檔案）**
+
+刪除 `index.html` 這一行（`index.html` 內 `font-shafarik` 使用次數為 0）：
 
 ```html
     <link href="https://fonts.googleapis.com/css2?family=Shafarik&display=swap" rel="stylesheet">
 ```
 
-刪除 `thanku.html` 中同樣的那一行。
+`thanku.html` 的同名 link **不要動**。
 
 - [ ] **Step 2: 移除 `--font-CenturyGothic` 變數**
 
