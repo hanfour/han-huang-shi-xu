@@ -104,6 +104,33 @@
 
 背景色 `#3d3127`、`#453a32` 分別等同 `:root` 已定義卻 0 引用的 `--color-brand-brown`、`--color-brand-brown-dark`。
 
+### 2.3.1 未指定顏色的元素（computed 落在瀏覽器預設純黑）
+
+以 computed style 量測（1440px，僅計可見元素）：
+
+| computed color | 元素數 | 身分 |
+| --- | --- | --- |
+| `rgb(255,255,255)` | 55 | white |
+| `rgb(43,43,43)` | 24 | `#2B2B2B` |
+| `rgb(0,0,0)` | **11** | **從未指定顏色** |
+| `rgb(125,98,26)` | 6 | `#7d621a` |
+| `rgb(128,128,128)` | 4 | `#808080` |
+| `rgb(233,219,110)` | 2 | `#e9db6e` |
+| `rgb(207,199,187)` | 1 | `#cfc7bb` |
+
+那 11 個純黑元素為：
+
+- `#info` 的 6 個 `<p>`（投資興建／結構工程／營造公司／燈光設計／建築規劃／建築代銷）
+- `#form` 的 4 個 `<div>`（接待中心／貴賓專線／建照號碼／不動產經紀人）與 1 個 `<input>`
+
+它們沒有任何 `text-*` class，故 `body` 無 `color` 宣告時直接落到瀏覽器預設 `#000`。
+
+**掃 Tailwind class 永遠找不到這個問題——因為它們沒有 class。** 此項僅能由 computed
+style 量測發現，是本次「統一字色」的實質缺口。
+
+註：`#kv` 與 `#form` 兩個 section 的 `id` 寫在 `<section` 的**下一行**，
+用 `grep '<section id='` 會漏掉它們。全站共 15 個 section。
+
 ### 2.4 字級
 
 依 class 組合分類（而非依單一 utility 統計）：
@@ -205,6 +232,9 @@ B 類多數已是 96px，離群者為 `#materials`(80)、`#school`(160)、`#faci
 
 `text-gray-700` / `text-gray-800`（5 處，全在隱藏元素）直接移除。
 
+另於 `body` 補上 `color: var(--color-ink)`，使 2.3.1 那 11 個未指定顏色的元素
+由瀏覽器預設純黑 `#000` 繼承為 `#2B2B2B`。這是全站字色統一的最後一塊缺口。
+
 ### 3.2 字型 token
 
 - `--font-serif` 重新定義為 `'Times New Roman', Georgia, serif`（照 `.fc-cap-en` 的實際 fallback 順序）
@@ -286,24 +316,64 @@ markup，收益不足以抵銷風險，列為非目標。
 
 ## 4. 風險與驗證
 
-| 項目 | 風險 | 驗證方式 |
+### 4.1 主要驗證手段：computed style 快照，而非截圖
+
+**不以截圖比對作為主要驗證。** 本次重構的標的就是 computed style（font／color／size／
+spacing），而截圖是一條帶雜訊的間接管道。實測證實三個無法消除的雜訊源：
+
+1. `#vr` 內嵌外部 VR 環景 iframe，載入時機取決於外部網路
+2. `#school`、`#park` 的圖片排版依圖片載入時序而異
+3. slick 輪播的 autoplay 是 `setInterval`，在 Chrome `--virtual-time-budget` 下會前進不定張數
+
+實測結果：截圖比對在上述 section 無法達成確定性；而 computed style 快照
+連續兩次執行**逐字元相同**（693 行，涵蓋 15 個 section × 5 個斷點）。
+
+工具為 `_verify.sh`（搭配 `_shot.html`、`_probe.html`），實作完成後一併刪除：
+
+```bash
+./_verify.sh serve                  # 啟動本機 server
+./_verify.sh styles baseline        # 產生基準快照
+# ...改動...
+./_verify.sh styles t2 && ./_verify.sh sdiff baseline t2
+```
+
+快照記錄每個可見文字元素的 `font-family` / `font-size` / `font-weight` / `color` /
+`line-height` / `letter-spacing` / `margin-bottom` / 距 section 頂端距離，以及每個
+section 的 `padding-top` / `padding-bottom`。
+
+截圖（`./_verify.sh snap` / `diff`）僅作為輔助，供人工檢視關鍵 section 的視覺結果。
+
+### 4.2 各步驟的驗證斷言
+
+| 步驟 | 風險 | 驗證斷言 |
 | --- | --- | --- |
-| 色彩 token | 極低（等值替換） | grep 確認無殘留 hex |
-| 刪除死字型／死 class | 極低（實測 0 引用） | 刪除後截圖比對 |
-| `title` md 字級 | 低（僅平板寬度） | 768px 截圖比對 |
-| 垂直間距 | 中（僅 4 個 B 類 section） | 逐 section 截圖比對 |
-| 語意 class 替換 | 中（`@apply` 需新 style 區塊） | 替換後四斷點全頁截圖比對 |
-| 標題階層與顏色 | 中（`#materials`、`#info` 變色） | 截圖比對 |
+| 1 建立 token | 極低（不改 markup） | `sdiff` **完全 PASS** |
+| 2 字色 token 替換 | 極低（等值替換） | `sdiff` **完全 PASS** + grep 無殘留 hex |
+| 3 清理死設定 | 極低（實測 0 引用） | `sdiff` **完全 PASS** |
+| 4 `--font-serif` | 極低（等值替換） | `sdiff` **完全 PASS** |
+| 5 語意 class 替換 | 中（`@apply` 可能靜默失效） | `sdiff` **完全 PASS** |
+| 6 `body` 補 `color` | 低（僅影響未指定者） | `sdiff` **恰好 11 行**：`rgb(0,0,0)` → `rgb(43,43,43)`，無其他差異 |
+| 7 `title` 字級曲線 | 低（僅平板寬度） | 僅 768px 的 `size=` 由 30px→24px，其餘斷點不變 |
+| 8 標題階層與顏色 | 中 | `#materials`/`#info` 主標 `color` 轉為 `rgb(125,98,26)`；`#info` 標籤 `h4`→`h3` |
+| 9 垂直間距 | 中（僅 4 個 B 類 section） | `#materials`/`#school`/`#facility`/`#info` 的 `pt=` 均為 `96px`；A 類不得變動 |
+| 10 刪除字型檔 | 低（實測 0 引用） | `sdiff` **完全 PASS** |
+
+步驟 1–5 是純等值替換，斷言是 `sdiff` 完全 PASS——**任何一行差異都代表改壞了**。
+
+步驟 6–9 是刻意的視覺改動，斷言是「差異恰好等於預期，且不多不少」。
+例如步驟 6 若出現第 12 行差異，代表 `body` 的 `color` 意外影響了原本已指定顏色的元素。
+
+### 4.3 關鍵前提
 
 **A 類 section（`#mrt`、`#traffic`、`#park`）的間距不在改動範圍內**，因其標題位置由
-flex 對齊決定（見 2.5(c)）。此判斷是本案避免誤改的關鍵前提，實作時若發現任一 A 類
-section 實為 padding 定位，應先回頭修正本文件。
+flex 對齊決定（見 2.5(c)）。實作時若發現任一 A 類 section 實為 padding 定位，
+應先回頭修正本文件。
 
 `@apply` 必須寫在新增的 `<style type="text/tailwindcss">` 內。若誤寫入既有的普通
-`<style>`，樣式會靜默失效而非報錯——這正是 `.unique-image-caption` 的失敗原因。
-替換後務必以截圖確認，不可僅憑「無錯誤」判定成功。
+`<style>`，樣式會**靜默失效而非報錯**——這正是 `.unique-image-caption` 的失敗原因。
+因此步驟 5 不可僅憑「無錯誤」判定成功，必須以 `sdiff` PASS 為準。
 
-驗證斷點：375px（手機）、768px（平板）、1024px（筆電）、1536px（桌機）。
+驗證斷點：375、768、1024、1440、1536px。
 
 ---
 
@@ -311,18 +381,21 @@ section 實為 padding 定位，應先回頭修正本文件。
 
 風險由低至高，每步可獨立 commit 與回滾：
 
+0. 建立驗證 harness（`_verify.sh` / `_shot.html` / `_probe.html`），產生 baseline 快照
 1. 新增 `tailwind.config` 色彩／字級 token 與 `<style type="text/tailwindcss">` 區塊（不改 markup）
 2. 字色 token 替換 + 移除 `text-gray-700/800`
 3. 清理死設定：`fonts.css`、`Shafarik` `<link>`、`--font-CenturyGothic`、`.unique-*` 死 class
 4. `--font-serif` 重新定義，`.fc-cap-en` 改用變數
 5. 建立 `.section-title` / `.subsection-title` / `.body-text` / `.img-caption` / `.info-row`，替換 markup
-6. 修正 `title` 字級曲線（`md:text-3xl` → `md:text-2xl`）
-7. 統一標題階層與顏色（`#materials`、`#info`）
-8. 統一垂直間距（`#materials`、`#school`、`#facility`、`#info` 四個 B 類 section）
-9. **（獨立步驟，執行前另行確認）** 刪除 `src/assets/fonts/` 全部 137MB
+6. `body` 補 `color: var(--color-ink)`，收拾 11 個未指定顏色的元素
+7. 修正 `title` 字級曲線（`md:text-3xl` → `md:text-2xl`）
+8. 統一標題階層與顏色（`#materials`、`#info`）
+9. 統一垂直間距（`#materials`、`#school`、`#facility`、`#info` 四個 B 類 section）
+10. 刪除驗證 harness 三個檔案
+11. **（獨立步驟，執行前另行確認）** 刪除 `src/assets/fonts/` 全部 137MB
 
-步驟 1–8 完成後網站應與現況視覺一致（除 3.3、3.5、3.6 列出的預期改動外）。
-步驟 9 與前八步無依賴關係，可單獨執行或永久擱置。
+步驟 1–9 完成後網站應與現況視覺一致（除 3.3、3.5、3.6、2.3.1 列出的預期改動外）。
+步驟 11 與前面無依賴關係，可單獨執行或永久擱置。
 
 ---
 
